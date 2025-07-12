@@ -98,6 +98,26 @@ GIT
       tsort (>= 0.2)
       zeitwerk (~> 2.6)
 
+PATH
+  remote: engines/catalog
+  specs:
+    catalog (0.1.0)
+
+PATH
+  remote: engines/community
+  specs:
+    community (0.1.0)
+
+PATH
+  remote: engines/copyright
+  specs:
+    copyright (0.1.0)
+
+PATH
+  remote: engines/web
+  specs:
+    web (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -375,6 +395,9 @@ DEPENDENCIES
   bootsnap
   brakeman
   capybara
+  catalog!
+  community!
+  copyright!
   debug
   importmap-rails
   jbuilder
@@ -392,6 +415,7 @@ DEPENDENCIES
   thruster
   turbo-rails
   tzinfo-data
+  web!
   web-console
 
 BUNDLED WITH

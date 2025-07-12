@@ -61,3 +61,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "catalog", path: "engines/catalog"
+gem "copyright", path: "engines/copyright"
+gem "community", path: "engines/community"
+gem "web", path: "engines/web"

@@ -11,4 +11,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  mount Web::Engine, at: "/"
+  mount Catalog::Engine, at: "/catalog"
+  mount Copyright::Engine, at: "/copyright"
+  mount Community::Engine, at: "/community"
 end
