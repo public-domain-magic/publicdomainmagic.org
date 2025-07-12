@@ -1,4 +1,5 @@
 # README
+[![GitHub License](https://img.shields.io/badge/license-AGPLv3_or_later-orange)](https://www.gnu.org/licenses/agpl-3.0.en.html)
 [![Ruby Version](https://img.shields.io/badge/ruby_version-3.4.2-blue)](https://www.ruby-lang.org/en/news/)
 [![Rails Version](https://img.shields.io/badge/rails_version-8.0.2-blue)](https://rubyonrails.org/blog/)
 
