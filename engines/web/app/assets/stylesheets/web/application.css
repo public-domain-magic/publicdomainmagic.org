@@ -13,3 +13,91 @@
  *= require_tree .
  *= require_self
  */
+
+@import url("simple.css");
+@import url("simple_customizations.css");
+
+body {
+    font-synthesis: none;
+}
+
+body > header {
+    background: var(--header-bg);
+    color: var(--header-text);
+
+    nav {
+        margin: 0 0 2rem;
+    }
+}
+
+@media (min-width: 72ch) {
+    body > header {
+        display: grid;
+        grid-template-columns: 1fr max-content auto 1fr;
+        gap: 1em;
+        align-items: center;
+
+        nav {
+            grid-column: 3 / span 1;
+            margin: 0;
+        }
+
+        :has(.logo) {
+            grid-column: 2 / span 1;
+        }
+
+        & > *:not(nav):not(:has(.logo)) {
+            grid-column: 1 / span 4;
+        }
+    }
+}
+
+body > footer nav {
+    ul, li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: inline-block;
+    }
+    li:not(:last-child) {
+        margin-inline-end: 1ch;
+        &:after {
+            content: "•";
+            padding-inline-start: 1ch;
+        }
+    }
+}
+
+.logo {
+    fill: currentColor;
+    block-size: 5.5rem;
+    inline-size: auto;
+    margin: 1em;
+    aspect-ratio: 4216 / 1484;
+}
+
+.logotype {
+    font-family: "Sorts Mill Goudy", serif;
+    font-weight: inherit;
+    line-height: 0;
+    background: var(--logotype-bg);
+    color: var(--logotype-color);
+
+    &:is(a:hover .logotype, a:focus .logotype) {
+        color: inherit;
+        background: transparent;
+    }
+
+    .icon {
+        margin-inline-end: 0.5ch;
+        position: relative;
+        top: 0.1em;
+        fill: currentColor;
+    }
+
+    .magic {
+        font-style: italic;
+    }
+}
