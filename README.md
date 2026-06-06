@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Kerrick Long <me@kerricklong.com>
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # README
 
 This README would normally document whatever steps are necessary to get the

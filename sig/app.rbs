@@ -1,0 +1,14 @@
+class ApplicationController < ActionController::Base
+end
+
+module ApplicationHelper
+end
+
+class ApplicationRecord < ActiveRecord::Base
+end
+
+class ApplicationJob < ActiveJob::Base
+end
+
+class ApplicationMailer < ActionMailer::Base
+end

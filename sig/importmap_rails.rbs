@@ -1,0 +1,5 @@
+module ActionController
+  class Base
+    def self.stale_when_importmap_changes: () -> void
+  end
+end

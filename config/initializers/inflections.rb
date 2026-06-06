@@ -1,3 +1,11 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 # Be sure to restart your server when you modify this file.
 
 # Add new inflection rules using the following format. Inflections

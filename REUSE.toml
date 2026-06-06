@@ -1,0 +1,41 @@
+version = 1
+
+[[annotations]]
+path = 'Gemfile.lock'
+SPDX-FileCopyrightText = "Kerrick Design, LLC <me@kerricklong.com>"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = 'public/robots.txt'
+SPDX-FileCopyrightText = "Kerrick Design, LLC <me@kerricklong.com>"
+SPDX-License-Identifier = "LicenseRef-LICENSE"
+
+[[annotations]]
+path = [
+  '.dockerignore',
+  '.gitattributes',
+  '.gitignore',
+  '.ruby-version',
+  'Dockerfile',
+  'Gemfile',
+  'Rakefile',
+  'config.ru',
+  'config/credentials.yml.enc',
+  '.kamal/**',
+  'bin/**',
+]
+SPDX-FileCopyrightText = "Kerrick Design, LLC <me@kerricklong.com>"
+SPDX-License-Identifier = "LicenseRef-LICENSE"
+
+[[annotations]]
+path = [
+  'app/assets/**',
+  'app/javascript/**',
+  'app/views/**',
+  'public/**/*.html',
+  'public/**/*.png',
+  'public/**/*.svg',
+  'sig/**/*.rbs',
+]
+SPDX-FileCopyrightText = "Kerrick Design, LLC <me@kerricklong.com>"
+SPDX-License-Identifier = "LicenseRef-LICENSE"

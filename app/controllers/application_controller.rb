@@ -1,7 +1,16 @@
-class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
-  allow_browser versions: :modern
+# frozen_string_literal: true
 
-  # Changes to the importmap will invalidate the etag for HTML responses
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Base controller for the PublicDomainMagic application.
+#
+# All controllers inherit from this class. Shared filters, rescue handlers,
+# and helper declarations belong here so they apply application-wide.
+class ApplicationController < ActionController::Base
+  allow_browser versions: :modern
   stale_when_importmap_changes
 end

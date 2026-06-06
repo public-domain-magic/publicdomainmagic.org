@@ -1,3 +1,11 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 require_relative "boot"
 
 require "rails/all"
@@ -6,7 +14,9 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Top-level namespace for the PublicDomainMagic application.
 module PublicDomainMagic
+  # Rails application bootstrap and configuration.
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.1

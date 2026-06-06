@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 ARG RUBY_VERSION=4.0.3
 FROM ghcr.io/rails/devcontainer/images/ruby:$RUBY_VERSION
