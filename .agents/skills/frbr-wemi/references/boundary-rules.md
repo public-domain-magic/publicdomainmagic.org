@@ -98,8 +98,9 @@ within a manifestation because the production plan leaves device details unspeci
 
 ## Aggregates (Working Group on Aggregates, 2011; adopted by LRM)
 
-An aggregate is **a manifestation embodying multiple distinct expressions**. ~20% of
-library holdings. Three types:
+An aggregate is **a manifestation embodying multiple distinct expressions**. Over 20% of
+holdings in library-collection studies (O'Neill, Žumer & Mixter, 2015); frequency varies
+by domain. Three types:
 
 1. **Collections** — expressions of works similar in form/genre: anthologies, selected
    and collected works, journals.

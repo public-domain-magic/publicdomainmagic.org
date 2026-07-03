@@ -63,15 +63,16 @@ this ladder and stop at the first match:
    summaries, annotated and commentary editions, reviews and criticism. *The Annotated
    Alice* is a new work related to Carroll's original, not an edition of it.
 2. **Any change to the intellectual content itself?** → **new Expression, same Work**:
-   translations, revised/enlarged/updated editions, abridgements and expurgations,
-   modernized-spelling editions, a recorded reading of a text (change of form),
-   arrangements and distinct performances of music. Minor corrections of spelling and
-   punctuation do *not* cross this line — same expression.
+   translations (each is a distinct expression — and so is the same translator working
+   from a different source edition), revised/enlarged/updated editions, abridgements and
+   expurgations, modernized-spelling editions, a recorded reading of a text (change of
+   form), arrangements and distinct performances of music. Minor corrections of spelling
+   and punctuation do *not* cross this line — same expression.
 3. **Change in production/physical form only?** → **new Manifestation, same Expression**:
    different publisher (even with no other visible change), reprint by a new house,
-   facsimile, paper → microfilm → digital scan, PDF vs ePub vs print (each encoding format
-   is its own manifestation), typeface/page-layout changes fixed at production, hardcover
-   vs paperback.
+   facsimile, paper → microfilm → digital scan, PDF vs ePub vs print (each encoding
+   format is its own manifestation, because the encoding is what production fixes),
+   typeface/page-layout changes fixed at production, hardcover vs paperback.
 4. **Differences only between individual copies, arising after production?** → same
    Manifestation; the differences live on the **Item** (damage, rebinding, inscriptions,
    provenance, missing pages).
@@ -86,7 +87,10 @@ Two refinements for digital documents:
   bitstreams are means of delivery.
 
 For contested or unusual calls — serials, music, born-digital, "is this printing a new
-manifestation?" — read `references/boundary-rules.md` before answering.
+manifestation?" — read `references/boundary-rules.md` before answering. Serials and
+performance genres are not minor edge cases: serials never close, and improvised or
+performer-driven genres relocate the creative effort, so where the work/expression
+boundary falls genuinely shifts by domain.
 
 ## Which level does an attribute belong on?
 
@@ -119,16 +123,22 @@ appropriate level:
 
 An illustrator is strictly the *creator* of the illustration works whose expressions are
 aggregated alongside the text (see Aggregates); many cataloging rules simplify this to an
-expression-level contributor. Either convention works — pick one and apply it
-consistently.
+expression-level contributor. This is a local design decision, not a FRBR fact, and it
+has schema consequences — separate works need whole/part and aggregate records; the
+contributor shortcut keeps records flatter. Pick one and apply it consistently.
 
 Role vocabulary matters for the user tasks — "translated by" and "written by" must be
-distinguishable, not merged into a generic byline.
+distinguishable, not merged into a generic byline. Keep person-role links separate from
+content relationships: the *translator* is a Group 2 entity with a role on the
+expression; the *translation* relationship (which expression derives from which) links
+the expressions themselves.
 
 ## Aggregates (anthologies, collections, illustrated editions)
 
-An **aggregate is a manifestation embodying multiple distinct expressions.** Roughly 20%
-of real library holdings are aggregates, so model them deliberately. Three kinds:
+An **aggregate is a manifestation embodying multiple distinct expressions.** In library
+collection studies, over 20% of holdings are aggregates (O'Neill, Žumer & Mixter); the
+proportion varies by domain, but aggregates are common enough everywhere to model
+deliberately. Three kinds:
 
 - **Collections** — anthologies, collected works, journals (expressions of several works
   similar in form).
@@ -167,10 +177,12 @@ read it before designing a related-works feature or schema.
   manifestation usually signals either an aggregate (multiple expressions, multiple
   languages) or a denormalization — if you denormalize for performance, say so explicitly
   and keep the canonical field authoritative.
-- **Design for 1:1:1, keep the chain anyway.** In WorldCat, 94% of works have a single
-  expression and 78% a single manifestation. Creation flows should make the
-  work+expression+manifestation+item fast path one step, while the model still supports
-  the complex minority — which is disproportionately the famous, heavily held works.
+- **Design for 1:1:1, keep the chain anyway.** In WorldCat (predominantly print library
+  materials), 94% of works have a single expression and 78% a single manifestation.
+  Music, serials, and multilingual collections skew far more multiple. Creation flows
+  should make the work+expression+manifestation+item fast path one step, while the model
+  still supports the complex minority — which is disproportionately the famous, heavily
+  held works users care most about.
 - **Users seek expressions, not works.** Studies show users want "the English one,"
   "the illustrated one," "the latest edition" — not an undifferentiated work cluster.
   Collocate results by work, but differentiate and let users select by expression- and
@@ -187,7 +199,9 @@ read it before designing a related-works feature or schema.
   subjects) — never as expressions of it.
 - **Different printings, same publisher = same manifestation** unless changes were
   substantive or intentional (a "second printing" with corrections is a new manifestation
-  embodying a possibly-new expression; check the content).
+  embodying a possibly-new expression; check the content). Digital resources have no
+  printings: judge by intentional, signaled updates; silently patched typos are the
+  digital analogue of same-expression corrections.
 - **The model is a framework, not an algorithm.** FRBR deliberately leaves boundary
   details to cataloging rules and local user needs; communities interpret it differently
   (that is by design). When a call is genuinely ambiguous, decide by the four user tasks —
@@ -204,7 +218,8 @@ read it before designing a related-works feature or schema.
   related-works schema or UI.
 - `references/attributes.md` — full FRBR attribute lists per entity. Read when adding
   fields to bibliographic records or tables.
-- `references/work-set-algorithm.md` — OCLC's work-clustering algorithm adapted from
-  MARC. Read when importing external records or deduplicating into works.
+- `references/work-set-algorithm.md` — OCLC's work-clustering algorithm. Its details are
+  MARC/LCNAF-specific; adapt the normalization and mapping patterns to your record
+  schema. Read when importing external records or deduplicating into works.
 - `references/vocabularies.md` — canonical property names from FRBR Core, openWEMI, and
   FaBiO. Read when naming public-facing API fields, exports, or linked-data output.
