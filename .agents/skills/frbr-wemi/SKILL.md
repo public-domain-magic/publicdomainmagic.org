@@ -134,6 +134,12 @@ content relationships: the *translator* is a Group 2 entity with a role on the
 expression; the *translation* relationship (which expression derives from which) links
 the expressions themselves.
 
+A person and a name are different things: the name *as printed on the piece* is the
+manifestation's statement-of-responsibility attribute (transcribed as-is), while the
+relationship points at the person entity. Pseudonyms, stage names, and ghostwriting make
+the name↔person relation many-to-many — never merge person records on name-string
+equality (classic FRBR: authority-controlled headings; IFLA LRM: the Nomen entity).
+
 ## Aggregates (anthologies, collections, illustrated editions)
 
 An **aggregate is a manifestation embodying multiple distinct expressions.** In library

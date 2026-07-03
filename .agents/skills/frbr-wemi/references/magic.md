@@ -111,6 +111,41 @@ none.
   exceptional and expect the record to hang on relationships and subjects alone.
 - **One person, many roles.** A single figure may create the works, write the book text,
   perform on the videos, and co-own the publisher — magic's small world makes role-typed
-  Group 2 relationships (not bylines) non-negotiable. Stage names and pseudonyms are
-  pervasive; classic FRBR handles them as name headings, and IFLA LRM's Nomen entity is
-  the formal upgrade if name-vs-person matters to your catalog.
+  Group 2 relationships (not bylines) non-negotiable.
+
+## Stage names: the name↔person problem
+
+Magic is a worst case for personal names, and the invariant to internalize is:
+**a person and a name are different things, and their relation is many-to-many in both
+directions.**
+
+- **One person, many names.** A real research example — Jean Hugard, co-author of *The
+  Royal Road to Card Magic*, is attested as: John Gerard Rodney Boyce (birth name), Jean
+  Hugarde (spelling variant), Kelmann, Oscar Kellmann, Hugarde, and Chin Sun Loo (stage
+  and performance names) — and he ghostwrote for still other names. Names are typed
+  (birth, legal, spelling variant, stage, touring, pen) and often time-scoped (a touring
+  name for particular seasons).
+- **One name, several persons.** Hugard also performed under "Ching Ling Foo" — the
+  stage name of a *different, real magician* — and Paul Fleming toured as "Karl
+  Germain," likewise another magician's name. Homage and imitation names (Dan Harlan ←
+  Harlan Tarbell) compound this. **Never merge records on name-string equality.**
+- **A name with no known person.** S. W. Erdnase is a pseudonym whose bearer has never
+  been established: the works attach to the name itself, with the person link left
+  open. This is normal, not an error state.
+
+Modeling consequences:
+
+- Keep one entity per **person**, with a set of typed, sourced **name variants**; link
+  works/expressions to the person, not to whichever name appeared on the piece.
+- The name *as printed* is preserved anyway — it's the manifestation's **statement of
+  responsibility** (transcribed as-is), so "by Kelmann" on the title page and
+  creator → Hugard on the work coexist without conflict. Ghostwriting is the same split:
+  transcribed credit vs. actual creator relationships, both recorded when known.
+- Search and collocation must expand through the variant set — this is the same
+  variant-headings mapping that drives work clustering (see
+  `work-set-algorithm.md`'s mapping files).
+- Classic FRBR handles all this through authority-controlled headings; IFLA LRM
+  promotes the name to a first-class entity (**Nomen**) with its own attributes (type,
+  time period, context). If name-vs-person matters to your catalog — in magic it will —
+  LRM's Nomen is the formal model to borrow even inside an otherwise-classic-FRBR
+  design.
