@@ -62,8 +62,9 @@ separate. Union-find over (title, name) pairs implements this directly.
 
 - Store the computed key on the import/staging record, not on the work itself; the key
   identifies a candidate cluster, a curator confirms the Work.
-- Older and public-domain titles frequently reappear under variant titles and pseudonymous
-  authors — expect heavy reliance on the mapping table, and prefer one uniform
-  (conventional) title per famous work regardless of cover-title variants.
+- Titles with long publication histories frequently reappear under variant titles and
+  pseudonymous or variantly styled authors — expect heavy reliance on the mapping table,
+  and prefer one uniform (conventional) title per famous work regardless of cover-title
+  variants.
 - Idempotency: re-running the keyer over already-linked records must not move confirmed
   works; only unconfirmed candidates re-cluster.

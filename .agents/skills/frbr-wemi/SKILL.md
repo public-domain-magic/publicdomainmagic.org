@@ -45,6 +45,13 @@ downward: an expression realizes exactly one work; an item exemplifies exactly o
 manifestation. The expression↔manifestation link is many-to-many — that is where
 aggregates live (see below).
 
+This skill teaches classic FRBR (IFLA 1998, amended 2009), the vocabulary nearly all
+tooling and literature use. Its successor, IFLA LRM (2017), consolidates FRBR/FRAD/FRSAD:
+WEMI survives intact, but Group 2/3 are reorganized (Agent, Nomen, Place, Time-span, and
+a top-level Res), and LRM formally adopts the aggregates model described below. If a task
+targets LRM or current RDA, say so and flag the differences rather than silently mixing
+models.
+
 ## The boundary decision procedure
 
 When asked "is X a new work / expression / manifestation, or the same one?", walk down
@@ -74,8 +81,9 @@ Two refinements for digital documents:
 - Post-production rendering is not a manifestation boundary. An ePub reflowing on a phone
   or a reader changing the font does not create new manifestations; the publisher's
   production plan anticipates it.
-- Treat an item functionally: the thing the reader actually reads or hears (the displayed/
-  printed copy), not the bytes or the server. Files and bitstreams are means of delivery.
+- Treat an item functionally: the thing the user actually reads, views, or hears (the
+  displayed/printed copy, the played recording), not the bytes or the server. Files and
+  bitstreams are means of delivery.
 
 For contested or unusual calls — serials, music, born-digital, "is this printing a new
 manifestation?" — read `references/boundary-rules.md` before answering.
@@ -105,9 +113,14 @@ on the work record. Model a link (with a role) between Group 2 entities and the
 appropriate level:
 
 - wrote/composed/created → Work
-- translated, revised, edited (the text), performed, illustrated → Expression
+- translated, revised, edited (the text), performed → Expression
 - published, printed, manufactured → Manifestation
 - owned, annotated, donated → Item
+
+An illustrator is strictly the *creator* of the illustration works whose expressions are
+aggregated alongside the text (see Aggregates); many cataloging rules simplify this to an
+expression-level contributor. Either convention works — pick one and apply it
+consistently.
 
 Role vocabulary matters for the user tasks — "translated by" and "written by" must be
 distinguishable, not merged into a generic byline.

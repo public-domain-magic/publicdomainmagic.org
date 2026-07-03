@@ -65,7 +65,8 @@ when the *production process* changes:
 - display characteristics fixed at production: typeface, font size, page layout
 - physical medium: paper → microfilm → digital; container: cassette → cartridge
 - **each digital encoding format, including its DRM layer**: PDF, ePub, Mobi, HTML, Word,
-  Braille are all distinct manifestations of the same expression
+  Braille are all distinct manifestations of the same expression; likewise audio formats
+  (WAV vs. MP3 vs. AAC) and, by the same carrier rule, video carriers/encodings
 - publisher, distributor, repackaging, or publication/marketing changes signaled in the
   product — a publisher change alone creates a new manifestation
 - reproductions: facsimile, reprint, photo-offset, micro/macroreproduction (same
@@ -90,7 +91,8 @@ when the *production process* changes:
 FRBR calls the item "a concrete entity," which fails for digital documents (files and
 in-memory states are not what anyone reads; a file may be several documents or vice
 versa). O'Neill & Žumer's resolution, follow it here: identify the item **functionally —
-the entity the reader or listener actually uses** (the displayed or printed copy). This
+the entity the reader, viewer, or listener actually uses** (the displayed or printed
+copy, the played video or audio). This
 keeps analog and digital treatment consistent. LRM similarly allows digital items to vary
 within a manifestation because the production plan leaves device details unspecified.
 
@@ -130,6 +132,7 @@ record the whole/part links.
   substantially creative), covers, and sampling (horizontal family relationships, not
   vertical derivation). For musical or performance material, expect boundary calls to be
   genre-dependent and favor explicit related-work links over forcing a hierarchy.
-- **A work with no surviving expression** (a documented-but-lost manuscript) is
-  representable: create the work with work-to-work relationships and no expression rows,
-  but treat this as exceptional.
+- **A work with no surviving expression** (a documented-but-lost manuscript, an
+  announced-but-never-made film) is a contested case: formally a FRBR work exists only
+  through its expressions (Renear & Choi), yet catalogs sometimes need the record. If you
+  allow expression-less works, treat them as exceptional and mark them as such.

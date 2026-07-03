@@ -53,10 +53,11 @@ records), since it makes no claims the other data can't support.
 shortcuts FRBR lacks: `fabio:hasManifestation` (Work→M), `fabio:hasPortrayal` (Work→I),
 `fabio:hasRepresentation` (Expression→I).
 
-Lessons to copy: give users domain nouns (Treatise, Pamphlet, Periodical, Poster) as
-subtypes of the WEMI levels rather than exposing raw Work/Expression; pair with Dublin
-Core (`dcterms:title`, `dcterms:creator`, `dcterms:publisher`) and PRISM
-(`prism:doi`-style identifiers) for garden-variety metadata instead of inventing fields.
+Lessons to copy: give users domain nouns as subtypes of the WEMI levels (FaBiO's own
+`ResearchPaper`, `JournalArticle`, `JournalIssue`) rather than exposing raw
+Work/Expression; pair with Dublin Core (`dcterms:title`, `dcterms:creator`,
+`dcterms:publisher`) and PRISM (`prism:doi`-style identifiers) for garden-variety
+metadata instead of inventing fields.
 
 ## Quick JSON-LD sketch for an export
 
