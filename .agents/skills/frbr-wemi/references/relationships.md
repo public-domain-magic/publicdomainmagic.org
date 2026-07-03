@@ -59,10 +59,10 @@ e.g. *this* translation was adapted from *that* revised edition.
 | Reproduction | reprint, facsimile, photo-offset reprint, micro/macroreproduction |
 | Alternate | simultaneous editions by different publishers, alternate formats issued together |
 
-Reciprocals: "has a reproduction" / "is a reproduction of". A facsimile of the 1584
-*Discoverie of Witchcraft* is a new manifestation of the same expression, related by
-reproduction to the manifestation it reproduces (when that source manifestation is
-known — otherwise attach at expression level).
+Reciprocals: "has a reproduction" / "is a reproduction of". The report's example: a map
+issued in 1570 and its 1974 facsimile are two manifestations of the same expression,
+related by reproduction (when the source manifestation is known — otherwise attach at
+expression level).
 
 Manifestation → Item: reproduction also applies (a scan made from one specific copy);
 item → item: reproduction and bound-with.
@@ -88,5 +88,5 @@ Part-to-part: **sequential** (issue follows issue) and **accompanying/companion*
 - When the precise lower level is unknown, state the relationship at the more general
   level: if you can't establish *which edition* an adaptation used, link work-to-work and
   stop.
-- Model these as a self-referential join with a closed `relationship_type` vocabulary
-  drawn from the tables above, plus direction. Do not free-text relationship types.
+- Model these as typed, directed links with a closed relationship-type vocabulary drawn
+  from the tables above. Do not free-text relationship types.

@@ -123,15 +123,13 @@ record the whole/part links.
 
 - **Serials/continuing resources.** A serial never "closes": the whole run as one
   manifestation is a set that grows forever, but issue-level records fragment the unity.
-  LRM patches this with a "serial work" concept; there is no clean answer. For this
-  catalog (mostly monographs and finished periodicals from the public domain era), model a
-  defunct magazine as a serial work with issues as parts.
+  LRM patches this with a "serial work" concept; there is no clean answer. For a ceased
+  periodical, the pragmatic model is a serial work with issues as parts.
 - **Music and performance genres.** Classical assumptions (composer creates the work,
   performers create expressions) fail for jazz/improvisation (the performance *is*
   substantially creative), covers, and sampling (horizontal family relationships, not
-  vertical derivation). If the catalog takes on musical or performance material
-  (recorded magic acts, instructional films), expect boundary calls to be genre-dependent
-  and favor explicit related-work links over forcing a hierarchy.
+  vertical derivation). For musical or performance material, expect boundary calls to be
+  genre-dependent and favor explicit related-work links over forcing a hierarchy.
 - **A work with no surviving expression** (a documented-but-lost manuscript) is
   representable: create the work with work-to-work relationships and no expression rows,
   but treat this as exceptional.

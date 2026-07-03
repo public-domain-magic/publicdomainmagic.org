@@ -1,14 +1,13 @@
 # FRBR attributes per entity
 
-Source: IFLA *FRBR Final Report* ch. 4 (pp. 31–52). Trimmed to attributes plausible for
-this catalog (books, periodicals, ephemera, images, and possibly recordings of magic);
-cartographic/remote-sensing attributes omitted. Attributes marked ♪ apply to musical
-material only.
+Source: IFLA *FRBR Final Report* ch. 4 (pp. 31–52). Trimmed to attributes for textual
+documents, periodicals, images, and sound recordings; cartographic/remote-sensing
+attributes omitted. Attributes marked ♪ apply to musical material only.
 
-Consult this list when adding columns to `catalog_*` tables. If a proposed column is not
-on the target entity's list, either it belongs at another level, it is a relationship
-(creators! subjects!), or it is app-specific metadata that should be named so it can't be
-confused with bibliographic data.
+Consult this list when adding fields to bibliographic records or tables. If a proposed
+field is not on the target entity's list, either it belongs at another level, it is a
+relationship (creators! subjects!), or it is application-specific metadata that should be
+named so it can't be confused with bibliographic data.
 
 ## Work
 
@@ -38,8 +37,8 @@ Group 3), language (expression), publisher (manifestation).
 - extent of the expression (word count; duration for sound)
 - summarization of content (abstract, table of contents)
 - context for the expression; critical response
-- use restrictions on the expression (rights-based — note: copyright *status* lives in
-  the app's copyright domain, not here)
+- use restrictions on the expression (rights-based — note: copyright *status*
+  determination is a separate concern from bibliographic description)
 - serial: sequencing pattern, expected regularity, expected frequency
 - ♪ type of score, medium of performance
 
@@ -72,14 +71,14 @@ Group 3), language (expression), publisher (manifestation).
 - item identifier (barcode, accession number, shelf mark)
 - fingerprint (early printed books: character groups transcribed from set pages to
   distinguish copies)
-- provenance (chain of ownership — high value for antiquarian magic books)
+- provenance (chain of ownership — high value for rare and antiquarian materials)
 - marks/inscriptions (signatures, annotations, bookplates)
 - exhibition history
 - condition (variances between this copy and its manifestation: missing pages, rebinding)
 - treatment history; scheduled treatment (conservation)
 - access restrictions on the item
 - location (holding/shelving — FRBR treats this via the holding relationship, but a
-  column or association here is the practical form)
+  field on the item is the practical form)
 
 ## Placement heuristics
 
@@ -87,6 +86,6 @@ Group 3), language (expression), publisher (manifestation).
   manifestation-level or higher; if it varies copy to copy, item-level.
 - If the fact survives a change of publisher/format (content-borne), it is expression-
   level or higher; if translation would change it, it is expression-level, not work-level.
-- If the fact is about a person's role, it is a relationship, not a column.
-- "Title" and "date" recur at every level as *different facts*; name columns so the level
-  is unambiguous (the model namespaces already help).
+- If the fact is about a person's role, it is a relationship, not an attribute.
+- "Title" and "date" recur at every level as *different facts*; name fields so the level
+  is unambiguous.

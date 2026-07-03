@@ -36,18 +36,17 @@ Precedence (WorldCat frequencies shown for expectation-setting):
   matching short first.
 - **Noise titles** — generic titles that must not merge across authors: "works",
   "selections", "essays", "poems", "correspondence", "speeches", "plays", "short
-  stories", "songs", "laws etc"… For a magic catalog add domain equivalents ("tricks",
-  "conjuring", "lecture notes", "collected routines"). A record whose only title is noise
-  falls through to the next key pattern.
+  stories", "songs", "laws etc"… Extend the list with your domain's generic titles. A
+  record whose only title is noise falls through to the next key pattern.
 
 ## Variant reconciliation (the mapping files)
 
 Before keying, map variant author and title headings to a preferred form using an
 authority list (OCLC used LCNAF 400→100 cross-references, author/title 400s, uniform-
-title 430s; also name-minus-dates aliases when unambiguous). Practical equivalent here: a
-`catalog` variant-names table mapping seen forms → canonical Person/Work, grown as
+title 430s; also name-minus-dates aliases when unambiguous). The practical equivalent
+without LCNAF: a variant-headings mapping of seen forms → canonical person/work, grown as
 imports are reviewed. This mapping step is what makes the whole thing work — without it,
-"Erdnase, S. W." and "Andrews, W. E." style variants fragment work-sets.
+"Twain, Mark" vs. "Clemens, Samuel" style variants fragment work-sets.
 
 Title-edit ladder when a lookup misses (try each, re-look-up after each): cleaned title →
 strip leading articles → strip author-name prefix from title ("Johan Smith's The Ultimate
@@ -59,13 +58,12 @@ Group by title first, then merge records whose name sets intersect: record 1 {sm
 and record 2 {doe, jones} merge; record 3 {jones} joins through record 2; {harvey} stays
 separate. Union-find over (title, name) pairs implements this directly.
 
-## Application notes for this codebase
+## Implementation notes
 
-- Store the computed key on the import/staging record, not on `catalog_works`; the key
-  identifies a candidate cluster, the curator confirms the Work.
-- Public domain magic titles frequently reappear under variant titles and pseudonymous
-  authors — expect heavy reliance on the mapping table, and prefer uniform titles for
-  famous works (e.g. one conventional title for *The Expert at the Card Table* regardless
-  of cover variants).
+- Store the computed key on the import/staging record, not on the work itself; the key
+  identifies a candidate cluster, a curator confirms the Work.
+- Older and public-domain titles frequently reappear under variant titles and pseudonymous
+  authors — expect heavy reliance on the mapping table, and prefer one uniform
+  (conventional) title per famous work regardless of cover-title variants.
 - Idempotency: re-running the keyer over already-linked records must not move confirmed
   works; only unconfirmed candidates re-cluster.

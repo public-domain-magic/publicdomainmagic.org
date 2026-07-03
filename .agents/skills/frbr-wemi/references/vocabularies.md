@@ -1,8 +1,8 @@
 # Vocabulary and naming conventions (FRBR Core, openWEMI, FaBiO)
 
 Use when naming public-facing API fields, JSON exports, or linked-data/RDF output so the
-catalog speaks the same language as the rest of the bibliographic web. Internal Rails
-naming (`work.expressions`, `expression.manifestations`) need not change.
+data speaks the same language as the rest of the bibliographic web. Internal application
+naming need not change.
 
 ## Canonical relationship names
 
@@ -38,7 +38,7 @@ Endeavor").
 - Cross-dataset alignment without class commitments: `commonWork`, `commonExpression`,
   `commonManifestation`, `commonItem`, `commonEndeavor` — e.g. link a catalog record to a
   Wikidata/MusicBrainz work it shares.
-- Intended usage: subclass for the domain (`MagicTreatise rdfs:subClassOf openwemi:Work`)
+- Intended usage: subclass for the domain (`MusicWork rdfs:subClassOf openwemi:Work`)
   and subproperty the links, rather than using the bare classes.
 
 Prefer openWEMI names for any *external* linking feature (pointing at other sites'
@@ -67,15 +67,15 @@ Core (`dcterms:title`, `dcterms:creator`, `dcterms:publisher`) and PRISM
     "dcterms": "http://purl.org/dc/terms/",
     "openwemi": "https://ns.dublincore.org/openwemi/"
   },
-  "@id": "/catalog/works/expert-at-the-card-table",
+  "@id": "/works/war-and-peace",
   "@type": "frbr:Work",
-  "dcterms:title": "The Expert at the Card Table",
+  "dcterms:title": "War and Peace",
   "frbr:realization": [
-    { "@id": "/catalog/expressions/…", "@type": "frbr:Expression",
+    { "@id": "/expressions/…", "@type": "frbr:Expression",
       "dcterms:language": "en",
       "frbr:embodiment": [
-        { "@id": "/catalog/manifestations/…", "@type": "frbr:Manifestation",
-          "dcterms:publisher": "…", "frbr:exemplar": [ { "@id": "/catalog/items/…" } ] }
+        { "@id": "/manifestations/…", "@type": "frbr:Manifestation",
+          "dcterms:publisher": "…", "frbr:exemplar": [ { "@id": "/items/…" } ] }
       ] }
   ],
   "openwemi:commonWork": { "@id": "https://www.wikidata.org/entity/…" }
