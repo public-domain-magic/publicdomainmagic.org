@@ -7,6 +7,19 @@
 #++
 
 Rails.application.routes.draw do
+  namespace :catalog do
+    resources :expressions
+    resources :works
+    resources :items
+    resources :conditions
+    resources :manifestations
+    resources :series
+    resources :languages
+    resources :form_of_expressions
+    resources :media
+    resources :form_of_works
+    resources :intended_audiences
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

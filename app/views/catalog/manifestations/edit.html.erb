@@ -1,0 +1,12 @@
+<% content_for :title, "Editing manifestation" %>
+
+<h1>Editing manifestation</h1>
+
+<%= render "form", catalog_manifestation: @catalog_manifestation %>
+
+<br>
+
+<div>
+  <%= link_to "Show this manifestation", @catalog_manifestation %> |
+  <%= link_to "Back to manifestations", catalog_manifestations_path %>
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @catalog_item %>
+
+<div>
+  <%= link_to "Edit this item", edit_catalog_item_path(@catalog_item) %> |
+  <%= link_to "Back to items", catalog_items_path %>
+
+  <%= button_to "Destroy this item", @catalog_item, method: :delete %>
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @catalog_language %>
+
+<div>
+  <%= link_to "Edit this language", edit_catalog_language_path(@catalog_language) %> |
+  <%= link_to "Back to languages", catalog_languages_path %>
+
+  <%= button_to "Destroy this language", @catalog_language, method: :delete %>
+</div>

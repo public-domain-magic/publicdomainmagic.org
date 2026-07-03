@@ -1,0 +1,11 @@
+<% content_for :title, "New expression" %>
+
+<h1>New expression</h1>
+
+<%= render "form", catalog_expression: @catalog_expression %>
+
+<br>
+
+<div>
+  <%= link_to "Back to expressions", catalog_expressions_path %>
+</div>

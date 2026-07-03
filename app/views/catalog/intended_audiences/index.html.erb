@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Intended audiences" %>
+
+<h1>Intended audiences</h1>
+
+<div id="catalog_intended_audiences">
+  <% @catalog_intended_audiences.each do |catalog_intended_audience| %>
+    <%= render catalog_intended_audience %>
+    <p>
+      <%= link_to "Show this intended audience", catalog_intended_audience %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New intended audience", new_catalog_intended_audience_path %>

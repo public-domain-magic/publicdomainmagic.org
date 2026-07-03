@@ -1,0 +1,12 @@
+<% content_for :title, "Editing form of work" %>
+
+<h1>Editing form of work</h1>
+
+<%= render "form", catalog_form_of_work: @catalog_form_of_work %>
+
+<br>
+
+<div>
+  <%= link_to "Show this form of work", @catalog_form_of_work %> |
+  <%= link_to "Back to form of works", catalog_form_of_works_path %>
+</div>

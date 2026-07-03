@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @catalog_intended_audience %>
+
+<div>
+  <%= link_to "Edit this intended audience", edit_catalog_intended_audience_path(@catalog_intended_audience) %> |
+  <%= link_to "Back to intended audiences", catalog_intended_audiences_path %>
+
+  <%= button_to "Destroy this intended audience", @catalog_intended_audience, method: :delete %>
+</div>

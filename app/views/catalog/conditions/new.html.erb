@@ -1,0 +1,11 @@
+<% content_for :title, "New condition" %>
+
+<h1>New condition</h1>
+
+<%= render "form", catalog_condition: @catalog_condition %>
+
+<br>
+
+<div>
+  <%= link_to "Back to conditions", catalog_conditions_path %>
+</div>

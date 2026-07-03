@@ -1,0 +1,22 @@
+<%= form_with(model: catalog_form_of_expression) do |form| %>
+  <% if catalog_form_of_expression.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(catalog_form_of_expression.errors.count, "error") %> prohibited this catalog_form_of_expression from being saved:</h2>
+
+      <ul>
+        <% catalog_form_of_expression.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<% content_for :title, "New language" %>
+
+<h1>New language</h1>
+
+<%= render "form", catalog_language: @catalog_language %>
+
+<br>
+
+<div>
+  <%= link_to "Back to languages", catalog_languages_path %>
+</div>

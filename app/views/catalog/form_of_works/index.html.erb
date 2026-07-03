@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Form of works" %>
+
+<h1>Form of works</h1>
+
+<div id="catalog_form_of_works">
+  <% @catalog_form_of_works.each do |catalog_form_of_work| %>
+    <%= render catalog_form_of_work %>
+    <p>
+      <%= link_to "Show this form of work", catalog_form_of_work %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New form of work", new_catalog_form_of_work_path %>

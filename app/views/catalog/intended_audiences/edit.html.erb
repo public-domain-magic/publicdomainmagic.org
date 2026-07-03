@@ -1,0 +1,12 @@
+<% content_for :title, "Editing intended audience" %>
+
+<h1>Editing intended audience</h1>
+
+<%= render "form", catalog_intended_audience: @catalog_intended_audience %>
+
+<br>
+
+<div>
+  <%= link_to "Show this intended audience", @catalog_intended_audience %> |
+  <%= link_to "Back to intended audiences", catalog_intended_audiences_path %>
+</div>

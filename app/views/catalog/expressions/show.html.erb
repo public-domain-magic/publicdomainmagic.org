@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @catalog_expression %>
+
+<div>
+  <%= link_to "Edit this expression", edit_catalog_expression_path(@catalog_expression) %> |
+  <%= link_to "Back to expressions", catalog_expressions_path %>
+
+  <%= button_to "Destroy this expression", @catalog_expression, method: :delete %>
+</div>

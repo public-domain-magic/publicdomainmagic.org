@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identifier: MyString
+  provenance: MyString
+  marks: MyString
+  manifestation: one
+  condition: one
+
+two:
+  identifier: MyString
+  provenance: MyString
+  marks: MyString
+  manifestation: two
+  condition: two

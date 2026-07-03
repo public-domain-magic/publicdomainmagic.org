@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @catalog_form_of_expression %>
+
+<div>
+  <%= link_to "Edit this form of expression", edit_catalog_form_of_expression_path(@catalog_form_of_expression) %> |
+  <%= link_to "Back to form of expressions", catalog_form_of_expressions_path %>
+
+  <%= button_to "Destroy this form of expression", @catalog_form_of_expression, method: :delete %>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  date: 2026-06-05
+  identifier: MyString
+  summary: MyString
+  form_of_expression: one
+  language: one
+  work: one
+
+two:
+  title: MyString
+  date: 2026-06-05
+  identifier: MyString
+  summary: MyString
+  form_of_expression: two
+  language: two
+  work: two

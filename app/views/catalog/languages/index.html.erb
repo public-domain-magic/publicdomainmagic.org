@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Languages" %>
+
+<h1>Languages</h1>
+
+<div id="catalog_languages">
+  <% @catalog_languages.each do |catalog_language| %>
+    <%= render catalog_language %>
+    <p>
+      <%= link_to "Show this language", catalog_language %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New language", new_catalog_language_path %>

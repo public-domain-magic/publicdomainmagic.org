@@ -1,0 +1,12 @@
+<% content_for :title, "Editing item" %>
+
+<h1>Editing item</h1>
+
+<%= render "form", catalog_item: @catalog_item %>
+
+<br>
+
+<div>
+  <%= link_to "Show this item", @catalog_item %> |
+  <%= link_to "Back to items", catalog_items_path %>
+</div>

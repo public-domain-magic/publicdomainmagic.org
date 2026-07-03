@@ -1,0 +1,52 @@
+<%= form_with(model: catalog_expression) do |form| %>
+  <% if catalog_expression.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(catalog_expression.errors.count, "error") %> prohibited this catalog_expression from being saved:</h2>
+
+      <ul>
+        <% catalog_expression.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :identifier, style: "display: block" %>
+    <%= form.text_field :identifier %>
+  </div>
+
+  <div>
+    <%= form.label :summary, style: "display: block" %>
+    <%= form.text_field :summary %>
+  </div>
+
+  <div>
+    <%= form.label :form_of_expression_id, style: "display: block" %>
+    <%= form.text_field :form_of_expression_id %>
+  </div>
+
+  <div>
+    <%= form.label :language_id, style: "display: block" %>
+    <%= form.text_field :language_id %>
+  </div>
+
+  <div>
+    <%= form.label :work_id, style: "display: block" %>
+    <%= form.text_field :work_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

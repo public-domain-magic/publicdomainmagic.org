@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Manifestations" %>
+
+<h1>Manifestations</h1>
+
+<div id="catalog_manifestations">
+  <% @catalog_manifestations.each do |catalog_manifestation| %>
+    <%= render catalog_manifestation %>
+    <p>
+      <%= link_to "Show this manifestation", catalog_manifestation %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New manifestation", new_catalog_manifestation_path %>

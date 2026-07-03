@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @catalog_manifestation %>
+
+<div>
+  <%= link_to "Edit this manifestation", edit_catalog_manifestation_path(@catalog_manifestation) %> |
+  <%= link_to "Back to manifestations", catalog_manifestations_path %>
+
+  <%= button_to "Destroy this manifestation", @catalog_manifestation, method: :delete %>
+</div>
