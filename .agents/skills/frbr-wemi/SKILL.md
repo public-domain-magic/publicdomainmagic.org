@@ -10,8 +10,9 @@ description: >
   aggregates, series, or work-to-work relationships; grouping or deduplicating
   bibliographic records into works. Applies whenever the user says "edition," "printing,"
   "version," "copy," "translation," or "reissue" about bibliographic or catalog data,
-  even without mentioning FRBR or WEMI. Do NOT use for copyright status determination or
-  for non-bibliographic versioning (software releases, document revision control).
+  even without mentioning FRBR or WEMI. Includes a domain module for magic/conjuring
+  materials (tricks, routines, effects, performances). Do NOT use for copyright status
+  determination or non-bibliographic versioning (software releases, revision control).
 ---
 
 # FRBR (WEMI): modeling the bibliographic universe
@@ -223,3 +224,9 @@ read it before designing a related-works feature or schema.
   schema. Read when importing external records or deduplicating into works.
 - `references/vocabularies.md` — canonical property names from FRBR Core, openWEMI, and
   FaBiO. Read when naming public-facing API fields, exports, or linked-data output.
+- `references/magic.md` — worked domain module for magic/conjuring materials: invariant
+  vocabulary mappings (effect → Concept, routine → Work, performance/explanation →
+  Expressions, packaging → Manifestation) and compressed case law. Read whenever the
+  material being cataloged is conjuring-related (tricks, routines, props, magic
+  books/DVDs/downloads, magic periodicals). It is also the template for writing an
+  equivalent module for any other domain.
