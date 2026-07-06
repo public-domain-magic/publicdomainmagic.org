@@ -1,8 +1,16 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 require "test_helper"
 
 class Catalog::FormOfWorksControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @catalog_form_of_work = catalog_form_of_works(:one)
+    @catalog_form_of_work = catalog_form_of_works(:pamphlet)
   end
 
   test "should get index" do

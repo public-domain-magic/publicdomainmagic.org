@@ -1,0 +1,11 @@
+<% content_for :title, "New carrier" %>
+
+<h1>New carrier</h1>
+
+<%= render "form", catalog_carrier: @catalog_carrier %>
+
+<br>
+
+<div>
+  <%= link_to "Back to carriers", catalog_carriers_path %>
+</div>

@@ -1,0 +1,349 @@
+# resolve-type-names: false
+
+module ::Catalog
+  class ::Catalog::Embodiment < ::ApplicationRecord
+    extend ::ActiveRecord::Base::ClassMethods[::Catalog::Embodiment, ::Catalog::Embodiment::ActiveRecord_Relation, ::Integer]
+
+    module ::Catalog::Embodiment::GeneratedAttributeMethods
+      def id: () -> ::Integer
+
+      def id=: (::Integer) -> ::Integer
+
+      def id?: () -> bool
+
+      def id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def id_will_change!: () -> void
+
+      def id_was: () -> ::Integer?
+
+      def id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_previous_change: () -> ::Array[::Integer?]?
+
+      def id_previously_was: () -> ::Integer?
+
+      def id_before_last_save: () -> ::Integer?
+
+      def id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def id_in_database: () -> ::Integer?
+
+      def saved_change_to_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_id!: () -> void
+
+      def clear_id_change: () -> void
+
+      def id_before_type_cast: () -> ::Integer
+
+      def id_for_database: () -> ::Integer
+
+      def manifestation_id: () -> ::Integer
+
+      def manifestation_id=: (::Integer) -> ::Integer
+
+      def manifestation_id?: () -> bool
+
+      def manifestation_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def manifestation_id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def manifestation_id_will_change!: () -> void
+
+      def manifestation_id_was: () -> ::Integer?
+
+      def manifestation_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def manifestation_id_previous_change: () -> ::Array[::Integer?]?
+
+      def manifestation_id_previously_was: () -> ::Integer?
+
+      def manifestation_id_before_last_save: () -> ::Integer?
+
+      def manifestation_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def manifestation_id_in_database: () -> ::Integer?
+
+      def saved_change_to_manifestation_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_manifestation_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_manifestation_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_manifestation_id!: () -> void
+
+      def clear_manifestation_id_change: () -> void
+
+      def manifestation_id_before_type_cast: () -> ::Integer
+
+      def manifestation_id_for_database: () -> ::Integer
+
+      def expression_id: () -> ::Integer
+
+      def expression_id=: (::Integer) -> ::Integer
+
+      def expression_id?: () -> bool
+
+      def expression_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def expression_id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def expression_id_will_change!: () -> void
+
+      def expression_id_was: () -> ::Integer?
+
+      def expression_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def expression_id_previous_change: () -> ::Array[::Integer?]?
+
+      def expression_id_previously_was: () -> ::Integer?
+
+      def expression_id_before_last_save: () -> ::Integer?
+
+      def expression_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def expression_id_in_database: () -> ::Integer?
+
+      def saved_change_to_expression_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_expression_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_expression_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_expression_id!: () -> void
+
+      def clear_expression_id_change: () -> void
+
+      def expression_id_before_type_cast: () -> ::Integer
+
+      def expression_id_for_database: () -> ::Integer
+
+      def position: () -> ::Integer?
+
+      def position=: (::Integer?) -> ::Integer?
+
+      def position?: () -> bool
+
+      def position_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def position_change: () -> [ ::Integer?, ::Integer? ]
+
+      def position_will_change!: () -> void
+
+      def position_was: () -> ::Integer?
+
+      def position_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def position_previous_change: () -> ::Array[::Integer?]?
+
+      def position_previously_was: () -> ::Integer?
+
+      def position_before_last_save: () -> ::Integer?
+
+      def position_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def position_in_database: () -> ::Integer?
+
+      def saved_change_to_position: () -> ::Array[::Integer?]?
+
+      def saved_change_to_position?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_position?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_position!: () -> void
+
+      def clear_position_change: () -> void
+
+      def position_before_type_cast: () -> ::Integer?
+
+      def position_for_database: () -> ::Integer?
+
+      def created_at: () -> ::ActiveSupport::TimeWithZone
+
+      def created_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def created_at?: () -> bool
+
+      def created_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def created_at_will_change!: () -> void
+
+      def created_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_created_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_created_at!: () -> void
+
+      def clear_created_at_change: () -> void
+
+      def created_at_before_type_cast: () -> ::Time
+
+      def created_at_for_database: () -> ::Time
+
+      def updated_at: () -> ::ActiveSupport::TimeWithZone
+
+      def updated_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def updated_at?: () -> bool
+
+      def updated_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def updated_at_will_change!: () -> void
+
+      def updated_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_updated_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_updated_at!: () -> void
+
+      def clear_updated_at_change: () -> void
+
+      def updated_at_before_type_cast: () -> ::Time
+
+      def updated_at_for_database: () -> ::Time
+    end
+    include ::Catalog::Embodiment::GeneratedAttributeMethods
+    module ::Catalog::Embodiment::GeneratedAliasAttributeMethods
+      include ::Catalog::Embodiment::GeneratedAttributeMethods
+
+      alias id_value id
+
+      alias id_value= id=
+
+      alias id_value? id?
+
+      alias id_value_changed? id_changed?
+
+      alias id_value_change id_change
+
+      alias id_value_will_change! id_will_change!
+
+      alias id_value_was id_was
+
+      alias id_value_previously_changed? id_previously_changed?
+
+      alias id_value_previous_change id_previous_change
+
+      alias id_value_previously_was id_previously_was
+
+      alias id_value_before_last_save id_before_last_save
+
+      alias id_value_change_to_be_saved id_change_to_be_saved
+
+      alias id_value_in_database id_in_database
+
+      alias saved_change_to_id_value saved_change_to_id
+
+      alias saved_change_to_id_value? saved_change_to_id?
+
+      alias will_save_change_to_id_value? will_save_change_to_id?
+
+      alias restore_id_value! restore_id!
+
+      alias clear_id_value_change clear_id_change
+
+      alias id_value_before_type_cast id_before_type_cast
+
+      alias id_value_for_database id_for_database
+    end
+    include ::Catalog::Embodiment::GeneratedAliasAttributeMethods
+
+    def manifestation: () -> ::Catalog::Manifestation
+    def manifestation=: (::Catalog::Manifestation?) -> ::Catalog::Manifestation?
+    def reload_manifestation: () -> ::Catalog::Manifestation?
+    def build_manifestation: (?untyped) -> ::Catalog::Manifestation
+    def create_manifestation: (?untyped) -> ::Catalog::Manifestation
+    def create_manifestation!: (?untyped) -> ::Catalog::Manifestation
+    def expression: () -> ::Catalog::Expression
+    def expression=: (::Catalog::Expression?) -> ::Catalog::Expression?
+    def reload_expression: () -> ::Catalog::Expression?
+    def build_expression: (?untyped) -> ::Catalog::Expression
+    def create_expression: (?untyped) -> ::Catalog::Expression
+    def create_expression!: (?untyped) -> ::Catalog::Expression
+
+    module ::Catalog::Embodiment::GeneratedAssociationMethods
+    end
+    include ::Catalog::Embodiment::GeneratedAssociationMethods
+
+    module ::Catalog::Embodiment::GeneratedRelationMethods
+    end
+
+    class ::Catalog::Embodiment::ActiveRecord_Relation < ::ActiveRecord::Relation
+      include ::Enumerable[::Catalog::Embodiment]
+      include ::Catalog::Embodiment::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Catalog::Embodiment, ::Integer]
+    end
+
+    class ::Catalog::Embodiment::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+      include ::Enumerable[::Catalog::Embodiment]
+      include ::Catalog::Embodiment::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Catalog::Embodiment, ::Integer]
+
+      def build: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::Embodiment
+               | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::Embodiment]
+      def create: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::Embodiment
+                | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::Embodiment]
+      def create!: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::Embodiment
+                 | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::Embodiment]
+      def reload: () -> ::Array[::Catalog::Embodiment]
+
+      def replace: (::Array[::Catalog::Embodiment]) -> void
+      def delete: (*::Catalog::Embodiment | ::Integer) -> ::Array[::Catalog::Embodiment]
+      def destroy: (*::Catalog::Embodiment | ::Integer) -> ::Array[::Catalog::Embodiment]
+      def <<: (*::Catalog::Embodiment | ::Array[::Catalog::Embodiment]) -> self
+      def prepend: (*::Catalog::Embodiment | ::Array[::Catalog::Embodiment]) -> self
+    end
+  end
+end
+
+module ::Catalog
+end
+class ::ApplicationRecord < ::ActiveRecord::Base
+end
+class ::Catalog::Manifestation < ::ApplicationRecord
+end
+class ::Catalog::Expression < ::ApplicationRecord
+end

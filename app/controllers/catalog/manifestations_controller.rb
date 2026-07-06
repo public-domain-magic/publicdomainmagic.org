@@ -65,6 +65,6 @@ class Catalog::ManifestationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def catalog_manifestation_params
-      params.expect(catalog_manifestation: [ :title, :statement_of_responsibility, :edition_or_issue, :date_of_publication, :form_of_expression_id, :medium_id, :language_id, :series_id, :expression_id ])
+      params.expect(catalog_manifestation: [ :title, :statement_of_responsibility, :edition_or_issue, :date_of_publication, :place_of_publication, :identifier, :carrier_id, :series_id ])
     end
 end

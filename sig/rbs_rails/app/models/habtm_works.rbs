@@ -1,0 +1,151 @@
+# resolve-type-names: false
+
+module ::Catalog
+  class ::Catalog::IntendedAudience < ::ApplicationRecord
+    class ::Catalog::IntendedAudience::HABTM_Works < ::ActiveRecord::Base
+      extend ::ActiveRecord::Base::ClassMethods[::Catalog::IntendedAudience::HABTM_Works, ::Catalog::IntendedAudience::HABTM_Works::ActiveRecord_Relation, top]
+
+      module ::Catalog::IntendedAudience::HABTM_Works::GeneratedAttributeMethods
+        def work_id: () -> ::Integer
+
+        def work_id=: (::Integer) -> ::Integer
+
+        def work_id?: () -> bool
+
+        def work_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+        def work_id_change: () -> [ ::Integer?, ::Integer? ]
+
+        def work_id_will_change!: () -> void
+
+        def work_id_was: () -> ::Integer?
+
+        def work_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+        def work_id_previous_change: () -> ::Array[::Integer?]?
+
+        def work_id_previously_was: () -> ::Integer?
+
+        def work_id_before_last_save: () -> ::Integer?
+
+        def work_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+        def work_id_in_database: () -> ::Integer?
+
+        def saved_change_to_work_id: () -> ::Array[::Integer?]?
+
+        def saved_change_to_work_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+        def will_save_change_to_work_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+        def restore_work_id!: () -> void
+
+        def clear_work_id_change: () -> void
+
+        def work_id_before_type_cast: () -> ::Integer
+
+        def work_id_for_database: () -> ::Integer
+
+        def intended_audience_id: () -> ::Integer
+
+        def intended_audience_id=: (::Integer) -> ::Integer
+
+        def intended_audience_id?: () -> bool
+
+        def intended_audience_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+        def intended_audience_id_change: () -> [ ::Integer?, ::Integer? ]
+
+        def intended_audience_id_will_change!: () -> void
+
+        def intended_audience_id_was: () -> ::Integer?
+
+        def intended_audience_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+        def intended_audience_id_previous_change: () -> ::Array[::Integer?]?
+
+        def intended_audience_id_previously_was: () -> ::Integer?
+
+        def intended_audience_id_before_last_save: () -> ::Integer?
+
+        def intended_audience_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+        def intended_audience_id_in_database: () -> ::Integer?
+
+        def saved_change_to_intended_audience_id: () -> ::Array[::Integer?]?
+
+        def saved_change_to_intended_audience_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+        def will_save_change_to_intended_audience_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+        def restore_intended_audience_id!: () -> void
+
+        def clear_intended_audience_id_change: () -> void
+
+        def intended_audience_id_before_type_cast: () -> ::Integer
+
+        def intended_audience_id_for_database: () -> ::Integer
+      end
+      include ::Catalog::IntendedAudience::HABTM_Works::GeneratedAttributeMethods
+      module ::Catalog::IntendedAudience::HABTM_Works::GeneratedAliasAttributeMethods
+        include ::Catalog::IntendedAudience::HABTM_Works::GeneratedAttributeMethods
+      end
+      include ::Catalog::IntendedAudience::HABTM_Works::GeneratedAliasAttributeMethods
+
+      def left_side: () -> ::Catalog::IntendedAudience?
+      def left_side=: (::Catalog::IntendedAudience?) -> ::Catalog::IntendedAudience?
+      def reload_left_side: () -> ::Catalog::IntendedAudience?
+      def build_left_side: (?untyped) -> ::Catalog::IntendedAudience
+      def create_left_side: (?untyped) -> ::Catalog::IntendedAudience
+      def create_left_side!: (?untyped) -> ::Catalog::IntendedAudience
+      def work: () -> ::Catalog::Work?
+      def work=: (::Catalog::Work?) -> ::Catalog::Work?
+      def reload_work: () -> ::Catalog::Work?
+      def build_work: (?untyped) -> ::Catalog::Work
+      def create_work: (?untyped) -> ::Catalog::Work
+      def create_work!: (?untyped) -> ::Catalog::Work
+
+      module ::Catalog::IntendedAudience::HABTM_Works::GeneratedAssociationMethods
+      end
+      include ::Catalog::IntendedAudience::HABTM_Works::GeneratedAssociationMethods
+
+      module ::Catalog::IntendedAudience::HABTM_Works::GeneratedRelationMethods
+      end
+
+      class ::Catalog::IntendedAudience::HABTM_Works::ActiveRecord_Relation < ::ActiveRecord::Relation
+        include ::Enumerable[::Catalog::IntendedAudience::HABTM_Works]
+        include ::Catalog::IntendedAudience::HABTM_Works::GeneratedRelationMethods
+        include ::ActiveRecord::Relation::Methods[::Catalog::IntendedAudience::HABTM_Works, top]
+      end
+
+      class ::Catalog::IntendedAudience::HABTM_Works::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+        include ::Enumerable[::Catalog::IntendedAudience::HABTM_Works]
+        include ::Catalog::IntendedAudience::HABTM_Works::GeneratedRelationMethods
+        include ::ActiveRecord::Relation::Methods[::Catalog::IntendedAudience::HABTM_Works, top]
+
+        def build: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::IntendedAudience::HABTM_Works
+                 | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::IntendedAudience::HABTM_Works]
+        def create: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::IntendedAudience::HABTM_Works
+                  | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::IntendedAudience::HABTM_Works]
+        def create!: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::IntendedAudience::HABTM_Works
+                   | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::IntendedAudience::HABTM_Works]
+        def reload: () -> ::Array[::Catalog::IntendedAudience::HABTM_Works]
+
+        def replace: (::Array[::Catalog::IntendedAudience::HABTM_Works]) -> void
+        def delete: (*::Catalog::IntendedAudience::HABTM_Works | top) -> ::Array[::Catalog::IntendedAudience::HABTM_Works]
+        def destroy: (*::Catalog::IntendedAudience::HABTM_Works | top) -> ::Array[::Catalog::IntendedAudience::HABTM_Works]
+        def <<: (*::Catalog::IntendedAudience::HABTM_Works | ::Array[::Catalog::IntendedAudience::HABTM_Works]) -> self
+        def prepend: (*::Catalog::IntendedAudience::HABTM_Works | ::Array[::Catalog::IntendedAudience::HABTM_Works]) -> self
+      end
+    end
+  end
+end
+
+class ::Catalog::IntendedAudience < ::ApplicationRecord
+end
+class ::ApplicationRecord < ::ActiveRecord::Base
+end
+class ::Catalog::Work < ::ApplicationRecord
+end
+module ::Catalog
+end

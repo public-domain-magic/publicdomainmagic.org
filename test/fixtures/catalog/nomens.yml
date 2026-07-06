@@ -1,0 +1,34 @@
+# Jean Hugard was born John Gerard Rodney Boyce and worked under several names.
+boyce:
+  agent: hugard
+  name: John Gerard Rodney Boyce
+  kind: birth
+
+hugarde:
+  agent: hugard
+  name: Jean Hugarde
+  kind: spelling
+
+kelmann:
+  agent: hugard
+  name: Jack Kelmann
+  kind: stage
+
+chin_sun_loo:
+  agent: hugard
+  name: Chin Sun Loo
+  kind: stage
+
+# Paul Fleming was born Paul Fleming Gemmill.
+gemmill:
+  agent: fleming
+  name: Paul Fleming Gemmill
+  kind: birth
+
+# Deliberately another magician's name — the name-to-person many-to-many case:
+# a stage name is an appellation of this agent, not identity with anyone else
+# who used it.
+karl_germain:
+  agent: fleming
+  name: Karl Germain
+  kind: stage

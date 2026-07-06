@@ -1,8 +1,16 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 require "test_helper"
 
 class Catalog::FormOfExpressionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @catalog_form_of_expression = catalog_form_of_expressions(:one)
+    @catalog_form_of_expression = catalog_form_of_expressions(:spoken_word)
   end
 
   test "should get index" do

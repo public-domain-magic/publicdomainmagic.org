@@ -1,0 +1,5 @@
+# The Dover facsimile reproduces the 1584 manifestation.
+discoverie_facsimile_reproduction:
+  manifestation: discoverie_facsimile
+  related_manifestation: discoverie_1584
+  kind: reproduction

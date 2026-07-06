@@ -1,0 +1,29 @@
+hugard_royal_road:
+  agent: hugard
+  contributable: royal_road (Catalog::Work)
+  role: created
+
+braue_royal_road:
+  agent: braue
+  contributable: royal_road (Catalog::Work)
+  role: created
+
+rigney_royal_road_text:
+  agent: rigney
+  contributable: royal_road_text (Catalog::Expression)
+  role: illustrated
+
+harper_harper_1948:
+  agent: harper_brothers
+  contributable: harper_1948 (Catalog::Manifestation)
+  role: published
+
+world_world_1951:
+  agent: world_publishing
+  contributable: world_1951 (Catalog::Manifestation)
+  role: published
+
+scot_discoverie:
+  agent: scot
+  contributable: discoverie (Catalog::Work)
+  role: created

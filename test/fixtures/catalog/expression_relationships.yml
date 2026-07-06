@@ -1,0 +1,5 @@
+# The 1665 enlarged third edition revises the 1584 text.
+discoverie_1665_revision:
+  expression: discoverie_1665_text
+  related_expression: discoverie_1584_text
+  kind: revision

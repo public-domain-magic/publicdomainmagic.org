@@ -1,0 +1,414 @@
+# resolve-type-names: false
+
+module ::Catalog
+  class ::Catalog::WorkRelationship < ::ApplicationRecord
+    extend ::ActiveRecord::Base::ClassMethods[::Catalog::WorkRelationship, ::Catalog::WorkRelationship::ActiveRecord_Relation, ::Integer]
+
+    module ::Catalog::WorkRelationship::GeneratedAttributeMethods
+      def id: () -> ::Integer
+
+      def id=: (::Integer) -> ::Integer
+
+      def id?: () -> bool
+
+      def id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def id_will_change!: () -> void
+
+      def id_was: () -> ::Integer?
+
+      def id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_previous_change: () -> ::Array[::Integer?]?
+
+      def id_previously_was: () -> ::Integer?
+
+      def id_before_last_save: () -> ::Integer?
+
+      def id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def id_in_database: () -> ::Integer?
+
+      def saved_change_to_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_id!: () -> void
+
+      def clear_id_change: () -> void
+
+      def id_before_type_cast: () -> ::Integer
+
+      def id_for_database: () -> ::Integer
+
+      def work_id: () -> ::Integer
+
+      def work_id=: (::Integer) -> ::Integer
+
+      def work_id?: () -> bool
+
+      def work_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def work_id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def work_id_will_change!: () -> void
+
+      def work_id_was: () -> ::Integer?
+
+      def work_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def work_id_previous_change: () -> ::Array[::Integer?]?
+
+      def work_id_previously_was: () -> ::Integer?
+
+      def work_id_before_last_save: () -> ::Integer?
+
+      def work_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def work_id_in_database: () -> ::Integer?
+
+      def saved_change_to_work_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_work_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_work_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_work_id!: () -> void
+
+      def clear_work_id_change: () -> void
+
+      def work_id_before_type_cast: () -> ::Integer
+
+      def work_id_for_database: () -> ::Integer
+
+      def related_work_id: () -> ::Integer
+
+      def related_work_id=: (::Integer) -> ::Integer
+
+      def related_work_id?: () -> bool
+
+      def related_work_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def related_work_id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def related_work_id_will_change!: () -> void
+
+      def related_work_id_was: () -> ::Integer?
+
+      def related_work_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def related_work_id_previous_change: () -> ::Array[::Integer?]?
+
+      def related_work_id_previously_was: () -> ::Integer?
+
+      def related_work_id_before_last_save: () -> ::Integer?
+
+      def related_work_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def related_work_id_in_database: () -> ::Integer?
+
+      def saved_change_to_related_work_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_related_work_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_related_work_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_related_work_id!: () -> void
+
+      def clear_related_work_id_change: () -> void
+
+      def related_work_id_before_type_cast: () -> ::Integer
+
+      def related_work_id_for_database: () -> ::Integer
+
+      def kind: () -> ::String
+
+      def kind=: (::String | ::Symbol) -> ::String
+
+      def kind?: () -> bool
+
+      def kind_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def kind_change: () -> [ ::String?, ::String? ]
+
+      def kind_will_change!: () -> void
+
+      def kind_was: () -> ::String?
+
+      def kind_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def kind_previous_change: () -> ::Array[::String?]?
+
+      def kind_previously_was: () -> ::String?
+
+      def kind_before_last_save: () -> ::String?
+
+      def kind_change_to_be_saved: () -> ::Array[::String?]?
+
+      def kind_in_database: () -> ::String?
+
+      def saved_change_to_kind: () -> ::Array[::String?]?
+
+      def saved_change_to_kind?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_kind?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_kind!: () -> void
+
+      def clear_kind_change: () -> void
+
+      def kind_before_type_cast: () -> ::String
+
+      def kind_for_database: () -> ::String
+
+      def created_at: () -> ::ActiveSupport::TimeWithZone
+
+      def created_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def created_at?: () -> bool
+
+      def created_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def created_at_will_change!: () -> void
+
+      def created_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_created_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_created_at!: () -> void
+
+      def clear_created_at_change: () -> void
+
+      def created_at_before_type_cast: () -> ::Time
+
+      def created_at_for_database: () -> ::Time
+
+      def updated_at: () -> ::ActiveSupport::TimeWithZone
+
+      def updated_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def updated_at?: () -> bool
+
+      def updated_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def updated_at_will_change!: () -> void
+
+      def updated_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_updated_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_updated_at!: () -> void
+
+      def clear_updated_at_change: () -> void
+
+      def updated_at_before_type_cast: () -> ::Time
+
+      def updated_at_for_database: () -> ::Time
+    end
+    include ::Catalog::WorkRelationship::GeneratedAttributeMethods
+    module ::Catalog::WorkRelationship::GeneratedAliasAttributeMethods
+      include ::Catalog::WorkRelationship::GeneratedAttributeMethods
+
+      alias id_value id
+
+      alias id_value= id=
+
+      alias id_value? id?
+
+      alias id_value_changed? id_changed?
+
+      alias id_value_change id_change
+
+      alias id_value_will_change! id_will_change!
+
+      alias id_value_was id_was
+
+      alias id_value_previously_changed? id_previously_changed?
+
+      alias id_value_previous_change id_previous_change
+
+      alias id_value_previously_was id_previously_was
+
+      alias id_value_before_last_save id_before_last_save
+
+      alias id_value_change_to_be_saved id_change_to_be_saved
+
+      alias id_value_in_database id_in_database
+
+      alias saved_change_to_id_value saved_change_to_id
+
+      alias saved_change_to_id_value? saved_change_to_id?
+
+      alias will_save_change_to_id_value? will_save_change_to_id?
+
+      alias restore_id_value! restore_id!
+
+      alias clear_id_value_change clear_id_change
+
+      alias id_value_before_type_cast id_before_type_cast
+
+      alias id_value_for_database id_for_database
+    end
+    include ::Catalog::WorkRelationship::GeneratedAliasAttributeMethods
+
+    def work: () -> ::Catalog::Work
+    def work=: (::Catalog::Work?) -> ::Catalog::Work?
+    def reload_work: () -> ::Catalog::Work?
+    def build_work: (?untyped) -> ::Catalog::Work
+    def create_work: (?untyped) -> ::Catalog::Work
+    def create_work!: (?untyped) -> ::Catalog::Work
+    def related_work: () -> ::Catalog::Work
+    def related_work=: (::Catalog::Work?) -> ::Catalog::Work?
+    def reload_related_work: () -> ::Catalog::Work?
+    def build_related_work: (?untyped) -> ::Catalog::Work
+    def create_related_work: (?untyped) -> ::Catalog::Work
+    def create_related_work!: (?untyped) -> ::Catalog::Work
+
+    module ::Catalog::WorkRelationship::GeneratedAssociationMethods
+    end
+    include ::Catalog::WorkRelationship::GeneratedAssociationMethods
+
+    def successor!: () -> bool
+    def successor?: () -> bool
+    def supplement!: () -> bool
+    def supplement?: () -> bool
+    def complement!: () -> bool
+    def complement?: () -> bool
+    def summarization!: () -> bool
+    def summarization?: () -> bool
+    def adaptation!: () -> bool
+    def adaptation?: () -> bool
+    def transformation!: () -> bool
+    def transformation?: () -> bool
+    def imitation!: () -> bool
+    def imitation?: () -> bool
+    def part!: () -> bool
+    def part?: () -> bool
+    def self.kinds: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
+    def self.successor: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.not_successor: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.supplement: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.not_supplement: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.complement: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.not_complement: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.summarization: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.not_summarization: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.adaptation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.not_adaptation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.transformation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.not_transformation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.imitation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.not_imitation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.part: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    def self.not_part: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+    module ::Catalog::WorkRelationship::GeneratedRelationMethods
+      def kinds: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
+
+      def successor: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def not_successor: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def supplement: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def not_supplement: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def complement: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def not_complement: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def summarization: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def not_summarization: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def adaptation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def not_adaptation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def transformation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def not_transformation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def imitation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def not_imitation: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def part: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+
+      def not_part: () -> ::Catalog::WorkRelationship::ActiveRecord_Relation
+    end
+
+    class ::Catalog::WorkRelationship::ActiveRecord_Relation < ::ActiveRecord::Relation
+      include ::Enumerable[::Catalog::WorkRelationship]
+      include ::Catalog::WorkRelationship::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Catalog::WorkRelationship, ::Integer]
+    end
+
+    class ::Catalog::WorkRelationship::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+      include ::Enumerable[::Catalog::WorkRelationship]
+      include ::Catalog::WorkRelationship::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Catalog::WorkRelationship, ::Integer]
+
+      def build: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::WorkRelationship
+               | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::WorkRelationship]
+      def create: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::WorkRelationship
+                | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::WorkRelationship]
+      def create!: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::WorkRelationship
+                 | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::WorkRelationship]
+      def reload: () -> ::Array[::Catalog::WorkRelationship]
+
+      def replace: (::Array[::Catalog::WorkRelationship]) -> void
+      def delete: (*::Catalog::WorkRelationship | ::Integer) -> ::Array[::Catalog::WorkRelationship]
+      def destroy: (*::Catalog::WorkRelationship | ::Integer) -> ::Array[::Catalog::WorkRelationship]
+      def <<: (*::Catalog::WorkRelationship | ::Array[::Catalog::WorkRelationship]) -> self
+      def prepend: (*::Catalog::WorkRelationship | ::Array[::Catalog::WorkRelationship]) -> self
+    end
+  end
+end
+
+module ::Catalog
+end
+class ::ApplicationRecord < ::ActiveRecord::Base
+end
+class ::Catalog::Work < ::ApplicationRecord
+end

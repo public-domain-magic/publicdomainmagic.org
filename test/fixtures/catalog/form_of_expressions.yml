@@ -1,7 +1,6 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+text:
+  name: Text
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+# Referenced by nothing — the destroy-test target.
+spoken_word:
+  name: Spoken word

@@ -1,0 +1,33 @@
+# Hand-written signatures for the Catalog bounded context: the namespace module
+# and the domain constants/methods that rbs_rails cannot derive from the schema.
+# The rest of each model's signature is generated into sig/rbs_rails/.
+
+module Catalog
+  def self.table_name_prefix: () -> String
+end
+
+class Catalog::Agent < ApplicationRecord
+  KINDS: Array[String]
+end
+
+class Catalog::Nomen < ApplicationRecord
+  KINDS: Array[String]
+end
+
+class Catalog::WorkRelationship < ApplicationRecord
+  KINDS: Array[String]
+end
+
+class Catalog::ExpressionRelationship < ApplicationRecord
+  KINDS: Array[String]
+end
+
+class Catalog::ManifestationRelationship < ApplicationRecord
+  KINDS: Array[String]
+end
+
+class Catalog::Contribution < ApplicationRecord
+  ROLES_BY_LEVEL: Hash[String, Array[String]]
+
+  private def role_appropriate_for_level: () -> void
+end

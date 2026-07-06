@@ -1,7 +1,6 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+dover_occult:
+  name: Dover Occult and Esoteric
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+# Referenced by nothing — the destroy-test target.
+forum_books:
+  name: Forum Books

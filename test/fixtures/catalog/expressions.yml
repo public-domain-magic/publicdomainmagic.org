@@ -1,19 +1,21 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+royal_road_text:
+  title: The Royal Road to Card Magic
+  date: "1948"
+  work: royal_road
+  language: english
+  form_of_expression: text
 
-one:
-  title: MyString
-  date: 2026-06-05
-  identifier: MyString
-  summary: MyString
-  form_of_expression: one
-  language: one
-  work: one
+discoverie_1584_text:
+  title: The Discoverie of Witchcraft
+  date: "1584"
+  work: discoverie
+  language: english
+  form_of_expression: text
 
-two:
-  title: MyString
-  date: 2026-06-05
-  identifier: MyString
-  summary: MyString
-  form_of_expression: two
-  language: two
-  work: two
+# The enlarged third edition — a revision of the 1584 text.
+discoverie_1665_text:
+  title: The Discoverie of Witchcraft
+  date: "1665"
+  work: discoverie
+  language: english
+  form_of_expression: text

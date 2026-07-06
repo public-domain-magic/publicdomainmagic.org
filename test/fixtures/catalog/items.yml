@@ -1,15 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+royal_road_copy:
+  identifier: PDM-RRCM-0001
+  provenance: Acquired from the estate of a Cleveland club magician
+  marks: Owner's signature on front free endpaper
+  manifestation: harper_1948
+  condition: good
 
-one:
-  identifier: MyString
-  provenance: MyString
-  marks: MyString
-  manifestation: one
-  condition: one
-
-two:
-  identifier: MyString
-  provenance: MyString
-  marks: MyString
-  manifestation: two
-  condition: two
+discoverie_copy:
+  identifier: PDM-DOW-0001
+  provenance: Ex libris a Somerset antiquarian
+  marks: Contemporary marginalia in a secretary hand
+  manifestation: discoverie_1584
+  condition: good

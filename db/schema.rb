@@ -10,16 +10,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_06_06_023055) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_06_041101) do
+  create_table "catalog_agents", force: :cascade do |t|
+    t.string "birth_date"
+    t.datetime "created_at", null: false
+    t.string "death_date"
+    t.string "kind", null: false
+    t.string "name", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "catalog_carriers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "catalog_concepts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_catalog_concepts_on_name", unique: true
+  end
+
   create_table "catalog_conditions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "name"
     t.datetime "updated_at", null: false
   end
 
+  create_table "catalog_contributions", force: :cascade do |t|
+    t.integer "agent_id", null: false
+    t.integer "contributable_id", null: false
+    t.string "contributable_type", null: false
+    t.datetime "created_at", null: false
+    t.string "role", null: false
+    t.datetime "updated_at", null: false
+    t.index ["agent_id"], name: "index_catalog_contributions_on_agent_id"
+    t.index ["contributable_type", "contributable_id"], name: "index_catalog_contributions_on_contributable"
+  end
+
+  create_table "catalog_embodiments", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "expression_id", null: false
+    t.integer "manifestation_id", null: false
+    t.integer "position"
+    t.datetime "updated_at", null: false
+    t.index ["expression_id"], name: "index_catalog_embodiments_on_expression_id"
+    t.index ["manifestation_id", "expression_id"], name: "index_catalog_embodiments_uniqueness", unique: true
+    t.index ["manifestation_id"], name: "index_catalog_embodiments_on_manifestation_id"
+  end
+
+  create_table "catalog_expression_relationships", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "expression_id", null: false
+    t.string "kind", null: false
+    t.integer "related_expression_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expression_id", "related_expression_id", "kind"], name: "index_catalog_expression_relationships_uniqueness", unique: true
+    t.index ["expression_id"], name: "index_catalog_expression_relationships_on_expression_id"
+    t.index ["related_expression_id"], name: "index_catalog_expr_relationships_on_related_expression_id"
+  end
+
   create_table "catalog_expressions", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.date "date"
+    t.string "date"
     t.integer "form_of_expression_id", null: false
     t.string "identifier"
     t.integer "language_id", null: false
@@ -50,6 +105,13 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_06_023055) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "catalog_intended_audiences_works", id: false, force: :cascade do |t|
+    t.integer "intended_audience_id", null: false
+    t.integer "work_id", null: false
+    t.index ["intended_audience_id", "work_id"], name: "idx_on_intended_audience_id_work_id_01f990f0c6"
+    t.index ["work_id", "intended_audience_id"], name: "idx_on_work_id_intended_audience_id_1452392be6"
+  end
+
   create_table "catalog_items", force: :cascade do |t|
     t.integer "condition_id", null: false
     t.datetime "created_at", null: false
@@ -63,36 +125,47 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_06_023055) do
   end
 
   create_table "catalog_languages", force: :cascade do |t|
-    t.string "code", limit: 2
+    t.string "code", limit: 3
     t.datetime "created_at", null: false
     t.string "name"
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_catalog_languages_on_code", unique: true
   end
 
+  create_table "catalog_manifestation_relationships", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "kind", null: false
+    t.integer "manifestation_id", null: false
+    t.integer "related_manifestation_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manifestation_id", "related_manifestation_id", "kind"], name: "index_catalog_manifestation_relationships_uniqueness", unique: true
+    t.index ["manifestation_id"], name: "index_catalog_manif_relationships_on_manifestation_id"
+    t.index ["related_manifestation_id"], name: "index_catalog_manif_relationships_on_related_manif_id"
+  end
+
   create_table "catalog_manifestations", force: :cascade do |t|
+    t.integer "carrier_id", null: false
     t.datetime "created_at", null: false
     t.date "date_of_publication"
     t.string "edition_or_issue"
-    t.integer "expression_id", null: false
-    t.integer "form_of_expression_id", null: false
-    t.integer "language_id", null: false
-    t.integer "medium_id", null: false
-    t.integer "series_id", null: false
+    t.string "identifier"
+    t.string "place_of_publication"
+    t.integer "series_id"
     t.string "statement_of_responsibility"
     t.string "title"
     t.datetime "updated_at", null: false
-    t.index ["expression_id"], name: "index_catalog_manifestations_on_expression_id"
-    t.index ["form_of_expression_id"], name: "index_catalog_manifestations_on_form_of_expression_id"
-    t.index ["language_id"], name: "index_catalog_manifestations_on_language_id"
-    t.index ["medium_id"], name: "index_catalog_manifestations_on_medium_id"
+    t.index ["carrier_id"], name: "index_catalog_manifestations_on_carrier_id"
     t.index ["series_id"], name: "index_catalog_manifestations_on_series_id"
   end
 
-  create_table "catalog_media", force: :cascade do |t|
+  create_table "catalog_nomens", force: :cascade do |t|
+    t.integer "agent_id", null: false
     t.datetime "created_at", null: false
-    t.string "name"
+    t.string "kind", null: false
+    t.string "name", null: false
+    t.string "note"
     t.datetime "updated_at", null: false
+    t.index ["agent_id"], name: "index_catalog_nomens_on_agent_id"
   end
 
   create_table "catalog_series", force: :cascade do |t|
@@ -101,9 +174,31 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_06_023055) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "catalog_subjects", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "subject_id", null: false
+    t.string "subject_type", null: false
+    t.datetime "updated_at", null: false
+    t.integer "work_id", null: false
+    t.index ["subject_type", "subject_id"], name: "index_catalog_subjects_on_subject"
+    t.index ["work_id", "subject_type", "subject_id"], name: "index_catalog_subjects_uniqueness", unique: true
+    t.index ["work_id"], name: "index_catalog_subjects_on_work_id"
+  end
+
+  create_table "catalog_work_relationships", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "kind", null: false
+    t.integer "related_work_id", null: false
+    t.datetime "updated_at", null: false
+    t.integer "work_id", null: false
+    t.index ["related_work_id"], name: "index_catalog_work_relationships_on_related_work_id"
+    t.index ["work_id", "related_work_id", "kind"], name: "index_catalog_work_relationships_uniqueness", unique: true
+    t.index ["work_id"], name: "index_catalog_work_relationships_on_work_id"
+  end
+
   create_table "catalog_works", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.date "date"
+    t.string "date"
     t.integer "form_of_work_id", null: false
     t.string "identifier"
     t.string "title"
@@ -111,22 +206,23 @@ ActiveRecord::Schema[8.1].define(version: 2026_06_06_023055) do
     t.index ["form_of_work_id"], name: "index_catalog_works_on_form_of_work_id"
   end
 
-  create_table "intended_audiences_works", id: false, force: :cascade do |t|
-    t.integer "intended_audience_id", null: false
-    t.integer "work_id", null: false
-    t.index ["intended_audience_id", "work_id"], name: "idx_on_intended_audience_id_work_id_9d1b9470f5"
-    t.index ["work_id", "intended_audience_id"], name: "idx_on_work_id_intended_audience_id_91ee403c01"
-  end
-
-  add_foreign_key "catalog_expressions", "form_of_expressions"
-  add_foreign_key "catalog_expressions", "languages"
-  add_foreign_key "catalog_expressions", "works"
-  add_foreign_key "catalog_items", "conditions"
-  add_foreign_key "catalog_items", "manifestations"
-  add_foreign_key "catalog_manifestations", "expressions"
-  add_foreign_key "catalog_manifestations", "form_of_expressions"
-  add_foreign_key "catalog_manifestations", "languages"
-  add_foreign_key "catalog_manifestations", "media"
-  add_foreign_key "catalog_manifestations", "series"
-  add_foreign_key "catalog_works", "form_of_works"
+  add_foreign_key "catalog_contributions", "catalog_agents", column: "agent_id"
+  add_foreign_key "catalog_embodiments", "catalog_expressions", column: "expression_id"
+  add_foreign_key "catalog_embodiments", "catalog_manifestations", column: "manifestation_id"
+  add_foreign_key "catalog_expression_relationships", "catalog_expressions", column: "expression_id"
+  add_foreign_key "catalog_expression_relationships", "catalog_expressions", column: "related_expression_id"
+  add_foreign_key "catalog_expressions", "catalog_form_of_expressions", column: "form_of_expression_id"
+  add_foreign_key "catalog_expressions", "catalog_languages", column: "language_id"
+  add_foreign_key "catalog_expressions", "catalog_works", column: "work_id"
+  add_foreign_key "catalog_items", "catalog_conditions", column: "condition_id"
+  add_foreign_key "catalog_items", "catalog_manifestations", column: "manifestation_id"
+  add_foreign_key "catalog_manifestation_relationships", "catalog_manifestations", column: "manifestation_id"
+  add_foreign_key "catalog_manifestation_relationships", "catalog_manifestations", column: "related_manifestation_id"
+  add_foreign_key "catalog_manifestations", "catalog_carriers", column: "carrier_id"
+  add_foreign_key "catalog_manifestations", "catalog_series", column: "series_id"
+  add_foreign_key "catalog_nomens", "catalog_agents", column: "agent_id"
+  add_foreign_key "catalog_subjects", "catalog_works", column: "work_id"
+  add_foreign_key "catalog_work_relationships", "catalog_works", column: "related_work_id"
+  add_foreign_key "catalog_work_relationships", "catalog_works", column: "work_id"
+  add_foreign_key "catalog_works", "catalog_form_of_works", column: "form_of_work_id"
 end

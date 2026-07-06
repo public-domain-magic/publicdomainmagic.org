@@ -1,0 +1,6 @@
+print:
+  name: Print
+
+# Referenced by nothing — the destroy-test target.
+pdf:
+  name: PDF

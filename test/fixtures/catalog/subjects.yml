@@ -1,0 +1,14 @@
+royal_road_card_magic:
+  work: royal_road
+  subject: card_magic (Catalog::Concept)
+
+discoverie_cups_and_balls:
+  work: discoverie
+  subject: cups_and_balls (Catalog::Concept)
+
+# Work-as-subject: The Annals of Conjuring is a descriptive work genuinely
+# about the Discoverie. (Hocus Pocus Junior gets NO subject edge here — it is
+# an adaptation, a derivative, not a work *about* the Discoverie.)
+annals_about_discoverie:
+  work: annals
+  subject: discoverie (Catalog::Work)

@@ -1,7 +1,6 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+magicians:
+  name: Magicians
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+# Referenced by nothing — the destroy-test target.
+general_public:
+  name: General public

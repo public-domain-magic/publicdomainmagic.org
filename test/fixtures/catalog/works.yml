@@ -1,13 +1,21 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+royal_road:
+  title: The Royal Road to Card Magic
+  date: "1948"
+  form_of_work: manual
+  intended_audiences: magicians
 
-one:
-  title: MyString
-  date: 2026-06-05
-  identifier: MyString
-  form_of_work: one
+discoverie:
+  title: The Discoverie of Witchcraft
+  date: "1584"
+  form_of_work: treatise
 
-two:
-  title: MyString
-  date: 2026-06-05
-  identifier: MyString
-  form_of_work: two
+hocus_pocus_junior:
+  title: "Hocus Pocus Junior: The Anatomie of Legerdemain"
+  date: "1634"
+  form_of_work: treatise
+
+# EDTF date range: The Annals of Conjuring was serialized 1924-1928.
+annals:
+  title: The Annals of Conjuring
+  date: "1924/1928"
+  form_of_work: treatise

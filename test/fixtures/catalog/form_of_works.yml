@@ -1,7 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+manual:
+  name: Manual
 
-one:
-  name: MyString
+treatise:
+  name: Treatise
 
-two:
-  name: MyString
+# Referenced by nothing — the destroy-test target.
+pamphlet:
+  name: Pamphlet

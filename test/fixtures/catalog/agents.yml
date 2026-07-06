@@ -1,0 +1,33 @@
+hugard:
+  name: Jean Hugard
+  kind: person
+  birth_date: "1871"
+  death_date: "1959"
+
+braue:
+  name: Frederick Braue
+  kind: person
+  birth_date: "1906"
+  death_date: "1962"
+
+fleming:
+  name: Paul Fleming
+  kind: person
+
+rigney:
+  name: Francis Rigney
+  kind: person
+
+scot:
+  name: Reginald Scot
+  kind: person
+  birth_date: "1538"
+  death_date: "1599"
+
+harper_brothers:
+  name: Harper & Brothers
+  kind: corporate_body
+
+world_publishing:
+  name: The World Publishing Company
+  kind: corporate_body

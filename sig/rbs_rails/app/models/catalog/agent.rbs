@@ -1,0 +1,407 @@
+# resolve-type-names: false
+
+module ::Catalog
+  class ::Catalog::Agent < ::ApplicationRecord
+    extend ::ActiveRecord::Base::ClassMethods[::Catalog::Agent, ::Catalog::Agent::ActiveRecord_Relation, ::Integer]
+
+    module ::Catalog::Agent::GeneratedAttributeMethods
+      def id: () -> ::Integer
+
+      def id=: (::Integer) -> ::Integer
+
+      def id?: () -> bool
+
+      def id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def id_will_change!: () -> void
+
+      def id_was: () -> ::Integer?
+
+      def id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_previous_change: () -> ::Array[::Integer?]?
+
+      def id_previously_was: () -> ::Integer?
+
+      def id_before_last_save: () -> ::Integer?
+
+      def id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def id_in_database: () -> ::Integer?
+
+      def saved_change_to_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_id!: () -> void
+
+      def clear_id_change: () -> void
+
+      def id_before_type_cast: () -> ::Integer
+
+      def id_for_database: () -> ::Integer
+
+      def name: () -> ::String
+
+      def name=: (::String) -> ::String
+
+      def name?: () -> bool
+
+      def name_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def name_change: () -> [ ::String?, ::String? ]
+
+      def name_will_change!: () -> void
+
+      def name_was: () -> ::String?
+
+      def name_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def name_previous_change: () -> ::Array[::String?]?
+
+      def name_previously_was: () -> ::String?
+
+      def name_before_last_save: () -> ::String?
+
+      def name_change_to_be_saved: () -> ::Array[::String?]?
+
+      def name_in_database: () -> ::String?
+
+      def saved_change_to_name: () -> ::Array[::String?]?
+
+      def saved_change_to_name?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_name?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_name!: () -> void
+
+      def clear_name_change: () -> void
+
+      def name_before_type_cast: () -> ::String
+
+      def name_for_database: () -> ::String
+
+      def kind: () -> ::String
+
+      def kind=: (::String | ::Symbol) -> ::String
+
+      def kind?: () -> bool
+
+      def kind_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def kind_change: () -> [ ::String?, ::String? ]
+
+      def kind_will_change!: () -> void
+
+      def kind_was: () -> ::String?
+
+      def kind_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def kind_previous_change: () -> ::Array[::String?]?
+
+      def kind_previously_was: () -> ::String?
+
+      def kind_before_last_save: () -> ::String?
+
+      def kind_change_to_be_saved: () -> ::Array[::String?]?
+
+      def kind_in_database: () -> ::String?
+
+      def saved_change_to_kind: () -> ::Array[::String?]?
+
+      def saved_change_to_kind?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_kind?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_kind!: () -> void
+
+      def clear_kind_change: () -> void
+
+      def kind_before_type_cast: () -> ::String
+
+      def kind_for_database: () -> ::String
+
+      def birth_date: () -> ::String?
+
+      def birth_date=: (::String?) -> ::String?
+
+      def birth_date?: () -> bool
+
+      def birth_date_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def birth_date_change: () -> [ ::String?, ::String? ]
+
+      def birth_date_will_change!: () -> void
+
+      def birth_date_was: () -> ::String?
+
+      def birth_date_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def birth_date_previous_change: () -> ::Array[::String?]?
+
+      def birth_date_previously_was: () -> ::String?
+
+      def birth_date_before_last_save: () -> ::String?
+
+      def birth_date_change_to_be_saved: () -> ::Array[::String?]?
+
+      def birth_date_in_database: () -> ::String?
+
+      def saved_change_to_birth_date: () -> ::Array[::String?]?
+
+      def saved_change_to_birth_date?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_birth_date?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_birth_date!: () -> void
+
+      def clear_birth_date_change: () -> void
+
+      def birth_date_before_type_cast: () -> ::String?
+
+      def birth_date_for_database: () -> ::String?
+
+      def death_date: () -> ::String?
+
+      def death_date=: (::String?) -> ::String?
+
+      def death_date?: () -> bool
+
+      def death_date_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def death_date_change: () -> [ ::String?, ::String? ]
+
+      def death_date_will_change!: () -> void
+
+      def death_date_was: () -> ::String?
+
+      def death_date_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def death_date_previous_change: () -> ::Array[::String?]?
+
+      def death_date_previously_was: () -> ::String?
+
+      def death_date_before_last_save: () -> ::String?
+
+      def death_date_change_to_be_saved: () -> ::Array[::String?]?
+
+      def death_date_in_database: () -> ::String?
+
+      def saved_change_to_death_date: () -> ::Array[::String?]?
+
+      def saved_change_to_death_date?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_death_date?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_death_date!: () -> void
+
+      def clear_death_date_change: () -> void
+
+      def death_date_before_type_cast: () -> ::String?
+
+      def death_date_for_database: () -> ::String?
+
+      def created_at: () -> ::ActiveSupport::TimeWithZone
+
+      def created_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def created_at?: () -> bool
+
+      def created_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def created_at_will_change!: () -> void
+
+      def created_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_created_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_created_at!: () -> void
+
+      def clear_created_at_change: () -> void
+
+      def created_at_before_type_cast: () -> ::Time
+
+      def created_at_for_database: () -> ::Time
+
+      def updated_at: () -> ::ActiveSupport::TimeWithZone
+
+      def updated_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def updated_at?: () -> bool
+
+      def updated_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def updated_at_will_change!: () -> void
+
+      def updated_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_updated_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_updated_at!: () -> void
+
+      def clear_updated_at_change: () -> void
+
+      def updated_at_before_type_cast: () -> ::Time
+
+      def updated_at_for_database: () -> ::Time
+    end
+    include ::Catalog::Agent::GeneratedAttributeMethods
+    module ::Catalog::Agent::GeneratedAliasAttributeMethods
+      include ::Catalog::Agent::GeneratedAttributeMethods
+
+      alias id_value id
+
+      alias id_value= id=
+
+      alias id_value? id?
+
+      alias id_value_changed? id_changed?
+
+      alias id_value_change id_change
+
+      alias id_value_will_change! id_will_change!
+
+      alias id_value_was id_was
+
+      alias id_value_previously_changed? id_previously_changed?
+
+      alias id_value_previous_change id_previous_change
+
+      alias id_value_previously_was id_previously_was
+
+      alias id_value_before_last_save id_before_last_save
+
+      alias id_value_change_to_be_saved id_change_to_be_saved
+
+      alias id_value_in_database id_in_database
+
+      alias saved_change_to_id_value saved_change_to_id
+
+      alias saved_change_to_id_value? saved_change_to_id?
+
+      alias will_save_change_to_id_value? will_save_change_to_id?
+
+      alias restore_id_value! restore_id!
+
+      alias clear_id_value_change clear_id_change
+
+      alias id_value_before_type_cast id_before_type_cast
+
+      alias id_value_for_database id_for_database
+    end
+    include ::Catalog::Agent::GeneratedAliasAttributeMethods
+    def nomens: () -> ::Catalog::Nomen::ActiveRecord_Associations_CollectionProxy
+    def nomens=: (::Catalog::Nomen::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::Nomen]) -> (::Catalog::Nomen::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::Nomen])
+    def nomen_ids: () -> ::Array[::Integer]
+    def nomen_ids=: (::Array[::Integer]) -> ::Array[::Integer]
+    def contributions: () -> ::Catalog::Contribution::ActiveRecord_Associations_CollectionProxy
+    def contributions=: (::Catalog::Contribution::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::Contribution]) -> (::Catalog::Contribution::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::Contribution])
+    def contribution_ids: () -> ::Array[::Integer]
+    def contribution_ids=: (::Array[::Integer]) -> ::Array[::Integer]
+
+    module ::Catalog::Agent::GeneratedAssociationMethods
+    end
+    include ::Catalog::Agent::GeneratedAssociationMethods
+
+    def person!: () -> bool
+    def person?: () -> bool
+    def corporate_body!: () -> bool
+    def corporate_body?: () -> bool
+    def self.kinds: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
+    def self.person: () -> ::Catalog::Agent::ActiveRecord_Relation
+    def self.not_person: () -> ::Catalog::Agent::ActiveRecord_Relation
+    def self.corporate_body: () -> ::Catalog::Agent::ActiveRecord_Relation
+    def self.not_corporate_body: () -> ::Catalog::Agent::ActiveRecord_Relation
+
+    module ::Catalog::Agent::GeneratedRelationMethods
+      def kinds: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
+
+      def person: () -> ::Catalog::Agent::ActiveRecord_Relation
+
+      def not_person: () -> ::Catalog::Agent::ActiveRecord_Relation
+
+      def corporate_body: () -> ::Catalog::Agent::ActiveRecord_Relation
+
+      def not_corporate_body: () -> ::Catalog::Agent::ActiveRecord_Relation
+    end
+
+    class ::Catalog::Agent::ActiveRecord_Relation < ::ActiveRecord::Relation
+      include ::Enumerable[::Catalog::Agent]
+      include ::Catalog::Agent::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Catalog::Agent, ::Integer]
+    end
+
+    class ::Catalog::Agent::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+      include ::Enumerable[::Catalog::Agent]
+      include ::Catalog::Agent::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Catalog::Agent, ::Integer]
+
+      def build: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::Agent
+               | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::Agent]
+      def create: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::Agent
+                | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::Agent]
+      def create!: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Catalog::Agent
+                 | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Catalog::Agent]
+      def reload: () -> ::Array[::Catalog::Agent]
+
+      def replace: (::Array[::Catalog::Agent]) -> void
+      def delete: (*::Catalog::Agent | ::Integer) -> ::Array[::Catalog::Agent]
+      def destroy: (*::Catalog::Agent | ::Integer) -> ::Array[::Catalog::Agent]
+      def <<: (*::Catalog::Agent | ::Array[::Catalog::Agent]) -> self
+      def prepend: (*::Catalog::Agent | ::Array[::Catalog::Agent]) -> self
+    end
+  end
+end
+
+module ::Catalog
+end
+class ::ApplicationRecord < ::ActiveRecord::Base
+end
+class ::Catalog::Nomen < ::ApplicationRecord
+end
+class ::Catalog::Nomen::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+end
+class ::Catalog::Contribution < ::ApplicationRecord
+end
+class ::Catalog::Contribution::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+end

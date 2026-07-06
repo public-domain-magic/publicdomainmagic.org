@@ -1,8 +1,16 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 require "test_helper"
 
 class Catalog::LanguagesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @catalog_language = catalog_languages(:one)
+    @catalog_language = catalog_languages(:french)
   end
 
   test "should get index" do
@@ -16,8 +24,9 @@ class Catalog::LanguagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create catalog_language" do
+    # A fresh literal code — the unique index rejects reusing a fixture's code.
     assert_difference("Catalog::Language.count") do
-      post catalog_languages_url, params: { catalog_language: { code: @catalog_language.code, name: @catalog_language.name } }
+      post catalog_languages_url, params: { catalog_language: { name: "German", code: "deu" } }
     end
 
     assert_redirected_to catalog_language_url(Catalog::Language.last)
@@ -34,7 +43,7 @@ class Catalog::LanguagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update catalog_language" do
-    patch catalog_language_url(@catalog_language), params: { catalog_language: { code: @catalog_language.code, name: @catalog_language.name } }
+    patch catalog_language_url(@catalog_language), params: { catalog_language: { name: "German", code: "deu" } }
     assert_redirected_to catalog_language_url(@catalog_language)
   end
 

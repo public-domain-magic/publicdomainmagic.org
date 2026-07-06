@@ -1,8 +1,16 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 require "test_helper"
 
 class Catalog::IntendedAudiencesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @catalog_intended_audience = catalog_intended_audiences(:one)
+    @catalog_intended_audience = catalog_intended_audiences(:general_public)
   end
 
   test "should get index" do

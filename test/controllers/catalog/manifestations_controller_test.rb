@@ -1,8 +1,16 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 require "test_helper"
 
 class Catalog::ManifestationsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @catalog_manifestation = catalog_manifestations(:one)
+    @catalog_manifestation = catalog_manifestations(:harper_1948)
   end
 
   test "should get index" do
@@ -17,7 +25,7 @@ class Catalog::ManifestationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create catalog_manifestation" do
     assert_difference("Catalog::Manifestation.count") do
-      post catalog_manifestations_url, params: { catalog_manifestation: { date_of_publication: @catalog_manifestation.date_of_publication, edition_or_issue: @catalog_manifestation.edition_or_issue, expression_id: @catalog_manifestation.expression_id, form_of_expression_id: @catalog_manifestation.form_of_expression_id, language_id: @catalog_manifestation.language_id, medium_id: @catalog_manifestation.medium_id, series_id: @catalog_manifestation.series_id, statement_of_responsibility: @catalog_manifestation.statement_of_responsibility, title: @catalog_manifestation.title } }
+      post catalog_manifestations_url, params: { catalog_manifestation: { title: @catalog_manifestation.title, statement_of_responsibility: @catalog_manifestation.statement_of_responsibility, edition_or_issue: @catalog_manifestation.edition_or_issue, date_of_publication: @catalog_manifestation.date_of_publication, place_of_publication: @catalog_manifestation.place_of_publication, identifier: @catalog_manifestation.identifier, carrier_id: @catalog_manifestation.carrier_id, series_id: @catalog_manifestation.series_id } }
     end
 
     assert_redirected_to catalog_manifestation_url(Catalog::Manifestation.last)
@@ -34,7 +42,7 @@ class Catalog::ManifestationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update catalog_manifestation" do
-    patch catalog_manifestation_url(@catalog_manifestation), params: { catalog_manifestation: { date_of_publication: @catalog_manifestation.date_of_publication, edition_or_issue: @catalog_manifestation.edition_or_issue, expression_id: @catalog_manifestation.expression_id, form_of_expression_id: @catalog_manifestation.form_of_expression_id, language_id: @catalog_manifestation.language_id, medium_id: @catalog_manifestation.medium_id, series_id: @catalog_manifestation.series_id, statement_of_responsibility: @catalog_manifestation.statement_of_responsibility, title: @catalog_manifestation.title } }
+    patch catalog_manifestation_url(@catalog_manifestation), params: { catalog_manifestation: { title: @catalog_manifestation.title, statement_of_responsibility: @catalog_manifestation.statement_of_responsibility, edition_or_issue: @catalog_manifestation.edition_or_issue, date_of_publication: @catalog_manifestation.date_of_publication, place_of_publication: @catalog_manifestation.place_of_publication, identifier: @catalog_manifestation.identifier, carrier_id: @catalog_manifestation.carrier_id, series_id: @catalog_manifestation.series_id } }
     assert_redirected_to catalog_manifestation_url(@catalog_manifestation)
   end
 

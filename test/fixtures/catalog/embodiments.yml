@@ -1,0 +1,20 @@
+# The M:N proof: one expression embodied in two manifestations, on both sides.
+royal_road_harper:
+  expression: royal_road_text
+  manifestation: harper_1948
+  position: 1
+
+royal_road_world:
+  expression: royal_road_text
+  manifestation: world_1951
+  position: 1
+
+discoverie_1584_original:
+  expression: discoverie_1584_text
+  manifestation: discoverie_1584
+  position: 1
+
+discoverie_1584_facsimile:
+  expression: discoverie_1584_text
+  manifestation: discoverie_facsimile
+  position: 1

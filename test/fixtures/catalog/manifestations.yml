@@ -1,23 +1,32 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+harper_1948:
+  title: The Royal Road to Card Magic
+  statement_of_responsibility: Jean Hugard and Frederick Braue
+  place_of_publication: New York
+  date_of_publication: 1948-01-01
+  carrier: print
 
-one:
-  title: MyString
-  statement_of_responsibility: MyString
-  edition_or_issue: MyString
-  date_of_publication: 2026-06-05
-  form_of_expression: one
-  medium: one
-  language: one
-  series: one
-  expression: one
+world_1951:
+  title: The Royal Road to Card Magic
+  statement_of_responsibility: Jean Hugard and Frederick Braue
+  place_of_publication: Cleveland
+  date_of_publication: 1951-01-01
+  carrier: print
 
-two:
-  title: MyString
-  statement_of_responsibility: MyString
-  edition_or_issue: MyString
-  date_of_publication: 2026-06-05
-  form_of_expression: two
-  medium: two
-  language: two
-  series: two
-  expression: two
+discoverie_1584:
+  title: The Discoverie of Witchcraft
+  statement_of_responsibility: Reginald Scot
+  place_of_publication: London
+  date_of_publication: 1584-01-01
+  carrier: print
+
+# Illustrative reproduction edge: the historical Dover 1972 actually reproduces
+# the 1930 Montague Summers edition; for fixture simplicity the reproduction
+# edge (manifestation_relationships.yml) points at the 1584 original.
+discoverie_facsimile:
+  title: The Discoverie of Witchcraft
+  statement_of_responsibility: Reginald Scot
+  edition_or_issue: Facsimile reprint
+  place_of_publication: New York
+  date_of_publication: 1972-01-01
+  carrier: print
+  series: dover_occult

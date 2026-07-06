@@ -1,8 +1,16 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 require "test_helper"
 
 class Catalog::SeriesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @catalog_series = catalog_series(:one)
+    @catalog_series = catalog_series(:forum_books)
   end
 
   test "should get index" do

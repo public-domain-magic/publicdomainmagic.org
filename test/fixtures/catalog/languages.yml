@@ -1,9 +1,8 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+english:
+  name: English
+  code: eng
 
-one:
-  name: MyString
-  code: MyString
-
-two:
-  name: MyString
-  code: MyString
+# Referenced by nothing — the destroy-test target. Three-char ISO 639-2 code.
+french:
+  name: French
+  code: fra

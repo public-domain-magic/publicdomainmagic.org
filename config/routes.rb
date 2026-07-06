@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :series
     resources :languages
     resources :form_of_expressions
-    resources :media
+    resources :carriers
     resources :form_of_works
     resources :intended_audiences
   end

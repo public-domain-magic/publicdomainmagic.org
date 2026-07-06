@@ -1,8 +1,16 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 require "test_helper"
 
 class Catalog::ExpressionsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @catalog_expression = catalog_expressions(:one)
+    @catalog_expression = catalog_expressions(:royal_road_text)
   end
 
   test "should get index" do

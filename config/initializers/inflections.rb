@@ -22,3 +22,11 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym "RESTful"
 # end
+
+# The default inflector treats the trailing "-men" in "nomen" as already
+# plural ("nomen".pluralize == "nomen"), which would give Catalog::Nomen a
+# singular table (catalog_nomen). Force the regular plural so the FRBR/LRM
+# Nomen entity gets catalog_nomens.
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.irregular "nomen", "nomens"
+end
