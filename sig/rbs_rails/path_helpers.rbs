@@ -6,6 +6,50 @@ interface ::_RbsRailsPathHelpers
   def rails_info_routes_path: (*untyped) -> ::String
   def rails_info_notes_path: (*untyped) -> ::String
   def rails_info_path: (*untyped) -> ::String
+  def catalog_expressions_path: (*untyped) -> ::String
+  def new_catalog_expression_path: (*untyped) -> ::String
+  def edit_catalog_expression_path: (*untyped) -> ::String
+  def catalog_expression_path: (*untyped) -> ::String
+  def catalog_works_path: (*untyped) -> ::String
+  def new_catalog_work_path: (*untyped) -> ::String
+  def edit_catalog_work_path: (*untyped) -> ::String
+  def catalog_work_path: (*untyped) -> ::String
+  def catalog_items_path: (*untyped) -> ::String
+  def new_catalog_item_path: (*untyped) -> ::String
+  def edit_catalog_item_path: (*untyped) -> ::String
+  def catalog_item_path: (*untyped) -> ::String
+  def catalog_conditions_path: (*untyped) -> ::String
+  def new_catalog_condition_path: (*untyped) -> ::String
+  def edit_catalog_condition_path: (*untyped) -> ::String
+  def catalog_condition_path: (*untyped) -> ::String
+  def catalog_manifestations_path: (*untyped) -> ::String
+  def new_catalog_manifestation_path: (*untyped) -> ::String
+  def edit_catalog_manifestation_path: (*untyped) -> ::String
+  def catalog_manifestation_path: (*untyped) -> ::String
+  def catalog_series_index_path: (*untyped) -> ::String
+  def new_catalog_series_path: (*untyped) -> ::String
+  def edit_catalog_series_path: (*untyped) -> ::String
+  def catalog_series_path: (*untyped) -> ::String
+  def catalog_languages_path: (*untyped) -> ::String
+  def new_catalog_language_path: (*untyped) -> ::String
+  def edit_catalog_language_path: (*untyped) -> ::String
+  def catalog_language_path: (*untyped) -> ::String
+  def catalog_form_of_expressions_path: (*untyped) -> ::String
+  def new_catalog_form_of_expression_path: (*untyped) -> ::String
+  def edit_catalog_form_of_expression_path: (*untyped) -> ::String
+  def catalog_form_of_expression_path: (*untyped) -> ::String
+  def catalog_carriers_path: (*untyped) -> ::String
+  def new_catalog_carrier_path: (*untyped) -> ::String
+  def edit_catalog_carrier_path: (*untyped) -> ::String
+  def catalog_carrier_path: (*untyped) -> ::String
+  def catalog_form_of_works_path: (*untyped) -> ::String
+  def new_catalog_form_of_work_path: (*untyped) -> ::String
+  def edit_catalog_form_of_work_path: (*untyped) -> ::String
+  def catalog_form_of_work_path: (*untyped) -> ::String
+  def catalog_intended_audiences_path: (*untyped) -> ::String
+  def new_catalog_intended_audience_path: (*untyped) -> ::String
+  def edit_catalog_intended_audience_path: (*untyped) -> ::String
+  def catalog_intended_audience_path: (*untyped) -> ::String
   def rails_health_check_path: (*untyped) -> ::String
   def turbo_recede_historical_location_path: (*untyped) -> ::String
   def turbo_resume_historical_location_path: (*untyped) -> ::String
@@ -39,6 +83,50 @@ interface ::_RbsRailsPathHelpers
   def rails_info_routes_url: (*untyped) -> ::String
   def rails_info_notes_url: (*untyped) -> ::String
   def rails_info_url: (*untyped) -> ::String
+  def catalog_expressions_url: (*untyped) -> ::String
+  def new_catalog_expression_url: (*untyped) -> ::String
+  def edit_catalog_expression_url: (*untyped) -> ::String
+  def catalog_expression_url: (*untyped) -> ::String
+  def catalog_works_url: (*untyped) -> ::String
+  def new_catalog_work_url: (*untyped) -> ::String
+  def edit_catalog_work_url: (*untyped) -> ::String
+  def catalog_work_url: (*untyped) -> ::String
+  def catalog_items_url: (*untyped) -> ::String
+  def new_catalog_item_url: (*untyped) -> ::String
+  def edit_catalog_item_url: (*untyped) -> ::String
+  def catalog_item_url: (*untyped) -> ::String
+  def catalog_conditions_url: (*untyped) -> ::String
+  def new_catalog_condition_url: (*untyped) -> ::String
+  def edit_catalog_condition_url: (*untyped) -> ::String
+  def catalog_condition_url: (*untyped) -> ::String
+  def catalog_manifestations_url: (*untyped) -> ::String
+  def new_catalog_manifestation_url: (*untyped) -> ::String
+  def edit_catalog_manifestation_url: (*untyped) -> ::String
+  def catalog_manifestation_url: (*untyped) -> ::String
+  def catalog_series_index_url: (*untyped) -> ::String
+  def new_catalog_series_url: (*untyped) -> ::String
+  def edit_catalog_series_url: (*untyped) -> ::String
+  def catalog_series_url: (*untyped) -> ::String
+  def catalog_languages_url: (*untyped) -> ::String
+  def new_catalog_language_url: (*untyped) -> ::String
+  def edit_catalog_language_url: (*untyped) -> ::String
+  def catalog_language_url: (*untyped) -> ::String
+  def catalog_form_of_expressions_url: (*untyped) -> ::String
+  def new_catalog_form_of_expression_url: (*untyped) -> ::String
+  def edit_catalog_form_of_expression_url: (*untyped) -> ::String
+  def catalog_form_of_expression_url: (*untyped) -> ::String
+  def catalog_carriers_url: (*untyped) -> ::String
+  def new_catalog_carrier_url: (*untyped) -> ::String
+  def edit_catalog_carrier_url: (*untyped) -> ::String
+  def catalog_carrier_url: (*untyped) -> ::String
+  def catalog_form_of_works_url: (*untyped) -> ::String
+  def new_catalog_form_of_work_url: (*untyped) -> ::String
+  def edit_catalog_form_of_work_url: (*untyped) -> ::String
+  def catalog_form_of_work_url: (*untyped) -> ::String
+  def catalog_intended_audiences_url: (*untyped) -> ::String
+  def new_catalog_intended_audience_url: (*untyped) -> ::String
+  def edit_catalog_intended_audience_url: (*untyped) -> ::String
+  def catalog_intended_audience_url: (*untyped) -> ::String
   def rails_health_check_url: (*untyped) -> ::String
   def turbo_recede_historical_location_url: (*untyped) -> ::String
   def turbo_resume_historical_location_url: (*untyped) -> ::String

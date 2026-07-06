@@ -1,0 +1,202 @@
+# Hand-written signatures for the Catalog scaffold web layer (controllers and
+# helpers). The action methods return `void` because Rails ignores their return
+# value; the request/response plumbing comes from ::ActionController::Base and
+# the route helpers from the generated ::_RbsRailsPathHelpers interface.
+
+class Catalog::CarriersController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_carrier: () -> void
+  def catalog_carrier_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::ConditionsController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_condition: () -> void
+  def catalog_condition_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::ExpressionsController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_expression: () -> void
+  def catalog_expression_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::FormOfExpressionsController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_form_of_expression: () -> void
+  def catalog_form_of_expression_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::FormOfWorksController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_form_of_work: () -> void
+  def catalog_form_of_work_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::IntendedAudiencesController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_intended_audience: () -> void
+  def catalog_intended_audience_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::ItemsController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_item: () -> void
+  def catalog_item_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::LanguagesController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_language: () -> void
+  def catalog_language_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::ManifestationsController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_manifestation: () -> void
+  def catalog_manifestation_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::SeriesController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_series: () -> void
+  def catalog_series_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::WorksController < ::ApplicationController
+  def index: () -> void
+  def show: () -> void
+  def new: () -> void
+  def edit: () -> void
+  def create: () -> void
+  def update: () -> void
+  def destroy: () -> void
+
+  private
+
+  def set_catalog_work: () -> void
+  def catalog_work_params: () -> ::ActionController::Parameters
+end
+
+module Catalog::CarriersHelper
+end
+
+module Catalog::ConditionsHelper
+end
+
+module Catalog::ExpressionsHelper
+end
+
+module Catalog::FormOfExpressionsHelper
+end
+
+module Catalog::FormOfWorksHelper
+end
+
+module Catalog::IntendedAudiencesHelper
+end
+
+module Catalog::ItemsHelper
+end
+
+module Catalog::LanguagesHelper
+end
+
+module Catalog::ManifestationsHelper
+end
+
+module Catalog::SeriesHelper
+end
+
+module Catalog::WorksHelper
+end
