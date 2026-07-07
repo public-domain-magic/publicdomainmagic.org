@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for FRBR Expressions — a realization of a work in words, sound, or image.
 class Catalog::ExpressionsController < ApplicationController
-  before_action :set_catalog_expression, only: %i[ show edit update destroy ]
+  before_action :set_catalog_expression, only: %i[show edit update destroy]
 
   # GET /catalog/expressions or /catalog/expressions.json
   def index
@@ -57,14 +66,13 @@ class Catalog::ExpressionsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_expression
-      @catalog_expression = Catalog::Expression.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_expression
+    @catalog_expression = Catalog::Expression.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_expression_params
-      params.expect(catalog_expression: [ :title, :date, :identifier, :summary, :form_of_expression_id, :language_id, :work_id ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_expression_params
+    params.expect(catalog_expression: [:title, :date, :identifier, :summary, :form_of_expression_id, :language_id, :work_id])
+  end
 end

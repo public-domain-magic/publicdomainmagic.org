@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for physical-condition descriptors for items.
 class Catalog::ConditionsController < ApplicationController
-  before_action :set_catalog_condition, only: %i[ show edit update destroy ]
+  before_action :set_catalog_condition, only: %i[show edit update destroy]
 
   # GET /catalog/conditions or /catalog/conditions.json
   def index
@@ -57,14 +66,13 @@ class Catalog::ConditionsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_condition
-      @catalog_condition = Catalog::Condition.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_condition
+    @catalog_condition = Catalog::Condition.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_condition_params
-      params.expect(catalog_condition: [ :name ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_condition_params
+    params.expect(catalog_condition: [:name])
+  end
 end

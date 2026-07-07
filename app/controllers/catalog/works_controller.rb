@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for FRBR Works — a distinct intellectual or artistic creation.
 class Catalog::WorksController < ApplicationController
-  before_action :set_catalog_work, only: %i[ show edit update destroy ]
+  before_action :set_catalog_work, only: %i[show edit update destroy]
 
   # GET /catalog/works or /catalog/works.json
   def index
@@ -57,14 +66,13 @@ class Catalog::WorksController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_work
-      @catalog_work = Catalog::Work.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_work
+    @catalog_work = Catalog::Work.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_work_params
-      params.expect(catalog_work: [ :title, :date, :identifier, :form_of_work_id ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_work_params
+    params.expect(catalog_work: [:title, :date, :identifier, :form_of_work_id])
+  end
 end

@@ -10,6 +10,9 @@
 # agent to the WEMI level its role operates on. The enum derives from
 # ROLES_BY_LEVEL so the vocabulary and the level rules cannot drift.
 class Catalog::Contribution < ApplicationRecord
+  # The contribution roles permitted at each WEMI level, keyed by
+  # +contributable_type+. Both the role enum and the level validation derive
+  # from this map, so a role can never be attached to the wrong level.
   ROLES_BY_LEVEL = {
     "Catalog::Work" => %w[created],
     "Catalog::Expression" => %w[wrote translated edited illustrated performed taught],

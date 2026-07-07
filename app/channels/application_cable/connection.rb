@@ -6,6 +6,7 @@
 # SPDX-License-Identifier: LicenseRef-LICENSE
 #++
 
+# Namespace for this application's Action Cable connection and channels.
 module ApplicationCable
   # Authenticates the WebSocket off the same signed session-token cookie the
   # HTTP controllers use, so one auth surface covers both and logging out kills
@@ -19,11 +20,10 @@ module ApplicationCable
       set_current_user || reject_unauthorized_connection
     end
 
-    private
-      def set_current_user
-        if session = Session.find_by(token: cookies.signed[:session_token])
-          self.current_user = session.user
-        end
+    private def set_current_user
+      if (session = Session.find_by(token: cookies.signed[:session_token]))
+        self.current_user = session.user
       end
+    end
   end
 end

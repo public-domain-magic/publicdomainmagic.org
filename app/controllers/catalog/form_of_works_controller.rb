@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for the controlled forms a work may take (novel, poem, treatise, and the like).
 class Catalog::FormOfWorksController < ApplicationController
-  before_action :set_catalog_form_of_work, only: %i[ show edit update destroy ]
+  before_action :set_catalog_form_of_work, only: %i[show edit update destroy]
 
   # GET /catalog/form_of_works or /catalog/form_of_works.json
   def index
@@ -57,14 +66,13 @@ class Catalog::FormOfWorksController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_form_of_work
-      @catalog_form_of_work = Catalog::FormOfWork.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_form_of_work
+    @catalog_form_of_work = Catalog::FormOfWork.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_form_of_work_params
-      params.expect(catalog_form_of_work: [ :name ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_form_of_work_params
+    params.expect(catalog_form_of_work: [:name])
+  end
 end

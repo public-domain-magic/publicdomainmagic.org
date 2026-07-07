@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for FRBR Items — a single exemplar of a manifestation.
 class Catalog::ItemsController < ApplicationController
-  before_action :set_catalog_item, only: %i[ show edit update destroy ]
+  before_action :set_catalog_item, only: %i[show edit update destroy]
 
   # GET /catalog/items or /catalog/items.json
   def index
@@ -57,14 +66,13 @@ class Catalog::ItemsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_item
-      @catalog_item = Catalog::Item.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_item
+    @catalog_item = Catalog::Item.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_item_params
-      params.expect(catalog_item: [ :identifier, :provenance, :marks, :manifestation_id, :condition_id ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_item_params
+    params.expect(catalog_item: [:identifier, :provenance, :marks, :manifestation_id, :condition_id])
+  end
 end

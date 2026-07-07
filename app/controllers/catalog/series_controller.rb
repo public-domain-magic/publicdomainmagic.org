@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for the series that group related works.
 class Catalog::SeriesController < ApplicationController
-  before_action :set_catalog_series, only: %i[ show edit update destroy ]
+  before_action :set_catalog_series, only: %i[show edit update destroy]
 
   # GET /catalog/series or /catalog/series.json
   def index
@@ -57,14 +66,13 @@ class Catalog::SeriesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_series
-      @catalog_series = Catalog::Series.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_series
+    @catalog_series = Catalog::Series.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_series_params
-      params.expect(catalog_series: [ :name ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_series_params
+    params.expect(catalog_series: [:name])
+  end
 end

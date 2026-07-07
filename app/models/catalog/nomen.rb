@@ -10,6 +10,7 @@
 # names, spellings, stage names, pen names. A person and a name are different
 # things; never merge agents on name-string equality.
 class Catalog::Nomen < ApplicationRecord
+  # The closed vocabulary of name kinds by which an agent may be known.
   KINDS = %w[birth legal spelling stage pen].freeze
 
   belongs_to :agent

@@ -9,6 +9,8 @@
 # FRBR table 5.3: a typed, directed relationship between two expressions of the
 # same work — one derived from another without becoming a new work.
 class Catalog::ExpressionRelationship < ApplicationRecord
+  # The closed vocabulary of expression-to-expression relationship kinds
+  # (FRBR table 5.3).
   KINDS = %w[abridgement revision translation arrangement part].freeze
 
   belongs_to :expression

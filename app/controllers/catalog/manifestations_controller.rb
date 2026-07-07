@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for FRBR Manifestations — a published embodiment of an expression.
 class Catalog::ManifestationsController < ApplicationController
-  before_action :set_catalog_manifestation, only: %i[ show edit update destroy ]
+  before_action :set_catalog_manifestation, only: %i[show edit update destroy]
 
   # GET /catalog/manifestations or /catalog/manifestations.json
   def index
@@ -57,14 +66,13 @@ class Catalog::ManifestationsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_manifestation
-      @catalog_manifestation = Catalog::Manifestation.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_manifestation
+    @catalog_manifestation = Catalog::Manifestation.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_manifestation_params
-      params.expect(catalog_manifestation: [ :title, :statement_of_responsibility, :edition_or_issue, :date_of_publication, :place_of_publication, :identifier, :carrier_id, :series_id ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_manifestation_params
+    params.expect(catalog_manifestation: [:title, :statement_of_responsibility, :edition_or_issue, :date_of_publication, :place_of_publication, :identifier, :carrier_id, :series_id])
+  end
 end

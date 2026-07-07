@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for RDA carrier types — the physical medium a manifestation is issued on.
 class Catalog::CarriersController < ApplicationController
-  before_action :set_catalog_carrier, only: %i[ show edit update destroy ]
+  before_action :set_catalog_carrier, only: %i[show edit update destroy]
 
   # GET /catalog/carriers or /catalog/carriers.json
   def index
@@ -57,14 +66,13 @@ class Catalog::CarriersController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_carrier
-      @catalog_carrier = Catalog::Carrier.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_carrier
+    @catalog_carrier = Catalog::Carrier.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_carrier_params
-      params.expect(catalog_carrier: [ :name ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_carrier_params
+    params.expect(catalog_carrier: [:name])
+  end
 end

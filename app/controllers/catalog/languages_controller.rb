@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for the languages an expression is realized in.
 class Catalog::LanguagesController < ApplicationController
-  before_action :set_catalog_language, only: %i[ show edit update destroy ]
+  before_action :set_catalog_language, only: %i[show edit update destroy]
 
   # GET /catalog/languages or /catalog/languages.json
   def index
@@ -57,14 +66,13 @@ class Catalog::LanguagesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_language
-      @catalog_language = Catalog::Language.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_language
+    @catalog_language = Catalog::Language.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_language_params
-      params.expect(catalog_language: [ :name, :code ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_language_params
+    params.expect(catalog_language: [:name, :code])
+  end
 end

@@ -20,12 +20,12 @@ module User::Rolable
   included do
     has_many :roles, dependent: :destroy # steep:ignore NoMethod
     has_many :granted_roles, class_name: "Role", foreign_key: :granted_by_id, # steep:ignore NoMethod
-             inverse_of: :granted_by, dependent: :nullify
+      inverse_of: :granted_by, dependent: :nullify
   end
 
   # Whether this user holds a grant for the named role. Prefer the capability
   # predicates below at call sites.
-  def role?(name) = roles.exists?(name: name)
+  def role?(name) = roles.exists?(name:)
 
   # Whether this user may grant and revoke roles (the Administrator role).
   def can_administer? = role?(:administrator)

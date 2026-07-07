@@ -1,5 +1,14 @@
+# frozen_string_literal: true
+
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Catalog administration for intended-audience descriptors for works.
 class Catalog::IntendedAudiencesController < ApplicationController
-  before_action :set_catalog_intended_audience, only: %i[ show edit update destroy ]
+  before_action :set_catalog_intended_audience, only: %i[show edit update destroy]
 
   # GET /catalog/intended_audiences or /catalog/intended_audiences.json
   def index
@@ -57,14 +66,13 @@ class Catalog::IntendedAudiencesController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_catalog_intended_audience
-      @catalog_intended_audience = Catalog::IntendedAudience.find(params.expect(:id))
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  private def set_catalog_intended_audience
+    @catalog_intended_audience = Catalog::IntendedAudience.find(params.expect(:id))
+  end
 
-    # Only allow a list of trusted parameters through.
-    def catalog_intended_audience_params
-      params.expect(catalog_intended_audience: [ :name ])
-    end
+  # Only allow a list of trusted parameters through.
+  private def catalog_intended_audience_params
+    params.expect(catalog_intended_audience: [:name])
+  end
 end

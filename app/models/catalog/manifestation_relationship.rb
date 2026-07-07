@@ -9,6 +9,7 @@
 # FRBR: a typed, directed relationship between two manifestations — a
 # reproduction (reprint, facsimile) or an alternate (simultaneous editions).
 class Catalog::ManifestationRelationship < ApplicationRecord
+  # The closed vocabulary of manifestation-to-manifestation relationship kinds.
   KINDS = %w[reproduction alternate].freeze
 
   belongs_to :manifestation
