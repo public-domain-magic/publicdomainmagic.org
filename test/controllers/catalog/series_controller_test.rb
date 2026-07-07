@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::SeriesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_series = catalog_series(:forum_books)
   end
 

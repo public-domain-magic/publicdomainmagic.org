@@ -1,0 +1,16 @@
+<% password_digest = BCrypt::Password.create("secret123456") %>
+
+kerrick:
+  name: Kerrick
+  email_address: kerrick@example.com
+  password_digest: <%= password_digest %>
+
+vetted_magician:
+  name: Vera Vetted
+  email_address: vera@example.com
+  password_digest: <%= password_digest %>
+
+visitor:
+  name: Norm Norole
+  email_address: norm@example.com
+  password_digest: <%= password_digest %>

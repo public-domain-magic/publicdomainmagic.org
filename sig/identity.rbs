@@ -1,0 +1,39 @@
+# Hand-written signatures for app-wide identity: the domain constants and
+# methods rbs_rails cannot derive from the schema. Attribute, association, and
+# enum signatures for User, Role, and Session are generated into sig/rbs_rails/.
+
+class Role < ApplicationRecord
+  NAMES: Array[String]
+end
+
+class User < ApplicationRecord
+  include User::Rolable
+
+  def self.find_by_password_reset_token!: (String token) -> User
+  def password_reset_token: () -> String
+end
+
+# The roles association the capability concern relies on. Modelled as an
+# interface so the concern's self-type does not create a cycle with User.
+interface _Rolable
+  def roles: () -> Role::ActiveRecord_Associations_CollectionProxy
+end
+
+# Capability concern mixed into User. Call sites ask these predicates, never
+# role?(...) directly.
+module User::Rolable : _Rolable
+  extend ActiveSupport::Concern
+
+  def role?: (String | Symbol name) -> bool
+  def can_administer?: () -> bool
+  def can_catalog?: () -> bool
+  def can_research?: () -> bool
+  def can_access_protected?: () -> bool
+  def grant: (String | Symbol name, by: User?, ?note: String?) -> Role
+end
+
+class Current < ActiveSupport::CurrentAttributes
+  def self.session: () -> Session?
+  def self.session=: (Session? session) -> Session?
+  def self.user: () -> User?
+end

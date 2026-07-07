@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::FormOfWorksControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_form_of_work = catalog_form_of_works(:pamphlet)
   end
 

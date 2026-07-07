@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::ConditionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_condition = catalog_conditions(:worn)
   end
 

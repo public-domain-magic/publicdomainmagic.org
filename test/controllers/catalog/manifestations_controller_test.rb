@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::ManifestationsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_manifestation = catalog_manifestations(:harper_1948)
   end
 

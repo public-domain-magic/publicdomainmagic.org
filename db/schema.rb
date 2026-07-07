@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_06_041101) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_06_141104) do
   create_table "catalog_agents", force: :cascade do |t|
     t.string "birth_date"
     t.datetime "created_at", null: false
@@ -206,6 +206,38 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_06_041101) do
     t.index ["form_of_work_id"], name: "index_catalog_works_on_form_of_work_id"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "granted_by_id"
+    t.string "name", null: false
+    t.string "note"
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["granted_by_id"], name: "index_roles_on_granted_by_id"
+    t.index ["user_id", "name"], name: "index_roles_on_user_id_and_name", unique: true
+    t.index ["user_id"], name: "index_roles_on_user_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "ip_address"
+    t.string "token", null: false
+    t.datetime "updated_at", null: false
+    t.string "user_agent"
+    t.integer "user_id", null: false
+    t.index ["token"], name: "index_sessions_on_token", unique: true
+    t.index ["user_id"], name: "index_sessions_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email_address", null: false
+    t.string "name"
+    t.string "password_digest", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email_address"], name: "index_users_on_email_address", unique: true
+  end
+
   add_foreign_key "catalog_contributions", "catalog_agents", column: "agent_id"
   add_foreign_key "catalog_embodiments", "catalog_expressions", column: "expression_id"
   add_foreign_key "catalog_embodiments", "catalog_manifestations", column: "manifestation_id"
@@ -225,4 +257,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_06_041101) do
   add_foreign_key "catalog_work_relationships", "catalog_works", column: "related_work_id"
   add_foreign_key "catalog_work_relationships", "catalog_works", column: "work_id"
   add_foreign_key "catalog_works", "catalog_form_of_works", column: "form_of_work_id"
+  add_foreign_key "roles", "users"
+  add_foreign_key "roles", "users", column: "granted_by_id"
+  add_foreign_key "sessions", "users"
 end

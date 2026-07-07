@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::ExpressionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_expression = catalog_expressions(:royal_road_text)
   end
 

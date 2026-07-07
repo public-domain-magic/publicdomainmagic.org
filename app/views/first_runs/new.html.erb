@@ -1,0 +1,23 @@
+<% content_for :title, "Set up Public Domain Magic" %>
+
+<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+
+<h1>Create the first account</h1>
+
+<p>This account will be the administrator. It is only offered until the first account exists.</p>
+
+<%= form_with model: @user, url: first_run_path do |form| %>
+  <% if @user.errors.any? %>
+    <ul style="color:red">
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form.text_field :name, autofocus: true, placeholder: "Your name" %><br>
+  <%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "Enter your email address" %><br>
+  <%= form.password_field :password, required: true, autocomplete: "new-password", placeholder: "Choose a password", maxlength: 72 %><br>
+  <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Confirm your password", maxlength: 72 %><br>
+  <%= form.submit "Create account" %>
+<% end %>

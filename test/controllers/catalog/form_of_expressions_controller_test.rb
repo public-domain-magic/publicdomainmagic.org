@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::FormOfExpressionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_form_of_expression = catalog_form_of_expressions(:spoken_word)
   end
 

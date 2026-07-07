@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::ItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_item = catalog_items(:royal_road_copy)
   end
 

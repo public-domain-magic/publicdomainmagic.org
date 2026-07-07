@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::IntendedAudiencesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_intended_audience = catalog_intended_audiences(:general_public)
   end
 

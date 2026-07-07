@@ -1,0 +1,97 @@
+# Hand-written signatures for the identity web layer: the Authentication
+# concern, the session/password/first-run/pages controllers, and the Action
+# Cable connection. Action methods return void because Rails ignores their
+# return value; controller plumbing comes from ::ActionController::Base and the
+# route helpers from the generated ::_RbsRailsPathHelpers interface.
+
+# The self-type binds the concern's instance methods to a controller so their
+# bodies can reach cookies, session, request, redirect_to, and path helpers.
+module Authentication : ActionController::Base
+  extend ActiveSupport::Concern
+
+  def authenticated?: () -> Session?
+  def require_authentication: () -> void
+  def resume_session: () -> Session?
+  def find_session_by_cookie: () -> Session?
+  def request_authentication: () -> void
+  def after_authentication_url: () -> String
+  def start_new_session_for: (User user) -> Session
+  def terminate_session: () -> void
+
+  module ClassMethods
+    def allow_unauthenticated_access: (**untyped options) -> void
+  end
+end
+
+class ApplicationController < ActionController::Base
+  include Authentication
+  extend Authentication::ClassMethods
+
+  # Rails 8 built-in, not present in the pinned actionpack collection sig. The
+  # `with:` proc is instance_exec'd on a controller, hence the self-type.
+  def self.rate_limit: (?to: Integer, ?within: untyped, ?only: Symbol, ?with: ^() [self: instance] -> void, **untyped) -> void
+end
+
+class SessionsController < ApplicationController
+  def new: () -> void
+  def create: () -> void
+  def destroy: () -> void
+
+  private
+
+  def redirect_to_first_run: () -> void
+end
+
+class PasswordsController < ApplicationController
+  def new: () -> void
+  def create: () -> void
+  def edit: () -> void
+  def update: () -> void
+
+  private
+
+  def set_user_by_token: () -> void
+end
+
+class FirstRunsController < ApplicationController
+  def new: () -> void
+  def create: () -> void
+
+  private
+
+  def prevent_running_after_setup: () -> void
+  def user_params: () -> ::ActionController::Parameters
+end
+
+class PagesController < ApplicationController
+  def home: () -> void
+end
+
+class PasswordsMailer < ApplicationMailer
+  def self.reset: (User user) -> ::ActionMailer::MessageDelivery
+  def reset: (User user) -> ::Mail::Message
+end
+
+# Action Cable is absent from the pinned RBS collection; declare the connection
+# hooks the generated Connection relies on.
+module ActionCable
+  module Connection
+    class Base
+      def self.identified_by: (*Symbol) -> void
+      def reject_unauthorized_connection: () -> void
+      def cookies: () -> untyped
+    end
+  end
+end
+
+module ApplicationCable
+  class Connection < ActionCable::Connection::Base
+    attr_accessor current_user: User?
+
+    def connect: () -> void
+
+    private
+
+    def set_current_user: () -> User?
+  end
+end

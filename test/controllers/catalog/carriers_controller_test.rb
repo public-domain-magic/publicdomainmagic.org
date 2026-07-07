@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::CarriersControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_carrier = catalog_carriers(:pdf)
   end
 

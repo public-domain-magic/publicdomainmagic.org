@@ -1,0 +1,10 @@
+kerrick_administrator: { user: kerrick, name: administrator }
+kerrick_librarian:     { user: kerrick, name: librarian }
+kerrick_researcher:    { user: kerrick, name: researcher }
+kerrick_magician:      { user: kerrick, name: magician }
+
+vera_magician:
+  user: vetted_magician
+  name: magician
+  granted_by: kerrick
+  note: Vetted via S.A.M. membership, July 2026

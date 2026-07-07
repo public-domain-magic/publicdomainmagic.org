@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::LanguagesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_language = catalog_languages(:french)
   end
 

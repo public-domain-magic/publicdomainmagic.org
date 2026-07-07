@@ -10,6 +10,7 @@ require "test_helper"
 
 class Catalog::WorksControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in :kerrick
     @catalog_work = catalog_works(:royal_road)
   end
 
