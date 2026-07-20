@@ -24,6 +24,17 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <% if authenticated? %>
+          <span>Signed in as <%= Current.user.name %></span>
+          <%= button_to "Sign out", session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign in", new_session_path %>
+        <% end %>
+      </nav>
+    </header>
+
     <%= yield %>
   </body>
 </html>

@@ -9,8 +9,15 @@
     typeset for magicians everywhere.
   </p>
 
-  <p>
-    The library is being hand-assembled. Come back soon, or
-    <%= link_to "sign in", new_session_path %> if you have an account.
-  </p>
+  <% if authenticated? %>
+    <p>
+      Welcome back, <%= Current.user.name %>. The library is being
+      hand-assembled — come back soon.
+    </p>
+  <% else %>
+    <p>
+      The library is being hand-assembled. Come back soon, or
+      <%= link_to "sign in", new_session_path %> if you have an account.
+    </p>
+  <% end %>
 </main>

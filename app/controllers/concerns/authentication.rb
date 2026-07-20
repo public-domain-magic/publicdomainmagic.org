@@ -19,10 +19,13 @@ module Authentication
   end
 
   class_methods do
-    # Exempt the given actions from requiring a signed-in user (e.g. the
-    # sign-in and first-run pages).
+    # Exempt the given actions from _requiring_ a signed-in user (e.g. the
+    # sign-in and first-run pages), while still _restoring_ the session when a
+    # cookie is present. "Public" therefore does not mean "anonymous": a public
+    # page such as the home page can greet a visitor who is already signed in.
     def allow_unauthenticated_access(**) # steep:ignore
       skip_before_action(:require_authentication, **) # steep:ignore NoMethod
+      before_action(:resume_session, **) # steep:ignore NoMethod
     end
   end
 

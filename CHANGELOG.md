@@ -15,6 +15,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Added
 
 - User accounts with email-and-password sign in and sign out.
+- A site-wide header that shows who is signed in and offers a sign-out
+  control; the home page greets a signed-in user instead of inviting them
+  to sign in.
 - First-run setup that creates the initial administrator when no account exists.
 - Self-service password reset by email.
 - Role-based access: administrator, librarian, researcher, and magician roles,
