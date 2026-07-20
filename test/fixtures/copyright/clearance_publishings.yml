@@ -1,0 +1,11 @@
+world_1951:
+  clearance: royal_road
+  position: 1
+  year: "1951"
+  kind: copyright_notice
+
+harper_1948:
+  clearance: royal_road
+  position: 2
+  year: "1948"
+  kind: copyright_notice

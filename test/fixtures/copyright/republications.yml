@@ -1,0 +1,28 @@
+royal_road_world_1951:
+  investigation: royal_road
+  title: The Royal Road to Card Magic
+  year: "1951"
+  publisher: The World Publishing Company
+  access_status: examined
+  notes: >
+    Matches the 1948 Harper & Brothers first edition; no differences found in
+    chapter openings, and no new copyrightable matter identified.
+
+trick_brain_saint_raphael:
+  investigation: trick_brain
+  title: The Trick Brain
+  year: "1944"
+  publisher: Saint Raphael House
+  access_status: examined
+
+# A real, reportable research limitation: the edition cannot be examined.
+trick_brain_third_printing:
+  investigation: trick_brain
+  title: The Trick Brain
+  publisher: Magic Limited
+  edition_designation: Third Printing
+  access_status: inaccessible
+  notes: >
+    Accessing the Magic Limited Third Printing is out of my reach, because of
+    its rarity. This book was not well-received in its time, so few copies
+    seem to have been preserved.

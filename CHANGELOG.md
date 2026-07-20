@@ -20,6 +20,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Role-based access: administrator, librarian, researcher, and magician roles,
   granted by an administrator and recorded with who granted them and why.
 - A public home page at the site root.
+- Copyright determinations per work (or per edition), with statutory bases,
+  a computed public-domain date, and a countdown for works still under term.
+- Structured Rule 6 copyright investigations — author research with aliases
+  and per-claim citations, republications, renewal searches and records,
+  third-party claims, and findings — with the Project Gutenberg submission
+  document generated as a report of that data.
+- Project Gutenberg clearance requests tracked per digitized edition,
+  validated against the copy.pglaf.org form limits, including page scans.
 
 ### Changed
 

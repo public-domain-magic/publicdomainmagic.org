@@ -1,0 +1,456 @@
+# resolve-type-names: false
+
+module ::Copyright
+  class ::Copyright::AliasFinding < ::ApplicationRecord
+    extend ::ActiveRecord::Base::ClassMethods[::Copyright::AliasFinding, ::Copyright::AliasFinding::ActiveRecord_Relation, ::Integer]
+
+    module ::Copyright::AliasFinding::GeneratedAttributeMethods
+      def id: () -> ::Integer
+
+      def id=: (::Integer) -> ::Integer
+
+      def id?: () -> bool
+
+      def id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def id_will_change!: () -> void
+
+      def id_was: () -> ::Integer?
+
+      def id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_previous_change: () -> ::Array[::Integer?]?
+
+      def id_previously_was: () -> ::Integer?
+
+      def id_before_last_save: () -> ::Integer?
+
+      def id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def id_in_database: () -> ::Integer?
+
+      def saved_change_to_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_id!: () -> void
+
+      def clear_id_change: () -> void
+
+      def id_before_type_cast: () -> ::Integer
+
+      def id_for_database: () -> ::Integer
+
+      def author_research_id: () -> ::Integer
+
+      def author_research_id=: (::Integer) -> ::Integer
+
+      def author_research_id?: () -> bool
+
+      def author_research_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def author_research_id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def author_research_id_will_change!: () -> void
+
+      def author_research_id_was: () -> ::Integer?
+
+      def author_research_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def author_research_id_previous_change: () -> ::Array[::Integer?]?
+
+      def author_research_id_previously_was: () -> ::Integer?
+
+      def author_research_id_before_last_save: () -> ::Integer?
+
+      def author_research_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def author_research_id_in_database: () -> ::Integer?
+
+      def saved_change_to_author_research_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_author_research_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_author_research_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_author_research_id!: () -> void
+
+      def clear_author_research_id_change: () -> void
+
+      def author_research_id_before_type_cast: () -> ::Integer
+
+      def author_research_id_for_database: () -> ::Integer
+
+      def name: () -> ::String?
+
+      def name=: (::String?) -> ::String?
+
+      def name?: () -> bool
+
+      def name_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def name_change: () -> [ ::String?, ::String? ]
+
+      def name_will_change!: () -> void
+
+      def name_was: () -> ::String?
+
+      def name_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def name_previous_change: () -> ::Array[::String?]?
+
+      def name_previously_was: () -> ::String?
+
+      def name_before_last_save: () -> ::String?
+
+      def name_change_to_be_saved: () -> ::Array[::String?]?
+
+      def name_in_database: () -> ::String?
+
+      def saved_change_to_name: () -> ::Array[::String?]?
+
+      def saved_change_to_name?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_name?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_name!: () -> void
+
+      def clear_name_change: () -> void
+
+      def name_before_type_cast: () -> ::String?
+
+      def name_for_database: () -> ::String?
+
+      def kind: () -> ::String
+
+      def kind=: (::String | ::Symbol) -> ::String
+
+      def kind?: () -> bool
+
+      def kind_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def kind_change: () -> [ ::String?, ::String? ]
+
+      def kind_will_change!: () -> void
+
+      def kind_was: () -> ::String?
+
+      def kind_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def kind_previous_change: () -> ::Array[::String?]?
+
+      def kind_previously_was: () -> ::String?
+
+      def kind_before_last_save: () -> ::String?
+
+      def kind_change_to_be_saved: () -> ::Array[::String?]?
+
+      def kind_in_database: () -> ::String?
+
+      def saved_change_to_kind: () -> ::Array[::String?]?
+
+      def saved_change_to_kind?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_kind?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_kind!: () -> void
+
+      def clear_kind_change: () -> void
+
+      def kind_before_type_cast: () -> ::String
+
+      def kind_for_database: () -> ::String
+
+      def note: () -> ::String?
+
+      def note=: (::String?) -> ::String?
+
+      def note?: () -> bool
+
+      def note_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def note_change: () -> [ ::String?, ::String? ]
+
+      def note_will_change!: () -> void
+
+      def note_was: () -> ::String?
+
+      def note_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def note_previous_change: () -> ::Array[::String?]?
+
+      def note_previously_was: () -> ::String?
+
+      def note_before_last_save: () -> ::String?
+
+      def note_change_to_be_saved: () -> ::Array[::String?]?
+
+      def note_in_database: () -> ::String?
+
+      def saved_change_to_note: () -> ::Array[::String?]?
+
+      def saved_change_to_note?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_note?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_note!: () -> void
+
+      def clear_note_change: () -> void
+
+      def note_before_type_cast: () -> ::String?
+
+      def note_for_database: () -> ::String?
+
+      def created_at: () -> ::ActiveSupport::TimeWithZone
+
+      def created_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def created_at?: () -> bool
+
+      def created_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def created_at_will_change!: () -> void
+
+      def created_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_created_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_created_at!: () -> void
+
+      def clear_created_at_change: () -> void
+
+      def created_at_before_type_cast: () -> ::Time
+
+      def created_at_for_database: () -> ::Time
+
+      def updated_at: () -> ::ActiveSupport::TimeWithZone
+
+      def updated_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def updated_at?: () -> bool
+
+      def updated_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def updated_at_will_change!: () -> void
+
+      def updated_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_updated_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_updated_at!: () -> void
+
+      def clear_updated_at_change: () -> void
+
+      def updated_at_before_type_cast: () -> ::Time
+
+      def updated_at_for_database: () -> ::Time
+    end
+    include ::Copyright::AliasFinding::GeneratedAttributeMethods
+    module ::Copyright::AliasFinding::GeneratedAliasAttributeMethods
+      include ::Copyright::AliasFinding::GeneratedAttributeMethods
+
+      alias id_value id
+
+      alias id_value= id=
+
+      alias id_value? id?
+
+      alias id_value_changed? id_changed?
+
+      alias id_value_change id_change
+
+      alias id_value_will_change! id_will_change!
+
+      alias id_value_was id_was
+
+      alias id_value_previously_changed? id_previously_changed?
+
+      alias id_value_previous_change id_previous_change
+
+      alias id_value_previously_was id_previously_was
+
+      alias id_value_before_last_save id_before_last_save
+
+      alias id_value_change_to_be_saved id_change_to_be_saved
+
+      alias id_value_in_database id_in_database
+
+      alias saved_change_to_id_value saved_change_to_id
+
+      alias saved_change_to_id_value? saved_change_to_id?
+
+      alias will_save_change_to_id_value? will_save_change_to_id?
+
+      alias restore_id_value! restore_id!
+
+      alias clear_id_value_change clear_id_change
+
+      alias id_value_before_type_cast id_before_type_cast
+
+      alias id_value_for_database id_for_database
+    end
+    include ::Copyright::AliasFinding::GeneratedAliasAttributeMethods
+    def citations: () -> ::Copyright::Citation::ActiveRecord_Associations_CollectionProxy
+    def citations=: (::Copyright::Citation::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::Citation]) -> (::Copyright::Citation::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::Citation])
+    def citation_ids: () -> ::Array[::Integer]
+    def citation_ids=: (::Array[::Integer]) -> ::Array[::Integer]
+
+    def author_research: () -> ::Copyright::AuthorResearch
+    def author_research=: (::Copyright::AuthorResearch?) -> ::Copyright::AuthorResearch?
+    def reload_author_research: () -> ::Copyright::AuthorResearch?
+    def build_author_research: (?untyped) -> ::Copyright::AuthorResearch
+    def create_author_research: (?untyped) -> ::Copyright::AuthorResearch
+    def create_author_research!: (?untyped) -> ::Copyright::AuthorResearch
+
+    module ::Copyright::AliasFinding::GeneratedAssociationMethods
+    end
+    include ::Copyright::AliasFinding::GeneratedAssociationMethods
+
+    def birth!: () -> bool
+    def birth?: () -> bool
+    def spelling!: () -> bool
+    def spelling?: () -> bool
+    def stage!: () -> bool
+    def stage?: () -> bool
+    def performance!: () -> bool
+    def performance?: () -> bool
+    def pen!: () -> bool
+    def pen?: () -> bool
+    def married!: () -> bool
+    def married?: () -> bool
+    def maiden!: () -> bool
+    def maiden?: () -> bool
+    def legal!: () -> bool
+    def legal?: () -> bool
+    def self.kinds: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
+    def self.birth: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.not_birth: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.spelling: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.not_spelling: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.stage: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.not_stage: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.performance: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.not_performance: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.pen: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.not_pen: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.married: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.not_married: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.maiden: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.not_maiden: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.legal: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    def self.not_legal: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+    module ::Copyright::AliasFinding::GeneratedRelationMethods
+      def kinds: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
+
+      def birth: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def not_birth: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def spelling: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def not_spelling: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def stage: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def not_stage: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def performance: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def not_performance: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def pen: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def not_pen: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def married: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def not_married: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def maiden: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def not_maiden: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def legal: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+
+      def not_legal: () -> ::Copyright::AliasFinding::ActiveRecord_Relation
+    end
+
+    class ::Copyright::AliasFinding::ActiveRecord_Relation < ::ActiveRecord::Relation
+      include ::Enumerable[::Copyright::AliasFinding]
+      include ::Copyright::AliasFinding::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Copyright::AliasFinding, ::Integer]
+    end
+
+    class ::Copyright::AliasFinding::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+      include ::Enumerable[::Copyright::AliasFinding]
+      include ::Copyright::AliasFinding::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Copyright::AliasFinding, ::Integer]
+
+      def build: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Copyright::AliasFinding
+               | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Copyright::AliasFinding]
+      def create: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Copyright::AliasFinding
+                | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Copyright::AliasFinding]
+      def create!: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Copyright::AliasFinding
+                 | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Copyright::AliasFinding]
+      def reload: () -> ::Array[::Copyright::AliasFinding]
+
+      def replace: (::Array[::Copyright::AliasFinding]) -> void
+      def delete: (*::Copyright::AliasFinding | ::Integer) -> ::Array[::Copyright::AliasFinding]
+      def destroy: (*::Copyright::AliasFinding | ::Integer) -> ::Array[::Copyright::AliasFinding]
+      def <<: (*::Copyright::AliasFinding | ::Array[::Copyright::AliasFinding]) -> self
+      def prepend: (*::Copyright::AliasFinding | ::Array[::Copyright::AliasFinding]) -> self
+    end
+  end
+end
+
+module ::Copyright
+end
+class ::ApplicationRecord < ::ActiveRecord::Base
+end
+class ::Copyright::Citation < ::ApplicationRecord
+end
+class ::Copyright::Citation::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+end
+class ::Copyright::AuthorResearch < ::ApplicationRecord
+end

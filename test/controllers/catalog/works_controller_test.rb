@@ -48,8 +48,11 @@ class Catalog::WorksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy catalog_work" do
+    # :annals rather than @catalog_work — the Copyright context holds
+    # determinations against :royal_road, and cross-context references are
+    # by ID (no cascade), so only a work without copyright research can go.
     assert_difference("Catalog::Work.count", -1) do
-      delete catalog_work_url(@catalog_work)
+      delete catalog_work_url(catalog_works(:annals))
     end
 
     assert_redirected_to catalog_works_url

@@ -19,3 +19,15 @@ annals:
   title: The Annals of Conjuring
   date: "1924/1928"
   form_of_work: treatise
+
+# Still under US copyright term until 2034 — the Copyright countdown case.
+greater_magic:
+  title: Greater Magic
+  date: "1938"
+  form_of_work: manual
+
+# Under renewal investigation in the Copyright context (in progress).
+trick_brain:
+  title: The Trick Brain
+  date: "1944"
+  form_of_work: treatise

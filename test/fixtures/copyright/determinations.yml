@@ -1,0 +1,46 @@
+# Cleared by Project Gutenberg under Rule 6 (nonrenewal): request 87848.
+royal_road:
+  work: royal_road
+  status: determined
+  basis: nonrenewal
+  first_publication_year: "1948"
+  first_publication_country: US
+  initial_registration_number: A20124
+  public_domain_on: 1977-01-01
+
+# The countdown case: publication term runs until 2034 (1938 + 96).
+greater_magic:
+  work: greater_magic
+  status: determined
+  basis: term_expired
+  first_publication_year: "1938"
+  first_publication_country: US
+  public_domain_on: 2034-01-01
+
+# Unscoped: the original 1584 text as first published.
+discoverie:
+  work: discoverie
+  status: determined
+  basis: term_expired
+  first_publication_year: "1584"
+  first_publication_country: GB
+  public_domain_on: 1680-01-01
+
+# Scoped to the facsimile edition: its added authorship (a new introduction)
+# has its own clock — coexists with the unscoped determination above.
+discoverie_facsimile:
+  work: discoverie
+  manifestation: discoverie_facsimile
+  status: determined
+  basis: term_expired
+  first_publication_year: "1972"
+  first_publication_country: US
+  public_domain_on: 2068-01-01
+
+# Research in progress (from the Trick Brain investigation).
+trick_brain:
+  work: trick_brain
+  status: researching
+  first_publication_year: "1944"
+  first_publication_country: US
+  initial_registration_number: A 184118

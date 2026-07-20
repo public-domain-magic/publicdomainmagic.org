@@ -1,0 +1,11 @@
+# The completed Rule 6 investigation behind clearance request 87848.
+royal_road:
+  determination: royal_road
+  researcher: kerrick
+  status: complete
+
+# In progress: planned searches, an inaccessible edition, a third-party claim.
+trick_brain:
+  determination: trick_brain
+  researcher: kerrick
+  status: in_progress

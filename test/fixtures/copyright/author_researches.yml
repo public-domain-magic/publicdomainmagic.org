@@ -1,0 +1,42 @@
+hugard:
+  investigation: royal_road
+  agent: hugard
+  name: Jean Hugard
+  role: author_creator
+  us_status: domiciliary
+  basis: >
+    Hugard was born in Australia, but he moved to the U.S. by 1915. The rest
+    of his biography, chronologically speaking, doesn't mention any other
+    countries. He died in the United States.
+  birth_date: "1871-12-04"
+  death_date: "1959-08-14"
+  heirs: >
+    He left his wife, Margaret Annie Griffiths, and at least two sons, Leslie
+    and Colin, to move to the U.S. in 1916. Myra C. Benson was the Publisher
+    and Circulation Manager of Hugard's Magic Monthly; she renewed the
+    copyright on Hugard's Modern Magic Manual.
+
+rigney:
+  investigation: royal_road
+  agent: rigney
+  name: Frank Rigney
+  role: illustrator
+  us_status: domiciliary
+  basis: >
+    Rigney was born in Ireland, but he moved to the U.S. by 1914. He died in
+    the United States, in New York.
+  birth_date: "1882-01-20"
+  death_date: "1962-04-20"
+
+# No catalog agent yet — the researched person stands on their own here.
+fitzkee:
+  investigation: trick_brain
+  name: Dariel Fitzkee
+  role: author_creator
+  us_status: national
+  basis: Fitzkee was born in Annawan, Illinois.
+  birth_date: "1898-05-13"
+  death_date: "1977-04-06"
+  heirs: >
+    He died after the renewal period. An uncited Wikipedia edit claims his
+    daughter, Marcia Dobbs, holds the copyright.

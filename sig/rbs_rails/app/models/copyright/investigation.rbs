@@ -1,0 +1,408 @@
+# resolve-type-names: false
+
+module ::Copyright
+  class ::Copyright::Investigation < ::ApplicationRecord
+    extend ::ActiveRecord::Base::ClassMethods[::Copyright::Investigation, ::Copyright::Investigation::ActiveRecord_Relation, ::Integer]
+
+    module ::Copyright::Investigation::GeneratedAttributeMethods
+      def id: () -> ::Integer
+
+      def id=: (::Integer) -> ::Integer
+
+      def id?: () -> bool
+
+      def id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def id_will_change!: () -> void
+
+      def id_was: () -> ::Integer?
+
+      def id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def id_previous_change: () -> ::Array[::Integer?]?
+
+      def id_previously_was: () -> ::Integer?
+
+      def id_before_last_save: () -> ::Integer?
+
+      def id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def id_in_database: () -> ::Integer?
+
+      def saved_change_to_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_id!: () -> void
+
+      def clear_id_change: () -> void
+
+      def id_before_type_cast: () -> ::Integer
+
+      def id_for_database: () -> ::Integer
+
+      def determination_id: () -> ::Integer
+
+      def determination_id=: (::Integer) -> ::Integer
+
+      def determination_id?: () -> bool
+
+      def determination_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def determination_id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def determination_id_will_change!: () -> void
+
+      def determination_id_was: () -> ::Integer?
+
+      def determination_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def determination_id_previous_change: () -> ::Array[::Integer?]?
+
+      def determination_id_previously_was: () -> ::Integer?
+
+      def determination_id_before_last_save: () -> ::Integer?
+
+      def determination_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def determination_id_in_database: () -> ::Integer?
+
+      def saved_change_to_determination_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_determination_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_determination_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_determination_id!: () -> void
+
+      def clear_determination_id_change: () -> void
+
+      def determination_id_before_type_cast: () -> ::Integer
+
+      def determination_id_for_database: () -> ::Integer
+
+      def researcher_id: () -> ::Integer
+
+      def researcher_id=: (::Integer) -> ::Integer
+
+      def researcher_id?: () -> bool
+
+      def researcher_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def researcher_id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def researcher_id_will_change!: () -> void
+
+      def researcher_id_was: () -> ::Integer?
+
+      def researcher_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def researcher_id_previous_change: () -> ::Array[::Integer?]?
+
+      def researcher_id_previously_was: () -> ::Integer?
+
+      def researcher_id_before_last_save: () -> ::Integer?
+
+      def researcher_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def researcher_id_in_database: () -> ::Integer?
+
+      def saved_change_to_researcher_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_researcher_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_researcher_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_researcher_id!: () -> void
+
+      def clear_researcher_id_change: () -> void
+
+      def researcher_id_before_type_cast: () -> ::Integer
+
+      def researcher_id_for_database: () -> ::Integer
+
+      def status: () -> ::String
+
+      def status=: (::String | ::Symbol) -> ::String
+
+      def status?: () -> bool
+
+      def status_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def status_change: () -> [ ::String?, ::String? ]
+
+      def status_will_change!: () -> void
+
+      def status_was: () -> ::String?
+
+      def status_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def status_previous_change: () -> ::Array[::String?]?
+
+      def status_previously_was: () -> ::String?
+
+      def status_before_last_save: () -> ::String?
+
+      def status_change_to_be_saved: () -> ::Array[::String?]?
+
+      def status_in_database: () -> ::String?
+
+      def saved_change_to_status: () -> ::Array[::String?]?
+
+      def saved_change_to_status?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_status?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_status!: () -> void
+
+      def clear_status_change: () -> void
+
+      def status_before_type_cast: () -> ::String
+
+      def status_for_database: () -> ::String
+
+      def created_at: () -> ::ActiveSupport::TimeWithZone
+
+      def created_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def created_at?: () -> bool
+
+      def created_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def created_at_will_change!: () -> void
+
+      def created_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def created_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def created_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def created_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_created_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_created_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_created_at!: () -> void
+
+      def clear_created_at_change: () -> void
+
+      def created_at_before_type_cast: () -> ::Time
+
+      def created_at_for_database: () -> ::Time
+
+      def updated_at: () -> ::ActiveSupport::TimeWithZone
+
+      def updated_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
+
+      def updated_at?: () -> bool
+
+      def updated_at_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_change: () -> [ ::ActiveSupport::TimeWithZone?, ::ActiveSupport::TimeWithZone? ]
+
+      def updated_at_will_change!: () -> void
+
+      def updated_at_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_previously_changed?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def updated_at_previous_change: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_previously_was: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_before_last_save: () -> ::ActiveSupport::TimeWithZone?
+
+      def updated_at_change_to_be_saved: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def updated_at_in_database: () -> ::ActiveSupport::TimeWithZone?
+
+      def saved_change_to_updated_at: () -> ::Array[::ActiveSupport::TimeWithZone?]?
+
+      def saved_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def will_save_change_to_updated_at?: (?from: ::ActiveSupport::TimeWithZone?, ?to: ::ActiveSupport::TimeWithZone?) -> bool
+
+      def restore_updated_at!: () -> void
+
+      def clear_updated_at_change: () -> void
+
+      def updated_at_before_type_cast: () -> ::Time
+
+      def updated_at_for_database: () -> ::Time
+    end
+    include ::Copyright::Investigation::GeneratedAttributeMethods
+    module ::Copyright::Investigation::GeneratedAliasAttributeMethods
+      include ::Copyright::Investigation::GeneratedAttributeMethods
+
+      alias id_value id
+
+      alias id_value= id=
+
+      alias id_value? id?
+
+      alias id_value_changed? id_changed?
+
+      alias id_value_change id_change
+
+      alias id_value_will_change! id_will_change!
+
+      alias id_value_was id_was
+
+      alias id_value_previously_changed? id_previously_changed?
+
+      alias id_value_previous_change id_previous_change
+
+      alias id_value_previously_was id_previously_was
+
+      alias id_value_before_last_save id_before_last_save
+
+      alias id_value_change_to_be_saved id_change_to_be_saved
+
+      alias id_value_in_database id_in_database
+
+      alias saved_change_to_id_value saved_change_to_id
+
+      alias saved_change_to_id_value? saved_change_to_id?
+
+      alias will_save_change_to_id_value? will_save_change_to_id?
+
+      alias restore_id_value! restore_id!
+
+      alias clear_id_value_change clear_id_change
+
+      alias id_value_before_type_cast id_before_type_cast
+
+      alias id_value_for_database id_for_database
+    end
+    include ::Copyright::Investigation::GeneratedAliasAttributeMethods
+    def author_researches: () -> ::Copyright::AuthorResearch::ActiveRecord_Associations_CollectionProxy
+    def author_researches=: (::Copyright::AuthorResearch::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::AuthorResearch]) -> (::Copyright::AuthorResearch::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::AuthorResearch])
+    def author_research_ids: () -> ::Array[::Integer]
+    def author_research_ids=: (::Array[::Integer]) -> ::Array[::Integer]
+    def republications: () -> ::Copyright::Republication::ActiveRecord_Associations_CollectionProxy
+    def republications=: (::Copyright::Republication::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::Republication]) -> (::Copyright::Republication::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::Republication])
+    def republication_ids: () -> ::Array[::Integer]
+    def republication_ids=: (::Array[::Integer]) -> ::Array[::Integer]
+    def renewal_searches: () -> ::Copyright::RenewalSearch::ActiveRecord_Associations_CollectionProxy
+    def renewal_searches=: (::Copyright::RenewalSearch::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::RenewalSearch]) -> (::Copyright::RenewalSearch::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::RenewalSearch])
+    def renewal_search_ids: () -> ::Array[::Integer]
+    def renewal_search_ids=: (::Array[::Integer]) -> ::Array[::Integer]
+    def copyright_claims: () -> ::Copyright::CopyrightClaim::ActiveRecord_Associations_CollectionProxy
+    def copyright_claims=: (::Copyright::CopyrightClaim::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::CopyrightClaim]) -> (::Copyright::CopyrightClaim::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::CopyrightClaim])
+    def copyright_claim_ids: () -> ::Array[::Integer]
+    def copyright_claim_ids=: (::Array[::Integer]) -> ::Array[::Integer]
+    def findings: () -> ::Copyright::Finding::ActiveRecord_Associations_CollectionProxy
+    def findings=: (::Copyright::Finding::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::Finding]) -> (::Copyright::Finding::ActiveRecord_Associations_CollectionProxy | ::Array[::Copyright::Finding])
+    def finding_ids: () -> ::Array[::Integer]
+    def finding_ids=: (::Array[::Integer]) -> ::Array[::Integer]
+
+    def determination: () -> ::Copyright::Determination
+    def determination=: (::Copyright::Determination?) -> ::Copyright::Determination?
+    def reload_determination: () -> ::Copyright::Determination?
+    def build_determination: (?untyped) -> ::Copyright::Determination
+    def create_determination: (?untyped) -> ::Copyright::Determination
+    def create_determination!: (?untyped) -> ::Copyright::Determination
+    def researcher: () -> ::User
+    def researcher=: (::User?) -> ::User?
+    def reload_researcher: () -> ::User?
+    def build_researcher: (?untyped) -> ::User
+    def create_researcher: (?untyped) -> ::User
+    def create_researcher!: (?untyped) -> ::User
+
+    module ::Copyright::Investigation::GeneratedAssociationMethods
+    end
+    include ::Copyright::Investigation::GeneratedAssociationMethods
+
+    def in_progress!: () -> bool
+    def in_progress?: () -> bool
+    def complete!: () -> bool
+    def complete?: () -> bool
+    def self.statuses: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
+    def self.in_progress: () -> ::Copyright::Investigation::ActiveRecord_Relation
+    def self.not_in_progress: () -> ::Copyright::Investigation::ActiveRecord_Relation
+    def self.complete: () -> ::Copyright::Investigation::ActiveRecord_Relation
+    def self.not_complete: () -> ::Copyright::Investigation::ActiveRecord_Relation
+
+    module ::Copyright::Investigation::GeneratedRelationMethods
+      def statuses: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
+
+      def in_progress: () -> ::Copyright::Investigation::ActiveRecord_Relation
+
+      def not_in_progress: () -> ::Copyright::Investigation::ActiveRecord_Relation
+
+      def complete: () -> ::Copyright::Investigation::ActiveRecord_Relation
+
+      def not_complete: () -> ::Copyright::Investigation::ActiveRecord_Relation
+    end
+
+    class ::Copyright::Investigation::ActiveRecord_Relation < ::ActiveRecord::Relation
+      include ::Enumerable[::Copyright::Investigation]
+      include ::Copyright::Investigation::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Copyright::Investigation, ::Integer]
+    end
+
+    class ::Copyright::Investigation::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+      include ::Enumerable[::Copyright::Investigation]
+      include ::Copyright::Investigation::GeneratedRelationMethods
+      include ::ActiveRecord::Relation::Methods[::Copyright::Investigation, ::Integer]
+
+      def build: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Copyright::Investigation
+               | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Copyright::Investigation]
+      def create: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Copyright::Investigation
+                | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Copyright::Investigation]
+      def create!: (?::ActiveRecord::Associations::CollectionProxy::_EachPair attributes) ?{ () -> untyped } -> ::Copyright::Investigation
+                 | (::Array[::ActiveRecord::Associations::CollectionProxy::_EachPair] attributes) ?{ () -> untyped } -> ::Array[::Copyright::Investigation]
+      def reload: () -> ::Array[::Copyright::Investigation]
+
+      def replace: (::Array[::Copyright::Investigation]) -> void
+      def delete: (*::Copyright::Investigation | ::Integer) -> ::Array[::Copyright::Investigation]
+      def destroy: (*::Copyright::Investigation | ::Integer) -> ::Array[::Copyright::Investigation]
+      def <<: (*::Copyright::Investigation | ::Array[::Copyright::Investigation]) -> self
+      def prepend: (*::Copyright::Investigation | ::Array[::Copyright::Investigation]) -> self
+    end
+  end
+end
+
+module ::Copyright
+end
+class ::ApplicationRecord < ::ActiveRecord::Base
+end
+class ::Copyright::AuthorResearch < ::ApplicationRecord
+end
+class ::Copyright::AuthorResearch::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+end
+class ::Copyright::Republication < ::ApplicationRecord
+end
+class ::Copyright::Republication::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+end
+class ::Copyright::RenewalSearch < ::ApplicationRecord
+end
+class ::Copyright::RenewalSearch::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+end
+class ::Copyright::CopyrightClaim < ::ApplicationRecord
+end
+class ::Copyright::CopyrightClaim::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+end
+class ::Copyright::Finding < ::ApplicationRecord
+end
+class ::Copyright::Finding::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+end
+class ::Copyright::Determination < ::ApplicationRecord
+end
+class ::User < ::ApplicationRecord
+end

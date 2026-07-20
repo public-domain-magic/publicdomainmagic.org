@@ -1,0 +1,32 @@
+# Per-claim evidence, polymorphic across the research records.
+boyce_laundry:
+  citable: boyce (Copyright::AliasFinding)
+  url: https://enterthroughthelaundry.com/jean-hugard
+  accessed_on: 2025-05-01
+
+kelmann_magicpedia:
+  citable: kelmann (Copyright::AliasFinding)
+  url: https://geniimagazine.com/magicpedia/Jean_Hugard
+  accessed_on: 2025-05-01
+
+chin_sun_loo_magicpedia:
+  citable: chin_sun_loo (Copyright::AliasFinding)
+  url: https://geniimagazine.com/magicpedia/Jean_Hugard
+  accessed_on: 2025-05-01
+
+ching_ling_foo_wikipedia:
+  citable: ching_ling_foo (Copyright::AliasFinding)
+  url: https://en.wikipedia.org/wiki/Jean_Hugard
+  accessed_on: 2025-05-01
+
+fitzroy_magicpedia:
+  citable: dariel_fitzroy (Copyright::AliasFinding)
+  url: https://geniimagazine.com/wiki/index.php?title=Dariel_Fitzkee
+  accessed_on: 2026-07-01
+
+# A second citable type: the Benson renewal record's source.
+benson_stanford:
+  citable: benson (Copyright::RenewalRecord)
+  url: https://exhibits.stanford.edu/copyrightrenewals/catalog/R410430
+  quote: She renewed the copyright on Hugard's Modern Magic Manual.
+  accessed_on: 2025-05-01

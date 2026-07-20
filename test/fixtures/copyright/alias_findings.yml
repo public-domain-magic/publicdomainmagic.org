@@ -1,0 +1,32 @@
+# Jean Hugard's researched aliases (each drives renewal searches).
+boyce:
+  author_research: hugard
+  name: John Gerard Rodney Boyce
+  kind: birth
+
+kelmann:
+  author_research: hugard
+  name: Kelmann
+  kind: stage
+
+chin_sun_loo:
+  author_research: hugard
+  name: Chin Sun Loo
+  kind: stage
+
+ching_ling_foo:
+  author_research: hugard
+  name: Ching Ling Foo
+  kind: performance
+
+# Dariel Fitzkee's researched names.
+dariel_comp_fitzkee:
+  author_research: fitzkee
+  name: Dariel Comp Fitzkee
+  kind: birth
+
+dariel_fitzroy:
+  author_research: fitzkee
+  name: Dariel Fitzroy
+  kind: legal
+  note: Legal name change.

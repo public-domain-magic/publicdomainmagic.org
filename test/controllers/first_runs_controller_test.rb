@@ -10,7 +10,7 @@ require "test_helper"
 
 class FirstRunsControllerTest < ActionDispatch::IntegrationTest
   test "new is shown when no user exists" do
-    User.destroy_all
+    erase_all_users
 
     get new_first_run_url
     assert_response :success
@@ -22,7 +22,7 @@ class FirstRunsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "create makes the first user an administrator and signs them in" do
-    User.destroy_all
+    erase_all_users
 
     assert_difference "User.count", 1 do
       post first_run_url, params: {
@@ -44,7 +44,7 @@ user: {
   end
 
   test "create re-renders on invalid input" do
-    User.destroy_all
+    erase_all_users
 
     assert_no_difference "User.count" do
       post first_run_url, params: {
@@ -73,5 +73,13 @@ user: {
     end
 
     assert_redirected_to root_url
+  end
+
+  # Simulates a fresh install against the fixture world: Copyright research
+  # is attributed to users by foreign key, so it must go before the users can.
+  private def erase_all_users
+    Copyright::Clearance.destroy_all
+    Copyright::Investigation.destroy_all
+    User.destroy_all
   end
 end

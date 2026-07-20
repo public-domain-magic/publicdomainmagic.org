@@ -1,0 +1,18 @@
+# The golden clearance: Project Gutenberg request 87848, "Cleared OK",
+# for the World Publishing 1951 copy actually digitized.
+royal_road:
+  manifestation: world_1951
+  determination: royal_road
+  researcher: kerrick
+  status: cleared
+  title: The Royal Road to Card Magic
+  language_code: en
+  publisher_name: The World Publishing Company
+  publication_city: Cleveland
+  publication_country: US
+  source_notes: Photos I took of my physical copy (title page and verso).
+  pg_request_id: "87848"
+  pg_rule_applied: "OK: Rule 6"
+  pg_ok_key: 20250510173922hugard
+  submitted_at: 2025-05-06 12:00:00
+  cleared_at: 2025-05-10 17:39:22

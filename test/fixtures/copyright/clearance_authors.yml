@@ -1,0 +1,28 @@
+# The four creators reported on clearance request 87848, in form order.
+hugard:
+  clearance: royal_road
+  position: 1
+  first_name: Jean
+  last_name: Hugard
+  role: author_creator
+
+braue:
+  clearance: royal_road
+  position: 2
+  first_name: Frederick
+  last_name: Braué
+  role: author_creator
+
+fleming:
+  clearance: royal_road
+  position: 3
+  first_name: Paul
+  last_name: Fleming
+  role: commentator
+
+rigney:
+  clearance: royal_road
+  position: 4
+  first_name: Frank
+  last_name: Rigney
+  role: illustrator

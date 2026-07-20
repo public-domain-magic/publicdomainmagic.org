@@ -1,0 +1,23 @@
+stanford_hugard:
+  investigation: royal_road
+  resource: Stanford Copyright Renewals
+  terms: Hugard
+  searched_on: 2025-05-01
+  status: clean
+  outcome: Empty result set.
+
+# Found a renewal — of a different work (see the attached renewal record).
+stanford_benson:
+  investigation: royal_road
+  resource: Stanford Copyright Renewals
+  terms: Benson, Myra
+  searched_on: 2025-05-01
+  status: found_renewal
+  outcome: One renewal found; it is of a different Hugard work.
+
+# In-progress research: planned but not yet performed.
+stanford_fitzkee:
+  investigation: trick_brain
+  resource: Stanford Copyright Renewals
+  terms: Fitzkee
+  status: planned

@@ -1,0 +1,129 @@
+# Hand-written signatures for the Copyright bounded context: the namespace
+# module and the domain constants, POROs, and methods that rbs_rails cannot
+# derive from the schema. The rest of each model's signature is generated
+# into sig/rbs_rails/.
+
+module Copyright
+  def self.table_name_prefix: () -> String
+end
+
+class Copyright::Determination < ApplicationRecord
+  BASES: Array[String]
+  PG_RULES: Hash[String, String]
+  STATUSES: Array[String]
+
+  def countdown_days: () -> Integer?
+  def pg_rule: () -> String?
+  def public_domain?: () -> bool
+end
+
+# The pre-1978 95-year publication term: computes and records when a work
+# enters the public domain.
+class Copyright::Determination::TermExpiration
+  FINAL_YEAR: Integer
+  YEARS_UNTIL_EXPIRATION: Integer
+
+  @determination: Copyright::Determination
+
+  def self.new: (Copyright::Determination determination) -> instance
+
+  # Implementation detail behind self.new; steep needs it to check the body.
+  def initialize: (Copyright::Determination determination) -> void
+
+  def applicable?: () -> bool
+  def apply!: () -> bool
+  def expires_on: () -> Date?
+
+  private def year: () -> Integer?
+end
+
+class Copyright::Clearance < ApplicationRecord
+  MAX_AUTHORS: Integer
+  MAX_PUBLISHINGS: Integer
+  MAX_PAGE_SCANS: Integer
+  PAGE_SCAN_CONTENT_TYPES: Array[String]
+  PAGE_SCAN_MAX_BYTES: Integer
+  STATUSES: Array[String]
+
+  private def authors_fit_pg_form: () -> void
+  private def publishings_fit_pg_form: () -> void
+  private def page_scans_fit_pg_form: () -> void
+end
+
+class Copyright::ClearanceAuthor < ApplicationRecord
+  ROLES: Hash[Symbol, String]
+end
+
+class Copyright::ClearancePublishing < ApplicationRecord
+  KINDS: Hash[Symbol, String]
+end
+
+class Copyright::Investigation < ApplicationRecord
+  STATUSES: Array[String]
+
+  def report: () -> Copyright::Investigation::Report
+end
+
+# Any research record that carries per-claim evidence. Modelled as an
+# interface so the report can cite across record types structurally.
+interface _Cited
+  def citations: () -> Copyright::Citation::ActiveRecord_Associations_CollectionProxy
+end
+
+# Renders an investigation's structured research records as the markdown
+# submission document Project Gutenberg receives.
+class Copyright::Investigation::Report
+  ACCESS_CAVEATS: Hash[String, String]
+  STATUS_MARKERS: Hash[String, String]
+  US_STATUS_PHRASES: Hash[String, String]
+
+  @investigation: Copyright::Investigation
+
+  def self.new: (Copyright::Investigation investigation) -> instance
+
+  # Implementation detail behind self.new; steep needs it to check the body.
+  def initialize: (Copyright::Investigation investigation) -> void
+
+  def to_markdown: () -> String
+
+  private def preamble: () -> Array[String]
+  private def basic_information: () -> Array[String]
+  private def biographical_research: () -> Array[String]
+  private def author_research_lines: (Copyright::AuthorResearch research) -> Array[String]
+  private def vital_dates: (Copyright::AuthorResearch research) -> String
+  private def alias_lines: (Copyright::AuthorResearch research) -> Array[String]
+  private def heir_lines: (Copyright::AuthorResearch research) -> Array[String]
+  private def copyright_claim_lines: () -> Array[String]
+  private def bibliographical_research: () -> Array[String]
+  private def republication_lines: (Copyright::Republication republication) -> Array[String]
+  private def renewal_research: () -> Array[String]
+  private def renewal_search_lines: (Copyright::RenewalSearch search) -> Array[String]
+  private def renewal_record_text: (Copyright::RenewalRecord record) -> String
+  private def applies_text: (Copyright::RenewalRecord record) -> String
+  private def findings_for: (String section) -> Array[String]
+  private def role_text: (Copyright::AuthorResearch research) -> String
+  private def citation_suffix: (_Cited record) -> String
+  private def determination: () -> Copyright::Determination
+  private def work: () -> Catalog::Work
+  private def investigation: () -> Copyright::Investigation
+end
+
+class Copyright::AuthorResearch < ApplicationRecord
+  US_STATUSES: Array[String]
+end
+
+class Copyright::AliasFinding < ApplicationRecord
+  KINDS: Array[String]
+end
+
+class Copyright::Republication < ApplicationRecord
+  ACCESS_STATUSES: Array[String]
+end
+
+class Copyright::RenewalSearch < ApplicationRecord
+  STATUSES: Array[String]
+end
+
+class Copyright::Finding < ApplicationRecord
+  SECTIONS: Array[String]
+end

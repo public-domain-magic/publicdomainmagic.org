@@ -1,0 +1,8 @@
+# An explicit negative finding — documents research completeness and must
+# appear in the report verbatim.
+royal_road_serial:
+  investigation: royal_road
+  section: bibliographical
+  question: Was the item part of a serial (i.e., in a magazine)?
+  answer: I found no evidence that it was part of a serial.
+  position: 1
