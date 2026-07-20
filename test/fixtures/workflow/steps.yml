@@ -1,0 +1,115 @@
+# The Royal Road to Card Magic: research and clearance done, scanning next.
+royal_road_discovery:
+  project: royal_road
+  kind: discovery
+  status: done
+  actor: kerrick
+  happened_on: 2025-03-01
+
+royal_road_bibliographic_research:
+  project: royal_road
+  kind: bibliographic_research
+  status: done
+  actor: kerrick
+  happened_on: 2025-04-15
+
+royal_road_source_survey:
+  project: royal_road
+  kind: source_survey
+  status: done
+  actor: kerrick
+  happened_on: 2025-04-20
+
+royal_road_copyright_clearance:
+  project: royal_road
+  kind: copyright_clearance
+  status: done
+  actor: kerrick
+  happened_on: 2025-05-10
+  note: "PG clearance request 87848: Cleared OK, Rule 6."
+
+royal_road_scans:
+  project: royal_road
+  kind: scans
+  status: in_progress
+  actor: kerrick
+  note: Book scanner ordered.
+
+royal_road_transcription:
+  project: royal_road
+  kind: transcription
+  status: todo
+
+royal_road_text_pipeline:
+  project: royal_road
+  kind: text_pipeline
+  status: todo
+
+royal_road_publication:
+  project: royal_road
+  kind: publication
+  status: todo
+
+royal_road_print_collectible:
+  project: royal_road
+  kind: print_collectible
+  status: todo
+
+# Budget softcover never applies here (protected-exposure title).
+royal_road_print_budget:
+  project: royal_road
+  kind: print_budget
+  status: skipped
+
+# Greater Magic: discovered, then waiting on the 2034 countdown.
+greater_magic_discovery:
+  project: greater_magic
+  kind: discovery
+  status: done
+  actor: kerrick
+  happened_on: 2026-06-01
+
+greater_magic_bibliographic_research:
+  project: greater_magic
+  kind: bibliographic_research
+  status: todo
+
+greater_magic_source_survey:
+  project: greater_magic
+  kind: source_survey
+  status: todo
+
+greater_magic_copyright_clearance:
+  project: greater_magic
+  kind: copyright_clearance
+  status: todo
+
+greater_magic_scans:
+  project: greater_magic
+  kind: scans
+  status: todo
+
+greater_magic_transcription:
+  project: greater_magic
+  kind: transcription
+  status: todo
+
+greater_magic_text_pipeline:
+  project: greater_magic
+  kind: text_pipeline
+  status: todo
+
+greater_magic_publication:
+  project: greater_magic
+  kind: publication
+  status: todo
+
+greater_magic_print_collectible:
+  project: greater_magic
+  kind: print_collectible
+  status: todo
+
+greater_magic_print_budget:
+  project: greater_magic
+  kind: print_budget
+  status: todo

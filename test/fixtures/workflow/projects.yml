@@ -1,0 +1,9 @@
+# Mid-pipeline: cleared, awaiting scans (see steps.yml).
+royal_road:
+  work: royal_road
+  lead: kerrick
+
+# Waiting out the copyright countdown — nothing to do but track it.
+greater_magic:
+  work: greater_magic
+  lead: kerrick

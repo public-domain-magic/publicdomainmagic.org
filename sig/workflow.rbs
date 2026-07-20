@@ -1,0 +1,45 @@
+# Hand-written signatures for the Workflow bounded context: the namespace
+# module and the domain constants and methods that rbs_rails cannot derive
+# from the schema — including the steps association's write API, declared on
+# the collection proxy the extension block enriches. The rest of each model's
+# signature is generated into sig/rbs_rails/.
+
+module Workflow
+  def self.table_name_prefix: () -> String
+end
+
+class Workflow::Project < ApplicationRecord
+  def self.start: (work: Catalog::Work, lead: User) -> Workflow::Project
+
+  def downloadable?: () -> bool
+  def published?: () -> bool
+  def ready_to_publish?: () -> bool
+
+  private def determination_public_domain?: () -> bool
+end
+
+# The kind-keyed lookup the steps write API relies on. Modelled as an
+# interface so the extension's self-type does not create a cycle with the
+# collection proxy that includes it.
+interface _StepFinder
+  def find_by!: (*untyped) -> Workflow::Step
+end
+
+# The ledger's write API, mixed into the steps association proxy.
+module Workflow::Project::StepsExtension : _StepFinder
+  def []: (String | Symbol kind) -> Workflow::Step
+  def complete: (String | Symbol kind, ?by: User?, ?note: String?) -> Workflow::Step
+end
+
+class Workflow::Step::ActiveRecord_Associations_CollectionProxy
+  include Workflow::Project::StepsExtension
+end
+
+class Workflow::Step < ApplicationRecord
+  KINDS: Array[String]
+  STATUSES: Array[String]
+end
+
+class Workflow::Resource < ApplicationRecord
+  KINDS: Array[String]
+end

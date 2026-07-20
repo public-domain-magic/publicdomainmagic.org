@@ -28,6 +28,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   document generated as a report of that data.
 - Project Gutenberg clearance requests tracked per digitized edition,
   validated against the copy.pglaf.org form limits, including page scans.
+- Workflow projects tracking each book's journey as a step ledger
+  (discovery through publication and print editions), with per-step actor
+  and date, external resource links (scans, transcripts, the book's text
+  repository), and readiness checks that read the Copyright context.
 
 ### Changed
 

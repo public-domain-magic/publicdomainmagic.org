@@ -76,10 +76,12 @@ user: {
   end
 
   # Simulates a fresh install against the fixture world: Copyright research
-  # is attributed to users by foreign key, so it must go before the users can.
+  # and Workflow projects are attributed to users by foreign key, so they
+  # must go before the users can.
   private def erase_all_users
     Copyright::Clearance.destroy_all
     Copyright::Investigation.destroy_all
+    Workflow::Project.destroy_all
     User.destroy_all
   end
 end

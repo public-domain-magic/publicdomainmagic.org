@@ -1,0 +1,12 @@
+# The book's text repository — an opaque locator, not necessarily https.
+royal_road_text_repo:
+  project: royal_road
+  kind: text_repo
+  url: git@github.com:publicdomainmagic/royal-road-to-card-magic.git
+  note: PG and SE spelling rules live on branches in the repo.
+
+greater_magic_listing:
+  project: greater_magic
+  kind: other
+  url: https://www.abebooks.com/servlet/SearchResults?tn=greater+magic
+  note: Copy acquired, awaiting scan.

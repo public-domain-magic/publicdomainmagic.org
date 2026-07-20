@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_20_004847) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_20_022255) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -436,6 +436,43 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_20_004847) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  create_table "workflow_projects", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "edition_manifestation_id"
+    t.integer "lead_id", null: false
+    t.text "notes"
+    t.datetime "updated_at", null: false
+    t.integer "work_id", null: false
+    t.index ["edition_manifestation_id"], name: "index_workflow_projects_on_edition_manifestation_id"
+    t.index ["lead_id"], name: "index_workflow_projects_on_lead_id"
+    t.index ["work_id"], name: "index_workflow_projects_on_work_id", unique: true
+  end
+
+  create_table "workflow_resources", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "kind", null: false
+    t.string "note"
+    t.integer "project_id", null: false
+    t.datetime "updated_at", null: false
+    t.string "url", null: false
+    t.index ["project_id", "kind"], name: "index_workflow_resources_text_repo_uniqueness", unique: true, where: "kind = 'text_repo'"
+    t.index ["project_id"], name: "index_workflow_resources_on_project_id"
+  end
+
+  create_table "workflow_steps", force: :cascade do |t|
+    t.integer "actor_id"
+    t.datetime "created_at", null: false
+    t.date "happened_on"
+    t.string "kind", null: false
+    t.text "note"
+    t.integer "project_id", null: false
+    t.string "status", null: false
+    t.datetime "updated_at", null: false
+    t.index ["actor_id"], name: "index_workflow_steps_on_actor_id"
+    t.index ["project_id", "kind"], name: "index_workflow_steps_on_project_id_and_kind", unique: true
+    t.index ["project_id"], name: "index_workflow_steps_on_project_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "catalog_contributions", "catalog_agents", column: "agent_id"
@@ -477,4 +514,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_20_004847) do
   add_foreign_key "roles", "users"
   add_foreign_key "roles", "users", column: "granted_by_id"
   add_foreign_key "sessions", "users"
+  add_foreign_key "workflow_projects", "catalog_manifestations", column: "edition_manifestation_id"
+  add_foreign_key "workflow_projects", "catalog_works", column: "work_id"
+  add_foreign_key "workflow_projects", "users", column: "lead_id"
+  add_foreign_key "workflow_resources", "workflow_projects", column: "project_id"
+  add_foreign_key "workflow_steps", "users", column: "actor_id"
+  add_foreign_key "workflow_steps", "workflow_projects", column: "project_id"
 end
