@@ -1,0 +1,13 @@
+# Hand-written signatures for the Magic bounded context: the namespace module
+# and the domain constants and methods that rbs_rails cannot derive from the
+# schema. The rest of each model's signature is generated into sig/rbs_rails/.
+
+module Magic
+  def self.table_name_prefix: () -> String
+end
+
+class Magic::Listing < ApplicationRecord
+  EXPOSURES: Array[String]
+
+  def accessible_to?: (User? user) -> bool
+end

@@ -1,0 +1,11 @@
+royal_road_cards:
+  tag: cards
+  taggable: royal_road (Magic::Listing)
+
+royal_road_sleights:
+  tag: sleights
+  taggable: royal_road (Magic::Listing)
+
+discoverie_cups_and_balls:
+  tag: cups_and_balls
+  taggable: discoverie (Magic::Listing)

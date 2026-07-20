@@ -1,0 +1,15 @@
+royal_road:
+  work: royal_road
+  exposure: public
+  featured: false
+
+# Protected + featured: the countdown/commerce case.
+greater_magic:
+  work: greater_magic
+  exposure: protected
+  featured: true
+
+discoverie:
+  work: discoverie
+  exposure: public
+  featured: false

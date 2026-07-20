@@ -55,7 +55,7 @@ royal_road_print_collectible:
   kind: print_collectible
   status: todo
 
-# Budget softcover never applies here (protected-exposure title).
+# Budget softcover was ruled out for this title.
 royal_road_print_budget:
   project: royal_road
   kind: print_budget

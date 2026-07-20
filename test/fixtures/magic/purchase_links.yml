@@ -1,0 +1,6 @@
+# Affiliate/dealer commerce for a work still counting down to public domain.
+greater_magic_dealer:
+  listing: greater_magic
+  label: Buy a used copy (dealer)
+  url: https://www.abebooks.com/servlet/SearchResults?tn=greater+magic
+  position: 1

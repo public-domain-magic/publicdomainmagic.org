@@ -1,0 +1,15 @@
+cards:
+  name: cards
+
+sleights:
+  name: sleights
+
+# The Group 3 bridge: tag search reaches works whose bibliographic subjects
+# match even before they're tagged.
+cups_and_balls:
+  name: cups and balls
+  concept: cups_and_balls
+
+# Normalization keeps the hyphen, lowercases, strips.
+self_working:
+  name: self-working

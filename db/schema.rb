@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_20_022255) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_20_023420) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -404,6 +404,46 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_20_022255) do
     t.index ["investigation_id"], name: "index_copyright_republications_on_investigation_id"
   end
 
+  create_table "magic_listings", force: :cascade do |t|
+    t.text "blurb"
+    t.datetime "created_at", null: false
+    t.string "exposure", default: "public", null: false
+    t.boolean "featured", default: false, null: false
+    t.datetime "updated_at", null: false
+    t.integer "work_id", null: false
+    t.index ["work_id"], name: "index_magic_listings_on_work_id", unique: true
+  end
+
+  create_table "magic_purchase_links", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "label", null: false
+    t.integer "listing_id", null: false
+    t.integer "position"
+    t.datetime "updated_at", null: false
+    t.string "url", null: false
+    t.index ["listing_id"], name: "index_magic_purchase_links_on_listing_id"
+  end
+
+  create_table "magic_taggings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "tag_id", null: false
+    t.integer "taggable_id", null: false
+    t.string "taggable_type", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id", "taggable_type", "taggable_id"], name: "index_magic_taggings_uniqueness", unique: true
+    t.index ["tag_id"], name: "index_magic_taggings_on_tag_id"
+    t.index ["taggable_type", "taggable_id"], name: "index_magic_taggings_on_taggable"
+  end
+
+  create_table "magic_tags", force: :cascade do |t|
+    t.integer "concept_id"
+    t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.datetime "updated_at", null: false
+    t.index ["concept_id"], name: "index_magic_tags_on_concept_id"
+    t.index ["name"], name: "index_magic_tags_on_name", unique: true
+  end
+
   create_table "roles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "granted_by_id"
@@ -511,6 +551,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_20_022255) do
   add_foreign_key "copyright_renewal_records", "copyright_renewal_searches", column: "renewal_search_id"
   add_foreign_key "copyright_renewal_searches", "copyright_investigations", column: "investigation_id"
   add_foreign_key "copyright_republications", "copyright_investigations", column: "investigation_id"
+  add_foreign_key "magic_listings", "catalog_works", column: "work_id"
+  add_foreign_key "magic_purchase_links", "magic_listings", column: "listing_id"
+  add_foreign_key "magic_taggings", "magic_tags", column: "tag_id"
+  add_foreign_key "magic_tags", "catalog_concepts", column: "concept_id"
   add_foreign_key "roles", "users"
   add_foreign_key "roles", "users", column: "granted_by_id"
   add_foreign_key "sessions", "users"

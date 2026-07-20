@@ -32,6 +32,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   (discovery through publication and print editions), with per-step actor
   and date, external resource links (scans, transcripts, the book's text
   repository), and readiness checks that read the Copyright context.
+- Public book listings with a download access gate: public books are open to
+  everyone, while protected books (whose methods working magicians still rely
+  on) require the magician or librarian capability.
+- Purchase links on listings for commerce and countdown affiliate hooks.
+- Flat tags for classifying listings, optionally bridged to catalog subjects.
 
 ### Changed
 
