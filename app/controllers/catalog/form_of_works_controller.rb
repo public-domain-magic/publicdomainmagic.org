@@ -8,6 +8,7 @@
 
 # Catalog administration for the controlled forms a work may take (novel, poem, treatise, and the like).
 class Catalog::FormOfWorksController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_form_of_work, only: %i[show edit update destroy]
 
   # GET /catalog/form_of_works or /catalog/form_of_works.json

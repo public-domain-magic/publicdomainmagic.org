@@ -1,0 +1,11 @@
+<% content_for :page_title, "Books tagged “#{@tag.name}”" %>
+
+<p><%= link_to "← Back to the library", books_path %></p>
+
+<% if @listings.any? %>
+  <ol>
+    <%= render partial: "books/book", collection: @listings, as: :book %>
+  </ol>
+<% else %>
+  <p>No books carry this tag yet.</p>
+<% end %>

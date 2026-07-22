@@ -8,6 +8,7 @@
 
 # Catalog administration for the series that group related works.
 class Catalog::SeriesController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_series, only: %i[show edit update destroy]
 
   # GET /catalog/series or /catalog/series.json

@@ -1,0 +1,111 @@
+<% content_for :page_title, @listing.work.title %>
+
+<p><%= link_to "← Back to the library", books_path %></p>
+
+<article id="<%= dom_id(@listing) %>">
+  <% if @listing.blurb.present? %>
+    <p><%= @listing.blurb %></p>
+  <% end %>
+
+  <dl>
+    <% creators = book_creators(@listing) %>
+    <dt>Created by</dt>
+    <dd><%= creators.presence || "Unknown" %></dd>
+
+    <% if @listing.work.date.present? %>
+      <dt>Date of work</dt>
+      <dd><%= @listing.work.date %></dd>
+    <% end %>
+
+    <% if @listing.work.form_of_work %>
+      <dt>Form</dt>
+      <dd><%= @listing.work.form_of_work.name %></dd>
+    <% end %>
+  </dl>
+
+  <section aria-labelledby="rights-heading">
+    <h2 id="rights-heading">Copyright status</h2>
+    <% if @determination.nil? %>
+      <p>Copyright status not yet determined.</p>
+    <% elsif @determination.public_domain? %>
+      <p>
+        In the US public domain<% if (pd = @determination.public_domain_on) %>
+        since <time datetime="<%= pd.iso8601 %>"><%= pd.strftime("%B %-d, %Y") %></time><% end %>.
+      </p>
+    <% elsif (pd = @determination.public_domain_on) %>
+      <p>
+        Enters the US public domain on
+        <time datetime="<%= pd.iso8601 %>"><%= pd.strftime("%B %-d, %Y") %></time><%
+          if (days = @determination.countdown_days) %> &mdash; <%= pluralize(days, "day") %> to go<% end %>.
+      </p>
+    <% else %>
+      <p>Under US copyright; a public-domain date has not been computed yet.</p>
+    <% end %>
+  </section>
+
+  <% editions = @listing.work.expressions.flat_map(&:manifestations).uniq %>
+  <% if editions.any? %>
+    <section aria-labelledby="editions-heading">
+      <h2 id="editions-heading">Editions</h2>
+      <details>
+        <summary><%= pluralize editions.size, "known edition" %></summary>
+        <ul>
+          <% editions.each do |edition| %>
+            <li>
+              <%= [ edition.edition_or_issue, edition.place_of_publication, edition.date_of_publication&.year ].compact_blank.join(" · ") %>
+              (<%= edition.carrier.name %>)
+              <% publishers = edition.contributions.select { |contribution| contribution.role == "published" }.filter_map { |contribution| contribution.agent.name } %>
+              <% if publishers.any? %>&mdash; <%= publishers.to_sentence %><% end %>
+            </li>
+          <% end %>
+        </ul>
+      </details>
+    </section>
+  <% end %>
+
+  <% if @listing.tags.any? %>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Topics</h2>
+      <ul>
+        <% @listing.tags.each do |tag| %>
+          <li><%= link_to tag.name, tag_path(tag) %></li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <section aria-labelledby="get-heading">
+    <h2 id="get-heading">Get this book</h2>
+    <% if @listing.accessible_to?(Current.user) %>
+      <% reader_kinds = %w[ pdm_ebook pg_ebook pg_transcript hathitrust_scans archive_scans google_books_scans ] %>
+      <% reads = @project ? @project.resources.select { |resource| reader_kinds.include?(resource.kind) } : [] %>
+      <% if reads.any? %>
+        <ul>
+          <% reads.each do |resource| %>
+            <li>
+              <%= link_to resource.kind.humanize, resource.url, rel: "nofollow noopener" %><% if resource.note.present? %> &mdash; <%= resource.note %><% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>This book isn&rsquo;t available to download yet. Check back as it moves through the pipeline.</p>
+      <% end %>
+    <% else %>
+      <p>
+        This title exposes methods working magicians still rely on, so access is limited to
+        the magic community. <%= link_to "Sign in", new_session_path %> if you have access.
+      </p>
+    <% end %>
+  </section>
+
+  <% if @listing.purchase_links.any? %>
+    <aside aria-labelledby="buy-heading">
+      <h2 id="buy-heading">Where to buy</h2>
+      <ul>
+        <% @listing.purchase_links.each do |purchase_link| %>
+          <li><%= link_to purchase_link.label, purchase_link.url, rel: "nofollow noopener sponsored" %></li>
+        <% end %>
+      </ul>
+    </aside>
+  <% end %>
+</article>

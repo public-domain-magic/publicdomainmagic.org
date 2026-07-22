@@ -1,0 +1,15 @@
+## Isolated seed data for Seeds::LoaderTest (see catalog.yml). Exercises a
+## listing, a tag, and a polymorphic tagging onto that listing.
+
+listings:
+  spellbook:
+    work: spellbook
+    exposure: public
+    featured: false
+    blurb: A grimoire that exists only in the test suite.
+
+tags:
+  witchcraft: { name: test-witchcraft }
+
+taggings:
+  - { tag: witchcraft, taggable: spellbook (Magic::Listing) }

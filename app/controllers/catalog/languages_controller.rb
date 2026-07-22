@@ -8,6 +8,7 @@
 
 # Catalog administration for the languages an expression is realized in.
 class Catalog::LanguagesController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_language, only: %i[show edit update destroy]
 
   # GET /catalog/languages or /catalog/languages.json

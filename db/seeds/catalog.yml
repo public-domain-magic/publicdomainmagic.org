@@ -1,0 +1,123 @@
+## Catalog (FRBR/WEMI) seed data for the launch corpus — real bibliography for
+## the three already-researched titles. Labels are resolved to records by
+## Seeds::Loader; join rows (embodiments, contributions, subjects) are lists
+## because nothing references them. This file is data, not fixtures: it is
+## loaded through the model layer by `bin/rails db:seed`.
+
+form_of_works:
+  manual: { name: Manual }
+  treatise: { name: Treatise }
+
+form_of_expressions:
+  text: { name: Text }
+
+languages:
+  english: { name: English, code: eng }
+
+carriers:
+  print: { name: Print }
+
+series:
+  dover_occult: { name: Dover Occult and Esoteric }
+
+intended_audiences:
+  magicians: { name: Magicians }
+
+agents:
+  hugard: { name: Jean Hugard, kind: person, birth_date: "1871", death_date: "1959" }
+  braue: { name: Frederick Braue, kind: person, birth_date: "1906", death_date: "1962" }
+  rigney: { name: Francis Rigney, kind: person }
+  scot: { name: Reginald Scot, kind: person, birth_date: "1538", death_date: "1599" }
+  harper_brothers: { name: Harper & Brothers, kind: corporate_body }
+  world_publishing: { name: The World Publishing Company, kind: corporate_body }
+
+nomens:
+  boyce: { agent: hugard, name: John Gerard Rodney Boyce, kind: birth }
+  hugarde: { agent: hugard, name: Jean Hugarde, kind: spelling }
+  kelmann: { agent: hugard, name: Jack Kelmann, kind: stage }
+  chin_sun_loo: { agent: hugard, name: Chin Sun Loo, kind: stage }
+
+works:
+  royal_road:
+    title: The Royal Road to Card Magic
+    date: "1948"
+    form_of_work: manual
+    intended_audiences: [magicians]
+  discoverie:
+    title: The Discoverie of Witchcraft
+    date: "1584"
+    form_of_work: treatise
+  greater_magic:
+    title: Greater Magic
+    date: "1938"
+    form_of_work: manual
+
+expressions:
+  royal_road_text:
+    work: royal_road
+    title: The Royal Road to Card Magic
+    date: "1948"
+    language: english
+    form_of_expression: text
+  discoverie_1584_text:
+    work: discoverie
+    title: The Discoverie of Witchcraft
+    date: "1584"
+    language: english
+    form_of_expression: text
+  discoverie_1665_text:
+    work: discoverie
+    title: The Discoverie of Witchcraft
+    date: "1665"
+    language: english
+    form_of_expression: text
+
+manifestations:
+  harper_1948:
+    title: The Royal Road to Card Magic
+    statement_of_responsibility: Jean Hugard and Frederick Braue
+    place_of_publication: New York
+    date_of_publication: "1948-01-01"
+    carrier: print
+  world_1951:
+    title: The Royal Road to Card Magic
+    statement_of_responsibility: Jean Hugard and Frederick Braue
+    place_of_publication: Cleveland
+    date_of_publication: "1951-01-01"
+    carrier: print
+  discoverie_1584:
+    title: The Discoverie of Witchcraft
+    statement_of_responsibility: Reginald Scot
+    place_of_publication: London
+    date_of_publication: "1584-01-01"
+    carrier: print
+  discoverie_facsimile:
+    title: The Discoverie of Witchcraft
+    statement_of_responsibility: Reginald Scot
+    edition_or_issue: Facsimile reprint
+    place_of_publication: New York
+    date_of_publication: "1972-01-01"
+    carrier: print
+    series: dover_occult
+
+embodiments:
+  - { expression: royal_road_text, manifestation: harper_1948, position: 1 }
+  - { expression: royal_road_text, manifestation: world_1951, position: 1 }
+  - { expression: discoverie_1584_text, manifestation: discoverie_1584, position: 1 }
+  - { expression: discoverie_1584_text, manifestation: discoverie_facsimile, position: 1 }
+
+contributions:
+  - { agent: hugard, contributable: royal_road (Catalog::Work), role: created }
+  - { agent: braue, contributable: royal_road (Catalog::Work), role: created }
+  - { agent: rigney, contributable: royal_road_text (Catalog::Expression), role: illustrated }
+  - { agent: harper_brothers, contributable: harper_1948 (Catalog::Manifestation), role: published }
+  - { agent: world_publishing, contributable: world_1951 (Catalog::Manifestation), role: published }
+  - { agent: scot, contributable: discoverie (Catalog::Work), role: created }
+
+concepts:
+  cups_and_balls: { name: Cups and balls }
+  card_magic: { name: Card magic }
+
+subjects:
+  - { work: royal_road, subject: card_magic (Catalog::Concept) }
+  - { work: discoverie, subject: cups_and_balls (Catalog::Concept) }

@@ -20,4 +20,10 @@ class Magic::Tag < ApplicationRecord
   normalizes :name, with: -> (n) { n.strip.downcase }
 
   validates :name, presence: true, uniqueness: true
+
+  # A slug of the id and the tag name for readable URLs; lookups read only the
+  # leading id (ActiveRecord casts it), so the name portion can drift freely.
+  def to_param
+    [id, name.to_s.parameterize].join("-")
+  end
 end

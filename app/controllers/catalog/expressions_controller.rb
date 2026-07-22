@@ -8,6 +8,7 @@
 
 # Catalog administration for FRBR Expressions — a realization of a work in words, sound, or image.
 class Catalog::ExpressionsController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_expression, only: %i[show edit update destroy]
 
   # GET /catalog/expressions or /catalog/expressions.json

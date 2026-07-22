@@ -1,0 +1,43 @@
+## Magic listings, commerce hooks, and tags for the launch corpus — the public
+## library's own presentation and access data. Loaded through the model layer
+## by Seeds::Loader.
+
+listings:
+  royal_road:
+    work: royal_road
+    exposure: public
+    featured: false
+    blurb: >-
+      Jean Hugard and Frederick Braué's graded course in sleight-of-hand with
+      a pack of cards — the classic first book of card magic.
+  greater_magic:
+    work: greater_magic
+    exposure: protected
+    featured: true
+    blurb: >-
+      John Northern Hilliard's monumental survey of conjuring. Still under US
+      copyright term until 2034 — track the countdown, buy a copy meanwhile.
+  discoverie:
+    work: discoverie
+    exposure: public
+    featured: false
+    blurb: >-
+      Reginald Scot's 1584 exposé of the conjurer's craft — the earliest
+      substantial English account of how the tricks are done.
+
+purchase_links:
+  - listing: greater_magic
+    label: Buy a used copy (dealer)
+    url: https://www.abebooks.com/servlet/SearchResults?tn=greater+magic
+    position: 1
+
+tags:
+  cards: { name: cards }
+  sleights: { name: sleights }
+  cups_and_balls: { name: cups and balls, concept: cups_and_balls }
+  self_working: { name: self-working }
+
+taggings:
+  - { tag: cards, taggable: royal_road (Magic::Listing) }
+  - { tag: sleights, taggable: royal_road (Magic::Listing) }
+  - { tag: cups_and_balls, taggable: discoverie (Magic::Listing) }

@@ -8,6 +8,7 @@
 
 # Catalog administration for the controlled forms an expression may take (spoken word, notated music, and the like).
 class Catalog::FormOfExpressionsController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_form_of_expression, only: %i[show edit update destroy]
 
   # GET /catalog/form_of_expressions or /catalog/form_of_expressions.json

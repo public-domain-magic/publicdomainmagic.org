@@ -8,6 +8,7 @@
 
 # Catalog administration for FRBR Works — a distinct intellectual or artistic creation.
 class Catalog::WorksController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_work, only: %i[show edit update destroy]
 
   # GET /catalog/works or /catalog/works.json

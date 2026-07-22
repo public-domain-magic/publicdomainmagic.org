@@ -10,5 +10,7 @@ target :app do
   check "app"
   check "lib"
 
+  library "psych" # YAML, for the db/seeds loader
+
   repo_path ".gem_rbs_collection"
 end

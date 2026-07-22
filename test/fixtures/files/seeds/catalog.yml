@@ -1,0 +1,19 @@
+## Isolated seed data for Seeds::LoaderTest — deliberately distinct from both
+## the real db/seeds corpus and the test fixtures, so the loader's effect is
+## observable. Exercises lookups, agents, a work with a creator contribution,
+## and the polymorphic reference syntax.
+
+form_of_works:
+  grimoire: { name: Test Grimoire Form }
+
+agents:
+  merlin: { name: Test Merlin, kind: person }
+
+works:
+  spellbook:
+    title: A Test Grimoire
+    date: "1600"
+    form_of_work: grimoire
+
+contributions:
+  - { agent: merlin, contributable: spellbook (Catalog::Work), role: created }

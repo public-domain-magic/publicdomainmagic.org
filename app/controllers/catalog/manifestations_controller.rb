@@ -8,6 +8,7 @@
 
 # Catalog administration for FRBR Manifestations — a published embodiment of an expression.
 class Catalog::ManifestationsController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_manifestation, only: %i[show edit update destroy]
 
   # GET /catalog/manifestations or /catalog/manifestations.json

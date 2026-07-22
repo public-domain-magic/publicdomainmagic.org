@@ -1,0 +1,38 @@
+# Hand-written signatures for the public library web layer: the read-only Books
+# and Tags controllers, the Librarian back-office guard, and their helpers.
+# Action methods return void because Rails ignores their return value.
+
+# The self-type binds the guard's instance method to a controller so its body
+# can reach +head+ and +Current+.
+module LibrarianAccess : ActionController::Base
+  extend ActiveSupport::Concern
+
+  def ensure_can_catalog: () -> void
+end
+
+class PagesController < ApplicationController
+  def index: () -> void
+  def about: () -> void
+  def about_our_goals: () -> void
+  def about_exposure: () -> void
+  def about_dual_license: () -> void
+  def accessibility: () -> void
+  def contribute: () -> void
+  def newsletter: () -> void
+end
+
+class BooksController < ApplicationController
+  def index: () -> void
+  def show: () -> void
+end
+
+class TagsController < ApplicationController
+  def show: () -> void
+end
+
+module BooksHelper
+  def book_creators: (Magic::Listing listing) -> String
+end
+
+module TagsHelper
+end

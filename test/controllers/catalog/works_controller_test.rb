@@ -57,4 +57,16 @@ class Catalog::WorksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to catalog_works_url
   end
+
+  test "a signed-in visitor without the librarian capability is forbidden" do
+    sign_in :visitor
+    get catalog_works_url
+    assert_response :forbidden
+  end
+
+  test "a librarian may catalog" do
+    # kerrick holds the librarian role (see roles.yml); the setup signs them in.
+    get new_catalog_work_url
+    assert_response :success
+  end
 end

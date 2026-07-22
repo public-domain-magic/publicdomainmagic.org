@@ -6,8 +6,25 @@ module Magic
   def self.table_name_prefix: () -> String
 end
 
+module Magic::Listing::GeneratedRelationMethods
+  def browsable: () -> Magic::Listing::ActiveRecord_Relation
+  def with_book_details: () -> Magic::Listing::ActiveRecord_Relation
+  def matching: (String? query) -> Magic::Listing::ActiveRecord_Relation
+  def tagged_with: (Magic::Tag tag) -> Magic::Listing::ActiveRecord_Relation
+end
+
 class Magic::Listing < ApplicationRecord
   EXPOSURES: Array[String]
 
+  def self.browsable: () -> Magic::Listing::ActiveRecord_Relation
+  def self.with_book_details: () -> Magic::Listing::ActiveRecord_Relation
+  def self.matching: (String? query) -> Magic::Listing::ActiveRecord_Relation
+  def self.tagged_with: (Magic::Tag tag) -> Magic::Listing::ActiveRecord_Relation
+
+  def to_param: () -> String
   def accessible_to?: (User? user) -> bool
+end
+
+class Magic::Tag < ApplicationRecord
+  def to_param: () -> String
 end

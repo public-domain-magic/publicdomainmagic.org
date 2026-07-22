@@ -8,6 +8,7 @@
 
 # Catalog administration for RDA carrier types — the physical medium a manifestation is issued on.
 class Catalog::CarriersController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_carrier, only: %i[show edit update destroy]
 
   # GET /catalog/carriers or /catalog/carriers.json

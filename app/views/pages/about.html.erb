@@ -1,0 +1,18 @@
+<%= content_for :page_title, raw("About #{pdm_logotype}") %>
+
+<p><%= pdm_logotype %> is a volunteer-driven project that catalogs books about magic and the allied arts, researches their <abbr title="United States">U.S.</abbr> copyright status, and produces new editions of public domain ebooks that are lovingly formatted and free of cost.</p>
+
+<h3>More Information</h3>
+
+<ul>
+  <li>
+    <%= link_to about_our_goals_path do %>
+      <%= pdm_logotype %>’s goals, and what we do to achieve them
+    <% end %>
+  </li>
+  <li>
+    <%= link_to about_exposure_path do %>
+    On whether <%= pdm_logotype %>’s efforts qualify as exposure to the public
+    <% end %>
+  </li>
+</ul>

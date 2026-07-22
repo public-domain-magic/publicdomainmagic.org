@@ -1,0 +1,10 @@
+## Isolated seed data for Seeds::LoaderTest (see catalog.yml).
+
+determinations:
+  spellbook:
+    work: spellbook
+    status: determined
+    basis: term_expired
+    first_publication_year: "1600"
+    first_publication_country: GB
+    public_domain_on: "1700-01-01"

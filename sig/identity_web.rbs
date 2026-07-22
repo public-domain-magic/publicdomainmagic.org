@@ -63,10 +63,6 @@ class FirstRunsController < ApplicationController
   def user_params: () -> ::ActionController::Parameters
 end
 
-class PagesController < ApplicationController
-  def home: () -> void
-end
-
 class PasswordsMailer < ApplicationMailer
   def self.reset: (User user) -> ::ActionMailer::MessageDelivery
   def reset: (User user) -> ::Mail::Message

@@ -9,27 +9,30 @@
 require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
-  test "home is reachable without signing in" do
+  test "the home page is the root and needs no sign-in" do
     get root_url
     assert_response :success
+    assert_select "b.logotype" # the inline PDM logotype appears in the copy
   end
 
-  test "home invites a signed-out visitor to sign in" do
+  test "the home page links into the library" do
     get root_url
-
-    assert_select "a", text: "Sign in"
-    assert_select "form[action=?]", session_path, count: 0
+    assert_select "a[href=?]", ebooks_path
   end
 
-  test "home greets a signed-in visitor and offers sign out" do
-    sign_in :kerrick
-
-    get root_url
-
-    assert_response :success
-    assert_match users(:kerrick).name, response.body
-    assert_select "form[action=?]", session_path do
-      assert_select "button", text: "Sign out"
+  test "every static page renders for an anonymous visitor" do
+    [
+      root_path,
+      about_path,
+      about_our_goals_path,
+      about_exposure_path,
+      about_dual_license_path,
+      about_accessibility_path,
+      contribute_path,
+      newsletter_path,
+].each do |path|
+      get path
+      assert_response :success, "expected #{path} to render"
     end
   end
 end

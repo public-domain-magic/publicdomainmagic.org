@@ -6,13 +6,42 @@
 # SPDX-License-Identifier: LicenseRef-LICENSE
 #++
 
-# Flat, public content pages. For now just the site's front door at the root
-# path; siblings (about, colophon) can join as static actions. The Magic
-# context (plan 005) is expected to take over the public library UI later.
+# The public marketing site: the home page and the static pages that explain
+# what Public Domain Magic is, our goals, our stance on exposure, how to take
+# part, and how the ebooks are licensed. All world-readable; each action just
+# renders its template.
 class PagesController < ApplicationController
   allow_unauthenticated_access
 
   # GET /
-  def home
+  def index
+  end
+
+  # GET /about
+  def about
+  end
+
+  # GET /about/our-goals
+  def about_our_goals
+  end
+
+  # GET /about/exposure
+  def about_exposure
+  end
+
+  # GET /about/dual-license
+  def about_dual_license
+  end
+
+  # GET /about/accessibility
+  def accessibility
+  end
+
+  # GET /contribute
+  def contribute
+  end
+
+  # GET /newsletter
+  def newsletter
   end
 end

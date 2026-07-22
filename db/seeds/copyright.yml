@@ -1,0 +1,35 @@
+## Copyright determinations for the launch corpus — the status/countdown answer
+## the public library reads for its badges. Loaded through the model layer by
+## Seeds::Loader; keyed on work (+ optional manifestation scope).
+
+determinations:
+  royal_road:
+    work: royal_road
+    status: determined
+    basis: nonrenewal
+    first_publication_year: "1948"
+    first_publication_country: US
+    initial_registration_number: A20124
+    public_domain_on: "1977-01-01"
+  greater_magic:
+    work: greater_magic
+    status: determined
+    basis: term_expired
+    first_publication_year: "1938"
+    first_publication_country: US
+    public_domain_on: "2034-01-01"
+  discoverie:
+    work: discoverie
+    status: determined
+    basis: term_expired
+    first_publication_year: "1584"
+    first_publication_country: GB
+    public_domain_on: "1680-01-01"
+  discoverie_facsimile:
+    work: discoverie
+    manifestation: discoverie_facsimile
+    status: determined
+    basis: term_expired
+    first_publication_year: "1972"
+    first_publication_country: US
+    public_domain_on: "2068-01-01"

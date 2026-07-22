@@ -8,6 +8,7 @@
 
 # Catalog administration for FRBR Items — a single exemplar of a manifestation.
 class Catalog::ItemsController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_item, only: %i[show edit update destroy]
 
   # GET /catalog/items or /catalog/items.json

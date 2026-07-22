@@ -1,0 +1,6 @@
+## A malformed corpus for Seeds::LoaderTest: the agent kind is outside the
+## enum vocabulary, so loading through the model layer must raise (proving
+## validations run) and leave nothing behind (the transaction rolls back).
+
+agents:
+  bad: { name: Bad Agent, kind: wizard }

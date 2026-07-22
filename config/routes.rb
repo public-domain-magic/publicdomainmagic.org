@@ -7,7 +7,24 @@
 #++
 
 Rails.application.routes.draw do
-  root "pages#home"
+  root "pages#index"
+
+  # The public marketing site (static pages).
+  scope "/about", as: "about" do
+    get "/", to: "pages#about"
+    get "/our-goals", to: "pages#about_our_goals", as: "our_goals"
+    get "/exposure", to: "pages#about_exposure", as: "exposure"
+    get "/dual-license", to: "pages#about_dual_license", as: "dual_license"
+    get "/accessibility", to: "pages#accessibility", as: "accessibility"
+  end
+  get "/contribute", to: "pages#contribute", as: "contribute"
+  get "/newsletter", to: "pages#newsletter", as: "newsletter"
+
+  # The public library (read-only): browse/search and a book's page. "Ebooks"
+  # is the marketing name for the same catalog, so it links here.
+  resources :books, only: %i[index show]
+  get "/ebooks", to: "books#index", as: "ebooks"
+  resources :tags, only: :show
 
   resource :session
   resource :first_run, only: %i[new create]

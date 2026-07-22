@@ -1,0 +1,15 @@
+<li>
+  <article id="<%= dom_id(book) %>">
+    <h3><%= link_to book.work.title, book_path(book) %></h3>
+    <% creators = book_creators(book) %>
+    <% if creators.present? %>
+      <p>by <%= creators %></p>
+    <% end %>
+    <% if book.blurb.present? %>
+      <p><%= book.blurb %></p>
+    <% end %>
+    <% if book.protected_exposure? %>
+      <p><small>Access restricted to the magic community.</small></p>
+    <% end %>
+  </article>
+</li>

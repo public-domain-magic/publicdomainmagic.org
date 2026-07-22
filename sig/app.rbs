@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
 end
 
-module ApplicationHelper
+# The self-type binds the helper's methods to a view so their bodies can reach
+# content_tag/concat.
+module ApplicationHelper : ActionView::Base
+  def public_domain_year: () -> Integer
+  def pdm_logotype: (?bool domain) -> ActiveSupport::SafeBuffer
 end
 
 class ApplicationRecord < ActiveRecord::Base

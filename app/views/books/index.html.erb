@@ -1,0 +1,43 @@
+<% content_for :page_title, "The library" %>
+
+<search>
+  <%= form_with url: books_path, method: :get do |form| %>
+    <%= form.label :q, "Search by title, creator, or topic" %>
+    <%= form.search_field :q, value: @query %>
+    <%= form.submit "Search" %>
+  <% end %>
+</search>
+
+<% if @query.present? %>
+  <p>
+    <%= pluralize @listings.size, "book" %> matching &ldquo;<%= @query %>&rdquo;.
+    <%= link_to "Show all books", books_path %>
+  </p>
+  <% if @listings.any? %>
+    <ol>
+      <%= render partial: "books/book", collection: @listings, as: :book %>
+    </ol>
+  <% else %>
+    <p>Nothing matched. Try a broader search.</p>
+  <% end %>
+<% else %>
+  <% featured, rest = @listings.partition(&:featured?) %>
+  <% if featured.any? %>
+    <section aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured</h2>
+      <ol>
+        <%= render partial: "books/book", collection: featured, as: :book %>
+      </ol>
+    </section>
+  <% end %>
+  <section aria-labelledby="collection-heading">
+    <h2 id="collection-heading">Browse the collection</h2>
+    <% if rest.any? %>
+      <ol>
+        <%= render partial: "books/book", collection: rest, as: :book %>
+      </ol>
+    <% else %>
+      <p>The library is still being stocked.</p>
+    <% end %>
+  </section>
+<% end %>

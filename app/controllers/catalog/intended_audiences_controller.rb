@@ -8,6 +8,7 @@
 
 # Catalog administration for intended-audience descriptors for works.
 class Catalog::IntendedAudiencesController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_intended_audience, only: %i[show edit update destroy]
 
   # GET /catalog/intended_audiences or /catalog/intended_audiences.json

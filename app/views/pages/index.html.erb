@@ -1,0 +1,43 @@
+<%= content_for :page_title, "Free and liberated ebooks, carefully produced for magicians and allied artists." %>
+
+<p><%= pdm_logotype %> is a volunteer-driven project that catalogs books about magic and the allied arts, researches their <abbr title="United States">U.S.</abbr> copyright status, and produces new editions of public domain ebooks that are lovingly formatted and free of cost.</p>
+<p>Our volunteers work with <a href="https://www.gutenberg.org">Project Gutenberg</a> to research, scan, and transcribe books and periodicals to make them available for the widest number of reading devices. Then, <%= pdm_logotype %> takes those ebooks, formats and typesets them using a carefully designed and professional-grade style manual, fully proofreads and corrects them, and then builds them to create a new edition that takes advantage of state-of-the-art ereader and browser technology.</p>
+<p><%= pdm_logotype %> editions aren’t just a beautiful addition to your digital library—they're a fantastic source for effects and methods that can amaze your spectators, impress your friends, and improve your shows.</p>
+
+<%= link_to "Browse our catalog of free ebooks", ebooks_path, class: "button" %>
+
+<h2>What makes <%= pdm_logotype %> editions different?</h2>
+
+<h3>Modern & consistent typography</h3>
+<p>Other free ebooks don’t put much effort into professional-quality typography: they use "straight" quotes instead of “curly” quotes, they ignore details like em- and en-dashes, and they look more like early-90’s web pages instead of actual books.</p>
+<p><%= pdm_logotype %> applies a rigorous and modern style manual when developing each and every ebook to ensure they meet a professional-grade and consistent typographical standard. Our ebooks look good.</p>
+
+<h3>Full proofing with careful corrections</h3>
+<p>Transcriptions from other sources are often filled with typos or suffer from issues like inconsistent spelling, missing accent marks, or missing punctuation. Submitting corrections to such sources can be difficult or impossible, so errors are rarely fixed.</p>
+<p>At <%= pdm_logotype %>, we do a careful and complete readthrough of each ebook before releasing it, checking it against a scan of the original pages to fix as many typos as possible. Even if we do miss something, our ebooks are stored in the hugely popular Git source control system, allowing anyone to easily submit a correction.</p>
+
+<h3>Rich & detailed metadata</h3>
+<p>Our ebooks include complete, well-researched, and consistent metadata, including original, detailed book blurbs and links to encyclopedia sources. Perfect for machine processing or for extra-curious, technically-minded readers.</p>
+<p>Our catalog also links to useful resources for erudite magicians, including <a href="https://conjuringarts.org/askalexander/">Ask Alexander</a>, <a href="https://www.conjuringarchive.com">Conjuring Archive</a>, <a href="https://magicref.net/magicbooks/index.htm">The Magic Reference Pages</a>, <a href="https://geniimagazine.com/wiki/index.php?title=Main_Page">MagicPedia</a>, and more.</p>
+
+<h3>State-of-the-art technology</h3>
+<p>Each <%= pdm_logotype %> ebook takes full advantage of the latest ereader technology, including: <ul>
+  <li>Hyphenation support,</li>
+  <li>Popup footnotes,</li>
+  <li>High-resolution and scalable vector graphics,</li>
+  <li>Ereader-compatible tables of contents,</li>
+</ul> and more. One of our goals is to ensure our ebooks stay up-to-date with the best reading experience technology can provide. Just because it’s a classic doesn’t mean it has to use old technology.</p>
+
+<h3>Quality covers and illustrations</h3>
+<p>Everyone knows a book is judged by its cover, but most free ebooks leave it to your ereader software to generate a drab default cover.</p>
+<p><%= pdm_logotype %> draws from a vast collection of public domain magic art to create attractive, unique, appropriate, and consistent covers for each of our ebooks.</p>
+<p>We also take efforts to scan original printings of books and periodicals at high resolution (1200<abbr title="dots per inch">dpi</abbr>) for high-resolution illustration imagery. We then convert those images to scalable vector graphics so they'll look great at any size on any device.</p>
+
+<h3>Clean code & semantic markup</h3>
+<p>Strict <a href="https://standardebooks.org/manual/">coding standards from Standard Ebooks</a> allow technologists and ebook producers to use <%= pdm_logotype %> files as reliable, easy to read, and robust bases for their own work—not to mention as models of what well-crafted ebook files look like. Common code patterns are repeated through different ebooks, so the code never surprises you.</p>
+<p>Each ebook is also enhanced with careful standards-based semantic markup that opens the gateway for exciting new kinds of machine processing.</p>
+
+<h3>Free, open-source, & public domain</h3>
+<p>We use the popular <a href="https://git-scm.com">Git</a> source control system to track each and every change made to our ebooks. Anyone can easily see a history of changes, or contribute their own changes with the click of a mouse.</p>
+<p>And while all of the ebooks we feature and the cover art we draw from are already believed to be in the public domain in the <abbr title="United States">U.S.</abbr>, <%= pdm_logotype %> releases all of the work we put in to each ebook under a dual <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons</a> and public domain license. That makes each and every one of our ebook files not just free, but libre too—because the world deserves more unrestricted culture.</p>
+<p>We stand on the shoulders of giants. Our deepest gratitude goes out to the authors, magicians, performers, and historians who created the works we build upon. Our sincerest thanks go out to the volunteers working on modern efforts like <a href="https://standardebooks.org">Standard Ebooks</a>, <a href="https://www.gutenberg.org">Project Gutenberg</a>, <a href="https://www.hathitrust.org">HathiTrust</a>, <a href="https://www.loc.gov">Library of Congress</a>, <a href="https://archive.org">Internet Archive</a>, <a href="https://en.wikisource.org/wiki/Main_Page">WikiSource</a>, the <a href="https://www.w3.org">W3C</a>, and many <a href="https://www.gnu.org/philosophy/free-sw.html"><abbr title="Free/Libre and Open Source Software">F/LOSS</a></a> software projects.</p>

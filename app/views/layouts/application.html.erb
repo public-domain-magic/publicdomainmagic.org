@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= content_for(:title) || "Public Domain Magic" %></title>
+    <title><%= content_for?(:page_title) ? "#{strip_tags(yield(:page_title))} | " : "" %>Public Domain Magic</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Public Domain Magic">
@@ -11,21 +11,30 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "web/simple", "web/simple_customizations", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <a href="#main">Skip to content</a>
+
     <header>
-      <nav>
+      <%= link_to root_path do %><%= render "layouts/pdm_logo" %><% end %>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><%= link_to "Ebooks", ebooks_path, aria: { current: current_page?(ebooks_path) } %></li>
+          <li><%= link_to "About", about_path, aria: { current: current_page?(about_path) } %></li>
+          <li><%= link_to "Newsletter", newsletter_path, aria: { current: current_page?(newsletter_path) } %></li>
+          <li><%= link_to "Get Involved", contribute_path, aria: { current: current_page?(contribute_path) } %></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Account">
         <% if authenticated? %>
           <span>Signed in as <%= Current.user.name %></span>
           <%= button_to "Sign out", session_path, method: :delete %>
@@ -33,8 +42,33 @@
           <%= link_to "Sign in", new_session_path %>
         <% end %>
       </nav>
+
+      <h1><%= content_for?(:page_title) ? yield(:page_title) : pdm_logotype %></h1>
     </header>
 
-    <%= yield %>
+    <main id="main" tabindex="-1">
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p><%= link_to "Subscribe to our free newsletter!", newsletter_path %></p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><%= link_to "Ebooks", ebooks_path %></li>
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Get Involved", contribute_path %></li>
+          <li><a href="https://github.com/public-domain-magic/">GitHub</a></li>
+          <li><%= link_to "Accessibility", about_accessibility_path %></li>
+        </ul>
+      </nav>
+      <p>
+        &ldquo;Public Domain Magic&rdquo;, &ldquo;<abbr title="Public Domain Magic">PDM</abbr>&rdquo;, and the
+        <svg class="icon" width="1.422em" height="1em" style="fill:var(--logotype-color, currentColor)"><use href="#pdm-icon"></use></svg>
+        logo are unregistered trademarks of Kerrick Long. Ebooks produced by or for <%= pdm_logotype %> are
+        available under a <%= link_to "dual public domain & Creative Commons license", about_dual_license_path %>.
+      </p>
+    </footer>
+
+    <%= render "layouts/pdm_icon_sprite" %>
   </body>
 </html>

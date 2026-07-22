@@ -22,7 +22,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Self-service password reset by email.
 - Role-based access: administrator, librarian, researcher, and magician roles,
   granted by an administrator and recorded with who granted them and why.
-- A public home page at the site root.
+- A public marketing site at the root — a home page plus About, Our Goals,
+  Exposure, Accessibility, Contribute, and Newsletter pages — introducing the
+  project, styled after Standard Ebooks with an inline logotype.
+- A public library: browse the collection and search it by title, creator
+  (including name variants), or topic, with a page for each book showing its
+  creators, editions, subjects, copyright status and public-domain countdown,
+  where to read it, and where to buy it. Protected titles remain discoverable;
+  only their downloads honor the access gate.
 - Copyright determinations per work (or per edition), with statutory bases,
   a computed public-domain date, and a countdown for works still under term.
 - Structured Rule 6 copyright investigations — author research with aliases

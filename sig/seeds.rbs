@@ -1,0 +1,37 @@
+# Hand-written signatures for the real-data seeder. The YAML the loader reads is
+# trusted project data, so the parsed values flow through the model API without
+# a schema; only the public surface and the per-entity registries are typed.
+
+module Seeds
+end
+
+class Seeds::Loader
+  @root: Pathname
+  @form_of_works: Hash[String, Catalog::FormOfWork]
+  @form_of_expressions: Hash[String, Catalog::FormOfExpression]
+  @languages: Hash[String, Catalog::Language]
+  @carriers: Hash[String, Catalog::Carrier]
+  @series: Hash[String, Catalog::Series]
+  @intended_audiences: Hash[String, Catalog::IntendedAudience]
+  @agents: Hash[String, Catalog::Agent]
+  @works: Hash[String, Catalog::Work]
+  @expressions: Hash[String, Catalog::Expression]
+  @manifestations: Hash[String, Catalog::Manifestation]
+  @concepts: Hash[String, Catalog::Concept]
+  @listings: Hash[String, Magic::Listing]
+  @tags: Hash[String, Magic::Tag]
+
+  def self.new: (?root: Pathname) -> instance
+
+  # Implementation detail behind self.new; steep needs it to check the body.
+  def initialize: (?root: Pathname) -> void
+
+  def load!: () -> void
+
+  private
+
+  def load_catalog: () -> void
+  def load_copyright: () -> void
+  def load_magic: () -> void
+  def polymorphic: (String reference) -> ApplicationRecord
+end

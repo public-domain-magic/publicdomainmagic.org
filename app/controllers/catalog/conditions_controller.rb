@@ -8,6 +8,7 @@
 
 # Catalog administration for physical-condition descriptors for items.
 class Catalog::ConditionsController < ApplicationController
+  include LibrarianAccess
   before_action :set_catalog_condition, only: %i[show edit update destroy]
 
   # GET /catalog/conditions or /catalog/conditions.json
