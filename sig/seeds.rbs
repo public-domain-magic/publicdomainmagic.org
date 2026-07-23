@@ -1,3 +1,9 @@
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 # Hand-written signatures for the real-data seeder. The YAML the loader reads is
 # trusted project data, so the parsed values flow through the model API without
 # a schema; only the public surface and the per-entity registries are typed.

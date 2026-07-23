@@ -1,3 +1,9 @@
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 # Hand-written signatures for the Workflow bounded context: the namespace
 # module and the domain constants and methods that rbs_rails cannot derive
 # from the schema — including the steps association's write API, declared on

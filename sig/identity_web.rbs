@@ -1,3 +1,9 @@
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 # Hand-written signatures for the identity web layer: the Authentication
 # concern, the session/password/first-run/pages controllers, and the Action
 # Cable connection. Action methods return void because Rails ignores their

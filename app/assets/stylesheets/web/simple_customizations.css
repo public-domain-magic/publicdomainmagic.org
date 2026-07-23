@@ -1,3 +1,10 @@
+/*
+ * Copyright (C) 2025 Kerrick Long <me@kerricklong.com>
+ * SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+ *
+ * SPDX-License-Identifier: LicenseRef-LICENSE
+ */
+
 @font-face {
     font-family: "League Spartan";
     src: url("./LeagueSpartan-VF.woff2") format("woff2-variations");

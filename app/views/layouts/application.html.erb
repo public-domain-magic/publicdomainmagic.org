@@ -1,74 +1,63 @@
+<%#
+SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+SPDX-License-Identifier: LicenseRef-LICENSE
+-%>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title><%= content_for?(:page_title) ? "#{strip_tags(yield(:page_title))} | " : "" %>Public Domain Magic</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Public Domain Magic">
-    <meta name="mobile-web-app-capable" content="yes">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title><%= content_for?(:page_title) ? "#{strip_tags(yield(:page_title))} | " : "" %>Public Domain Magic</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= yield :head %>
+  <%= yield :head %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-
-    <%= stylesheet_link_tag "web/simple", "web/simple_customizations", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
-    <a href="#main">Skip to content</a>
-
-    <header>
-      <%= link_to root_path do %><%= render "layouts/pdm_logo" %><% end %>
-
-      <nav aria-label="Primary">
-        <ul>
-          <li><%= link_to "Ebooks", ebooks_path, aria: { current: current_page?(ebooks_path) } %></li>
-          <li><%= link_to "About", about_path, aria: { current: current_page?(about_path) } %></li>
-          <li><%= link_to "Newsletter", newsletter_path, aria: { current: current_page?(newsletter_path) } %></li>
-          <li><%= link_to "Get Involved", contribute_path, aria: { current: current_page?(contribute_path) } %></li>
-        </ul>
-      </nav>
-
-      <nav aria-label="Account">
-        <% if authenticated? %>
-          <span>Signed in as <%= Current.user.name %></span>
-          <%= button_to "Sign out", session_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign in", new_session_path %>
-        <% end %>
-      </nav>
-
-      <h1><%= content_for?(:page_title) ? yield(:page_title) : pdm_logotype %></h1>
-    </header>
-
-    <main id="main" tabindex="-1">
-      <%= yield %>
-    </main>
-
-    <footer>
-      <p><%= link_to "Subscribe to our free newsletter!", newsletter_path %></p>
-      <nav aria-label="Footer">
-        <ul>
-          <li><%= link_to "Ebooks", ebooks_path %></li>
-          <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "Get Involved", contribute_path %></li>
-          <li><a href="https://github.com/public-domain-magic/">GitHub</a></li>
-          <li><%= link_to "Accessibility", about_accessibility_path %></li>
-        </ul>
-      </nav>
-      <p>
-        &ldquo;Public Domain Magic&rdquo;, &ldquo;<abbr title="Public Domain Magic">PDM</abbr>&rdquo;, and the
-        <svg class="icon" width="1.422em" height="1em" style="fill:var(--logotype-color, currentColor)"><use href="#pdm-icon"></use></svg>
-        logo are unregistered trademarks of Kerrick Long. Ebooks produced by or for <%= pdm_logotype %> are
-        available under a <%= link_to "dual public domain & Creative Commons license", about_dual_license_path %>.
-      </p>
-    </footer>
-
-    <%= render "layouts/pdm_icon_sprite" %>
-  </body>
+  <%= stylesheet_link_tag    "web/application", media: "all" %>
+</head>
+<body>
+<header>
+  <%= link_to root_path do %>
+    <%= render "layouts/logo" %>
+  <% end %>
+  <nav>
+    <ul>
+      <li><%= link_to "Ebooks", ebooks_path, aria: { current: current_page?(ebooks_path) } %></li>
+      <li><%= link_to "About", about_path, aria: { current: current_page?(about_path) } %></li>
+      <li><%= link_to "Newsletter", newsletter_path, aria: { current: current_page?(newsletter_path) } %></li>
+      <li><%= link_to "Get Involved", contribute_path, aria: { current: current_page?(contribute_path) } %></li>
+      <li><%= if authenticated?
+                button_to "Sign out", session_path, method: :delete
+              else
+                link_to "Sign in", new_session_path
+              end %></li>
+    </ul>
+  </nav>
+  <h1><% if content_for?(:page_title) %>
+    <%= yield(:page_title) %>
+  <% else %>
+    <%= pdm_logotype %>
+  <% end %></h1>
+</header>
+<main>
+  <%= yield %>
+</main>
+<footer>
+  <p><%= link_to "Subscribe to our free newsletter!", newsletter_path %></p>
+  <nav>
+    <ul>
+      <li><%= link_to "Ebooks", ebooks_path %></li>
+      <li><%= link_to "About", about_path %></li>
+      <li><%= link_to "Get Involved", contribute_path %></li>
+      <li><a href="https://github.com/public-domain-magic/">GitHub</a></li>
+      <li><%= link_to "Accessibility", about_accessibility_path %></li>
+    </ul>
+  </nav>
+  <p>
+    &ldquo;Public Domain Magic&rdquo;, &ldquo;<abbr title="Public Domain Magic">PDM</abbr>&rdquo;, and the <svg class="icon" width="1.422em" height="1em" style="fill:var(--logotype-color, currentColor)"><use href="#pdm-icon"></use></svg> logo are unregistered trademarks of Kerrick Long.
+    Ebooks produced by or for <%= pdm_logotype %> are available under a <%= link_to "dual public domain & Creative Commons license", about_dual_license_path %>.
+    Tools and applications produced by or for <%= pdm_logotype %> are <a href="https://www.fsf.org/about/what-is-free-software">free software</a> licensed under the <a href="https://www.gnu.org/licenses/why-affero-gpl.html">GNU Affero General Public License version 3 (or any later version)</a>.
+  </p>
+  <p>Content not produced by or for <%= pdm_logotype %> but displayed on this website may be subject to copyright.</p>
+</footer>
+<%= render "layouts/icon_sprite" %>
+</body>
 </html>

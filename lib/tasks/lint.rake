@@ -2,7 +2,7 @@
 
 #--
 # SPDX-FileCopyrightText: 2025 Kerrick Long <me@kerricklong.com>
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: LicenseRef-LICENSE
 #++
 
 require "rubocop/rake_task"
@@ -29,43 +29,53 @@ namespace :reuse do
   desc "Add SPDX headers to files missing them (per AGENTS.md standards)"
   task :fix do
     copyright = "Kerrick Design, LLC <me@kerricklong.com>"
+    license = "LicenseRef-LICENSE"
 
-    # Code files
-    code_extensions = %w[rb rbs rake gemspec rbs toml yml yaml json lock].freeze
-    code_license = "LicenseRef-LICENSE"
+    # reuse annotate has no comment style for ERB, so hand-write a non-rendering
+    # <%# … -%> header (the trailing -%> trims the newline, so it adds no output).
+    annotate_erb = lambda do |file|
+      content = File.read(file)
+      next if content.include?("SPDX-License-Identifier")
 
-    # Documentation files
-    doc_extensions = %w[md txt].freeze
-    doc_license = "LicenseRef-LICENSE"
-
-    # Find files missing headers (listed after "no copyright and licensing" message)
-    puts "Checking for files missing REUSE headers..."
-    output = `reuse lint 2>&1`
-    in_missing_section = false
-    missing_files = output.lines.filter_map do |line|
-      in_missing_section = true if line.include?("no copyright and licensing")
-      in_missing_section = false if line.start_with?("# ") && !line.include?("copyright")
-      next unless in_missing_section
-
-      line.match(/^\* (.+)/)&.[](1)
+      # REUSE-IgnoreStart — the tags below are a template, not this file's own.
+      File.write(file, <<~HEADER + content)
+        <%#
+        SPDX-FileCopyrightText: #{Time.now.year} #{copyright}
+        SPDX-License-Identifier: #{license}
+        -%>
+      HEADER
+      # REUSE-IgnoreEnd
     end
 
-    if missing_files.empty?
+    # Every path REUSE reports as missing copyright and/or licensing information,
+    # across both of its sub-lists (missing both; missing license only).
+    puts "Checking for files missing REUSE headers..."
+    output = `reuse lint 2>&1`
+    in_missing = false
+    missing = output.lines.filter_map do |line|
+      in_missing = true if line.include?("# MISSING COPYRIGHT AND LICENSING INFORMATION")
+      in_missing = false if line.include?("# SUMMARY")
+      next unless in_missing
+
+      path = line[/^\* (.+)$/, 1]
+      path if path && File.exist?(path)
+    end
+
+    if missing.empty?
       puts "All files have REUSE headers!"
     else
-      missing_files.each do |file|
-        ext = File.extname(file).delete(".")
-        license = if code_extensions.include?(ext)
-          code_license
-        elsif doc_extensions.include?(ext)
-          doc_license
+      missing.each do |file|
+        puts "  Annotating #{file}"
+        case File.extname(file)
+        when ".erb"
+          annotate_erb.call(file)
+        when ".rbs", ".jbuilder"
+          # reuse does not recognise these extensions; force the #-comment style.
+          sh "reuse annotate --style python --license #{license} --copyright '#{copyright}' --skip-existing '#{file}'", verbose: false
         else
-          puts "  Skipping #{file} (unknown extension: .#{ext})"
-          next
+          # reuse picks the comment style, and writes a .license sidecar for binaries.
+          sh "reuse annotate --license #{license} --copyright '#{copyright}' --skip-existing '#{file}'", verbose: false
         end
-
-        puts "  Annotating #{file} with #{license}"
-        sh "reuse annotate --license #{license} --copyright '#{copyright}' --skip-existing --skip-unrecognised '#{file}'", verbose: false
       end
     end
   end

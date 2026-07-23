@@ -1,3 +1,9 @@
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 # Hand-written signatures for the Magic bounded context: the namespace module
 # and the domain constants and methods that rbs_rails cannot derive from the
 # schema. The rest of each model's signature is generated into sig/rbs_rails/.

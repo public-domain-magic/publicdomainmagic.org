@@ -1,3 +1,9 @@
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 # Hand-written signatures for the Catalog scaffold web layer (controllers and
 # helpers). The action methods return `void` because Rails ignores their return
 # value; the request/response plumbing comes from ::ActionController::Base and

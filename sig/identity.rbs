@@ -1,3 +1,9 @@
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
 # Hand-written signatures for app-wide identity: the domain constants and
 # methods rbs_rails cannot derive from the schema. Attribute, association, and
 # enum signatures for User, Role, and Session are generated into sig/rbs_rails/.
