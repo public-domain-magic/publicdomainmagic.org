@@ -85,9 +85,9 @@ module ::Magic
 
       def work_id_for_database: () -> ::Integer
 
-      def exposure: () -> ::String
+      def exposure: () -> ::String?
 
-      def exposure=: (::String | ::Symbol) -> ::String
+      def exposure=: (::String? | ::Symbol) -> ::String?
 
       def exposure?: () -> bool
 
@@ -121,9 +121,9 @@ module ::Magic
 
       def clear_exposure_change: () -> void
 
-      def exposure_before_type_cast: () -> ::String
+      def exposure_before_type_cast: () -> ::String?
 
-      def exposure_for_database: () -> ::String
+      def exposure_for_database: () -> ::String?
 
       def featured: () -> bool
 

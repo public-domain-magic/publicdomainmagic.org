@@ -205,6 +205,46 @@ module ::Catalog
 
       def role_for_database: () -> ::String
 
+      def nomen_id: () -> ::Integer?
+
+      def nomen_id=: (::Integer?) -> ::Integer?
+
+      def nomen_id?: () -> bool
+
+      def nomen_id_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def nomen_id_change: () -> [ ::Integer?, ::Integer? ]
+
+      def nomen_id_will_change!: () -> void
+
+      def nomen_id_was: () -> ::Integer?
+
+      def nomen_id_previously_changed?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def nomen_id_previous_change: () -> ::Array[::Integer?]?
+
+      def nomen_id_previously_was: () -> ::Integer?
+
+      def nomen_id_before_last_save: () -> ::Integer?
+
+      def nomen_id_change_to_be_saved: () -> ::Array[::Integer?]?
+
+      def nomen_id_in_database: () -> ::Integer?
+
+      def saved_change_to_nomen_id: () -> ::Array[::Integer?]?
+
+      def saved_change_to_nomen_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def will_save_change_to_nomen_id?: (?from: ::Integer?, ?to: ::Integer?) -> bool
+
+      def restore_nomen_id!: () -> void
+
+      def clear_nomen_id_change: () -> void
+
+      def nomen_id_before_type_cast: () -> ::Integer?
+
+      def nomen_id_for_database: () -> ::Integer?
+
       def created_at: () -> ::ActiveSupport::TimeWithZone
 
       def created_at=: (::ActiveSupport::TimeWithZone) -> ::ActiveSupport::TimeWithZone
@@ -340,6 +380,12 @@ module ::Catalog
     def contributable: () -> untyped
     def contributable=: (untyped?) -> untyped?
     def reload_contributable: () -> untyped?
+    def nomen: () -> ::Catalog::Nomen?
+    def nomen=: (::Catalog::Nomen?) -> ::Catalog::Nomen?
+    def reload_nomen: () -> ::Catalog::Nomen?
+    def build_nomen: (?untyped) -> ::Catalog::Nomen
+    def create_nomen: (?untyped) -> ::Catalog::Nomen
+    def create_nomen!: (?untyped) -> ::Catalog::Nomen
 
     module ::Catalog::Contribution::GeneratedAssociationMethods
     end
@@ -480,4 +526,6 @@ end
 class ::ApplicationRecord < ::ActiveRecord::Base
 end
 class ::Catalog::Agent < ::ApplicationRecord
+end
+class ::Catalog::Nomen < ::ApplicationRecord
 end

@@ -9,22 +9,34 @@
 require "test_helper"
 
 class Copyright::Determination::TermExpirationTest < ActiveSupport::TestCase
-  test "a 1930 publication enters the public domain on 2026-01-01" do
-    determination = copyright_determinations(:trick_brain)
-    determination.update!(first_publication_year: "1930")
+  test "a term that has fully run settles the work public domain" do
+    travel_to Date.new(2026, 7, 1) do
+      determination = copyright_determinations(:trick_brain)
+      determination.update!(first_publication_year: "1930")
+      term_expiration = Copyright::Determination::TermExpiration.new(determination)
 
-    assert Copyright::Determination::TermExpiration.new(determination).apply!
-    assert_equal "term_expired", determination.basis
-    assert_equal "determined", determination.status
-    assert_equal Date.new(2026, 1, 1), determination.public_domain_on
+      assert_predicate term_expiration, :expired?
+      assert term_expiration.apply!
+      assert_equal "term_expired", determination.basis
+      assert_equal "determined", determination.status
+      assert_equal Date.new(2026, 1, 1), determination.public_domain_on
+    end
   end
 
-  test "a 1948 publication enters the public domain on 2044-01-01" do
-    determination = copyright_determinations(:trick_brain)
-    determination.update!(first_publication_year: "1948")
+  test "a pre-1978 term still running is not settled by expiry alone" do
+    travel_to Date.new(2026, 7, 1) do
+      determination = copyright_determinations(:trick_brain)
+      determination.update!(first_publication_year: "1948")
+      term_expiration = Copyright::Determination::TermExpiration.new(determination)
 
-    assert Copyright::Determination::TermExpiration.new(determination).apply!
-    assert_equal Date.new(2044, 1, 1), determination.public_domain_on
+      assert_predicate term_expiration, :applicable?, "still within the pre-1978 regime"
+      assert_not term_expiration.expired?, "the 95-year term has not run yet"
+      assert_not term_expiration.apply!
+      assert_equal "researching", determination.reload.status
+      assert_nil determination.basis
+      assert_nil determination.public_domain_on
+      assert_equal Date.new(2044, 1, 1), term_expiration.expires_on
+    end
   end
 
   test "an EDTF range counts from its start year" do
@@ -34,33 +46,35 @@ class Copyright::Determination::TermExpirationTest < ActiveSupport::TestCase
     term_expiration = Copyright::Determination::TermExpiration.new(determination)
     assert_predicate term_expiration, :applicable?
     assert_equal Date.new(2020, 1, 1), term_expiration.expires_on
+    assert_equal 1924, term_expiration.year
   end
 
-  test "the term covers first publication through 1977" do
+  test "the regime covers first publication through 1977" do
     determination = copyright_determinations(:trick_brain)
     determination.update!(first_publication_year: "1977")
 
     assert_predicate Copyright::Determination::TermExpiration.new(determination), :applicable?
   end
 
-  test "apply! declines a post-1977 publication without touching the determination" do
+  test "the regime excludes a post-1977 publication" do
     determination = copyright_determinations(:trick_brain)
     determination.update!(first_publication_year: "1978")
 
     term_expiration = Copyright::Determination::TermExpiration.new(determination)
     assert_not term_expiration.applicable?
+    assert_not term_expiration.expired?
     assert_not term_expiration.apply!
     assert_equal "researching", determination.reload.status
-    assert_nil determination.basis
-    assert_nil determination.public_domain_on
   end
 
-  test "not applicable without a known first publication year" do
+  test "nothing is applicable without a known first publication year" do
     determination = copyright_determinations(:trick_brain)
     determination.update!(first_publication_year: nil)
 
     term_expiration = Copyright::Determination::TermExpiration.new(determination)
     assert_not term_expiration.applicable?
+    assert_not term_expiration.expired?
     assert_nil term_expiration.expires_on
+    assert_nil term_expiration.year
   end
 end

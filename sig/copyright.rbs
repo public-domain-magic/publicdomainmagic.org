@@ -37,9 +37,27 @@ class Copyright::Determination::TermExpiration
   def initialize: (Copyright::Determination determination) -> void
 
   def applicable?: () -> bool
+  def expired?: () -> bool
   def apply!: () -> bool
   def expires_on: () -> Date?
+  def year: () -> Integer?
+end
 
+# The computed copyright verdict from a first-publication year: public domain,
+# not public domain, or needs Rule 6 research (nil when no year is known).
+class Copyright::Determination::Verdict
+  @determination: Copyright::Determination
+  @term_expiration: Copyright::Determination::TermExpiration
+
+  def self.new: (Copyright::Determination determination) -> instance
+
+  # Implementation detail behind self.new; steep needs it to check the body.
+  def initialize: (Copyright::Determination determination) -> void
+
+  def outcome: () -> Symbol?
+  def assess!: () -> Symbol?
+
+  private def term_expiration: () -> Copyright::Determination::TermExpiration
   private def year: () -> Integer?
 end
 

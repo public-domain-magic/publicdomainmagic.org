@@ -27,6 +27,15 @@ class Magic::ListingTest < ActiveSupport::TestCase
     assert listing.accessible_to?(users(:kerrick)), "librarian"
   end
 
+  test "an unclassified listing is treated as not-open, like protected" do
+    listing = magic_listings(:royal_road)
+    listing.update!(exposure: nil)
+
+    assert_not listing.accessible_to?(nil), "signed-out visitor"
+    assert_not listing.accessible_to?(users(:visitor)), "user with no roles"
+    assert listing.accessible_to?(users(:vetted_magician)), "magician"
+  end
+
   test "one listing per work" do
     duplicate = Magic::Listing.new(work: catalog_works(:royal_road), exposure: "public")
     assert_not duplicate.valid?
@@ -40,8 +49,12 @@ class Magic::ListingTest < ActiveSupport::TestCase
     assert listing.errors.of_kind?(:exposure, :inclusion)
   end
 
-  test "exposure defaults to public" do
-    assert_predicate Magic::Listing.new, :public_exposure?
+  test "a new listing is unclassified, carrying no fabricated access class" do
+    listing = Magic::Listing.new
+
+    assert_nil listing.exposure
+    assert_not listing.public_exposure?
+    assert_not listing.protected_exposure?
   end
 
   test "a listing aggregates its tags" do

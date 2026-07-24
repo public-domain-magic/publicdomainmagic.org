@@ -10,11 +10,14 @@
 # and what can be bought. One listing per book-level Catalog work; Magic adds
 # presentation and access policy, never bibliographic data.
 class Magic::Listing < ApplicationRecord
-  # The access axis. +public+ = safe to expose to laypeople (early Tarbell);
-  # +protected+ = exposes methods working magicians still rely on, grounded
-  # in the joint 1993 I.B.M. & S.A.M. Code of Ethics, clause 1. This also
-  # drives Workflow's print_budget step (public marketplaces carry only
-  # +public+ titles).
+  # The access axis for our own produced downloads. +public+ = safe to expose
+  # to laypeople (early Tarbell); +protected+ = exposes methods working
+  # magicians still rely on, grounded in the joint 1993 I.B.M. & S.A.M. Code of
+  # Ethics, clause 1. A nil exposure is *unclassified* — no access class has
+  # been decided, and the listing is treated as not-open. Exposure is truly a
+  # per-concept trick-level judgement (see +magic-taxonomy-research.md+); this
+  # book-wide axis is the coarse, deferred-model stand-in, never a fabricated
+  # default.
   EXPOSURES = %w[public protected].freeze
 
   belongs_to :work, class_name: "Catalog::Work"
@@ -24,7 +27,7 @@ class Magic::Listing < ApplicationRecord
   has_many :taggings, as: :taggable, dependent: :destroy
   has_many :tags, through: :taggings
 
-  enum :exposure, EXPOSURES.index_by(&:itself), suffix: true, validate: true
+  enum :exposure, EXPOSURES.index_by(&:itself), suffix: true, validate: { allow_nil: true }
 
   validates :work_id, uniqueness: true
 
@@ -75,9 +78,11 @@ class Magic::Listing < ApplicationRecord
     [id, work.title.to_s.parameterize].join("-")
   end
 
-  # The entire download gate: public listings are open to everyone
-  # (including signed-out visitors); protected listings require a capability
-  # (magician or librarian) from the Users seam.
+  # The gate on *our own produced downloads* (the digitized PDM edition), never
+  # on discoverability or on external read-links. Public listings are open to
+  # everyone (including signed-out visitors); protected and unclassified
+  # listings require a capability (magician or librarian) from the Users seam —
+  # an unclassified listing is treated as not-open until deliberately classified.
   def accessible_to?(user)
     public_exposure? || (!user.nil? && user.can_access_protected?)
   end

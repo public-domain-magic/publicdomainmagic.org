@@ -80,32 +80,39 @@ SPDX-License-Identifier: LicenseRef-LICENSE
 
   <section aria-labelledby="get-heading">
     <h2 id="get-heading">Get this book</h2>
+
+    <%# External read-links are never gated: HathiTrust/PG/LoC/IA editions are
+        public-domain or publicly readable, so the library always links out. -%>
+    <% online_editions = editions.select(&:online?) %>
+    <% if online_editions.any? %>
+      <ul>
+        <% online_editions.each do |edition| %>
+          <li>
+            <%= link_to "Read online", edition.access_address, rel: "nofollow noopener" %>
+            &mdash; <%= [ edition.edition_or_issue, edition.place_of_publication, edition.date_of_publication&.year ].compact_blank.join(" · ").presence || edition.carrier.name %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%# Only our own produced downloads honor the access gate. -%>
     <% if @listing.accessible_to?(Current.user) %>
-      <%# Where to read it: the Catalog online editions (digital manifestations
-          with an access address) plus our own published PDM ebook. -%>
-      <% online_editions = editions.select(&:online?) %>
       <% pdm_ebooks = @project ? @project.resources.select(&:pdm_ebook?) : [] %>
-      <% if online_editions.any? || pdm_ebooks.any? %>
+      <% if pdm_ebooks.any? %>
         <ul>
           <% pdm_ebooks.each do |resource| %>
             <li>
               <%= link_to "Download the Public Domain Magic edition", resource.url, rel: "nofollow noopener" %><% if resource.note.present? %> &mdash; <%= resource.note %><% end %>
             </li>
           <% end %>
-          <% online_editions.each do |edition| %>
-            <li>
-              <%= link_to "Read online", edition.access_address, rel: "nofollow noopener" %>
-              &mdash; <%= [ edition.edition_or_issue, edition.place_of_publication, edition.date_of_publication&.year ].compact_blank.join(" · ").presence || edition.carrier.name %>
-            </li>
-          <% end %>
         </ul>
-      <% else %>
+      <% elsif online_editions.empty? %>
         <p>This book isn&rsquo;t available to download yet. Check back as it moves through the pipeline.</p>
       <% end %>
     <% else %>
       <p>
-        This title exposes methods working magicians still rely on, so access is limited to
-        the magic community. <%= link_to "Sign in", new_session_path %> if you have access.
+        This title exposes methods working magicians still rely on, so our produced download is
+        limited to the magic community. <%= link_to "Sign in", new_session_path %> if you have access.
       </p>
     <% end %>
   </section>

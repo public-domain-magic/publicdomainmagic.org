@@ -33,4 +33,24 @@ class Catalog::ContributionTest < ActiveSupport::TestCase
     assert_equal [catalog_agents(:hugard), catalog_agents(:braue)].sort_by(&:id),
       catalog_works(:royal_road).agents.sort_by(&:id)
   end
+
+  test "credited_name falls back to the agent's best name when no nomen is used" do
+    assert_equal "Jean Hugard", catalog_contributions(:hugard_royal_road).credited_name
+  end
+
+  test "credited_name is the name as used when a nomen is recorded" do
+    contribution = catalog_contributions(:hugard_royal_road)
+    contribution.update!(nomen: catalog_nomens(:kelmann))
+
+    assert_equal "Jack Kelmann", contribution.credited_name
+  end
+
+  test "the name as used must be one of the agent's own names" do
+    contribution = Catalog::Contribution.new(
+      agent: catalog_agents(:braue), contributable: catalog_works(:royal_road),
+      role: "created", nomen: catalog_nomens(:kelmann))
+
+    assert_not contribution.valid?
+    assert_includes contribution.errors[:nomen], "must be one of the agent's own names"
+  end
 end

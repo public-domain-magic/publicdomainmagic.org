@@ -30,9 +30,6 @@ Rails.application.routes.draw do
   resource :first_run, only: %i[new create]
   resources :passwords, param: :token
 
-  # The librarian's first write surface: record a discovered book. A discovery
-  # is a domain operation named for the noun, not a table editor.
-  resources :discoveries, only: %i[new create]
   namespace :catalog do
     resources :expressions
     resources :works

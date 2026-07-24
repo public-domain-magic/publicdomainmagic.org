@@ -120,4 +120,19 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
     assert_match "available to download yet", response.body
   end
+
+  test "external read-links are never gated, even on a protected book" do
+    expression = catalog_works(:greater_magic).expressions.create!(
+      language: catalog_languages(:english),
+      form_of_expression: catalog_form_of_expressions(:text))
+    expression.manifestations.create!(
+      title: "Greater Magic",
+      carrier: catalog_carriers(:online_resource),
+      access_address: "https://hdl.handle.net/greater-magic")
+
+    get book_url(magic_listings(:greater_magic))
+
+    assert_select "a[href=?]", "https://hdl.handle.net/greater-magic"
+    assert_match "the magic community", response.body # our own download still gated
+  end
 end

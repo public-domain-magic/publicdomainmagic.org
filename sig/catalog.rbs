@@ -39,5 +39,8 @@ end
 class Catalog::Contribution < ApplicationRecord
   ROLES_BY_LEVEL: Hash[String, Array[String]]
 
+  def credited_name: () -> String
+
   private def role_appropriate_for_level: () -> void
+  private def nomen_belongs_to_agent: () -> void
 end

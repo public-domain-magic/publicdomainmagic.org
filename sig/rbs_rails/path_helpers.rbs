@@ -27,8 +27,6 @@ interface ::_RbsRailsPathHelpers
   def new_password_path: (*untyped) -> ::String
   def edit_password_path: (*untyped) -> ::String
   def password_path: (*untyped) -> ::String
-  def discoveries_path: (*untyped) -> ::String
-  def new_discovery_path: (*untyped) -> ::String
   def catalog_expressions_path: (*untyped) -> ::String
   def new_catalog_expression_path: (*untyped) -> ::String
   def edit_catalog_expression_path: (*untyped) -> ::String
@@ -127,8 +125,6 @@ interface ::_RbsRailsPathHelpers
   def new_password_url: (*untyped) -> ::String
   def edit_password_url: (*untyped) -> ::String
   def password_url: (*untyped) -> ::String
-  def discoveries_url: (*untyped) -> ::String
-  def new_discovery_url: (*untyped) -> ::String
   def catalog_expressions_url: (*untyped) -> ::String
   def new_catalog_expression_url: (*untyped) -> ::String
   def edit_catalog_expression_url: (*untyped) -> ::String

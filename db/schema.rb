@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_24_153659) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_24_160002) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -72,10 +72,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_24_153659) do
     t.integer "contributable_id", null: false
     t.string "contributable_type", null: false
     t.datetime "created_at", null: false
+    t.integer "nomen_id"
     t.string "role", null: false
     t.datetime "updated_at", null: false
     t.index ["agent_id"], name: "index_catalog_contributions_on_agent_id"
     t.index ["contributable_type", "contributable_id"], name: "index_catalog_contributions_on_contributable"
+    t.index ["nomen_id"], name: "index_catalog_contributions_on_nomen_id"
   end
 
   create_table "catalog_embodiments", force: :cascade do |t|
@@ -419,7 +421,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_24_153659) do
   create_table "magic_listings", force: :cascade do |t|
     t.text "blurb"
     t.datetime "created_at", null: false
-    t.string "exposure", default: "public", null: false
+    t.string "exposure"
     t.boolean "featured", default: false, null: false
     t.datetime "updated_at", null: false
     t.integer "work_id", null: false
@@ -528,6 +530,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_24_153659) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "catalog_contributions", "catalog_agents", column: "agent_id"
+  add_foreign_key "catalog_contributions", "catalog_nomens", column: "nomen_id"
   add_foreign_key "catalog_embodiments", "catalog_expressions", column: "expression_id"
   add_foreign_key "catalog_embodiments", "catalog_manifestations", column: "manifestation_id"
   add_foreign_key "catalog_expression_relationships", "catalog_expressions", column: "expression_id"
