@@ -36,6 +36,7 @@ module User::Rolable : _Rolable
   def can_research?: () -> bool
   def can_access_protected?: () -> bool
   def grant: (String | Symbol name, by: User?, ?note: String?) -> Role
+  def grant_founding_roles: (?by: User?, ?note: String) -> void
 end
 
 class Current < ActiveSupport::CurrentAttributes

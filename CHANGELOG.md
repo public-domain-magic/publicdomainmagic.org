@@ -18,7 +18,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - A site-wide header that shows who is signed in and offers a sign-out
   control; the home page greets a signed-in user instead of inviting them
   to sign in.
-- First-run setup that creates the initial administrator when no account exists.
+- First-run setup that creates the initial account when none exists, granting
+  it every role (the founder wears all hats at launch).
 - Self-service password reset by email.
 - Role-based access: administrator, librarian, researcher, and magician roles,
   granted by an administrator and recorded with who granted them and why.

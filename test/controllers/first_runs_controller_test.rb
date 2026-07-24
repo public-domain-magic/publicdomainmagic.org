@@ -21,7 +21,7 @@ class FirstRunsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
-  test "create makes the first user an administrator and signs them in" do
+  test "create makes the first user hold every role and signs them in" do
     erase_all_users
 
     assert_difference "User.count", 1 do
@@ -36,7 +36,11 @@ user: {
     end
 
     admin = User.find_by(email_address: "admin@example.com")
+    assert_equal Role::NAMES.sort, admin.roles.map(&:name).sort
     assert admin.can_administer?
+    assert admin.can_catalog?
+    assert admin.can_research?
+    assert admin.can_access_protected?
     assert_equal "first run", admin.roles.find_by(name: "administrator").note
     assert_nil admin.roles.find_by(name: "administrator").granted_by
     assert_redirected_to root_url

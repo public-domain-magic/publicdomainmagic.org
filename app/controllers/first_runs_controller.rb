@@ -9,7 +9,7 @@
 # Bootstraps the very first account. Before any user exists there is nobody to
 # authorize account creation, so this flow runs unauthenticated and disables
 # itself the moment the users table is populated. The account it creates is
-# granted the +administrator+ role and signed in.
+# granted every role — the founder wears all hats at launch — and signed in.
 class FirstRunsController < ApplicationController
   allow_unauthenticated_access
   before_action :prevent_running_after_setup
@@ -24,7 +24,7 @@ class FirstRunsController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      @user.grant :administrator, by: nil, note: "first run"
+      @user.grant_founding_roles
       start_new_session_for @user
       redirect_to after_authentication_url
     else

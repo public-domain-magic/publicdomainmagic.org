@@ -44,4 +44,11 @@ module User::Rolable
   # Grant +name+ to this user, recording who granted it and why. Raises
   # ActiveRecord::RecordInvalid on an unknown name or a duplicate grant.
   def grant(name, by:, note: nil) = roles.create!(name:, granted_by: by, note:)
+
+  # Grant every role — the founding administrator wears all hats at launch,
+  # since there is no one else yet to hold Librarian, Researcher, or Magician.
+  # Each grant is still an explicit, auditable {Role} row.
+  def grant_founding_roles(by: nil, note: "first run")
+    Role::NAMES.each { |name| grant name, by:, note: }
+  end
 end
