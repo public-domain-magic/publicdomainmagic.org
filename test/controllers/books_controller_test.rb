@@ -93,14 +93,31 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
     assert_no_match "the magic community", response.body
   end
 
-  # --- the "get this book" links read the Workflow seam ---------------------
+  # --- "get this book" reads Catalog online editions + our published ebook --
 
-  test "a downloadable resource is offered on an accessible book" do
+  test "our published PDM ebook is offered on an accessible book" do
     workflow_projects(:royal_road).resources.create!(
       kind: "pdm_ebook", url: "https://cdn.example.com/royal-road.epub", note: "EPUB")
 
     get book_url(magic_listings(:royal_road))
 
     assert_select "a[href=?]", "https://cdn.example.com/royal-road.epub"
+  end
+
+  test "a Catalog online edition is offered as somewhere to read the book" do
+    catalog_works(:royal_road).expressions.first.manifestations.create!(
+      title: "The Royal Road to Card Magic",
+      carrier: catalog_carriers(:online_resource),
+      access_address: "https://archive.org/details/royal-road")
+
+    get book_url(magic_listings(:royal_road))
+
+    assert_select "a[href=?]", "https://archive.org/details/royal-road"
+  end
+
+  test "a physical-only book offers nothing to read yet" do
+    get book_url(magic_listings(:royal_road))
+
+    assert_match "available to download yet", response.body
   end
 end

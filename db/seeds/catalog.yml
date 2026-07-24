@@ -16,6 +16,7 @@ languages:
 
 carriers:
   print: { name: Print }
+  online_resource: { name: Online resource }
 
 series:
   dover_occult: { name: Dover Occult and Esoteric }

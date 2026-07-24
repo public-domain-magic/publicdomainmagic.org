@@ -32,6 +32,10 @@ class Catalog::ManifestationRelationship < ApplicationRecord
   KINDS: Array[String]
 end
 
+class Catalog::Manifestation < ApplicationRecord
+  def online?: () -> bool
+end
+
 class Catalog::Contribution < ApplicationRecord
   ROLES_BY_LEVEL: Hash[String, Array[String]]
 

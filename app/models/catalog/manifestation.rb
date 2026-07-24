@@ -26,4 +26,12 @@ class Catalog::Manifestation < ApplicationRecord
   has_many :inverse_manifestation_relationships, class_name: "Catalog::ManifestationRelationship",
     foreign_key: :related_manifestation_id, dependent: :destroy
   has_many :relating_manifestations, through: :inverse_manifestation_relationships, source: :manifestation
+
+  # Digital editions available remotely — those bearing an access address (a
+  # URL), as opposed to physical carriers.
+  scope :online, -> { where.not(access_address: nil) }
+
+  # Whether this is an online edition: a remote resource with an access address
+  # (URL). This is where the library sends a reader.
+  def online? = access_address.present?
 end

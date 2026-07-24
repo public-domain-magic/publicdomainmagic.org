@@ -342,16 +342,6 @@ module ::Workflow
     end
     include ::Workflow::Resource::GeneratedAssociationMethods
 
-    def hathitrust_scans!: () -> bool
-    def hathitrust_scans?: () -> bool
-    def archive_scans!: () -> bool
-    def archive_scans?: () -> bool
-    def google_books_scans!: () -> bool
-    def google_books_scans?: () -> bool
-    def pg_transcript!: () -> bool
-    def pg_transcript?: () -> bool
-    def pg_ebook!: () -> bool
-    def pg_ebook?: () -> bool
     def ia_scan_set!: () -> bool
     def ia_scan_set?: () -> bool
     def text_repo!: () -> bool
@@ -361,16 +351,6 @@ module ::Workflow
     def other!: () -> bool
     def other?: () -> bool
     def self.kinds: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
-    def self.hathitrust_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-    def self.not_hathitrust_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-    def self.archive_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-    def self.not_archive_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-    def self.google_books_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-    def self.not_google_books_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-    def self.pg_transcript: () -> ::Workflow::Resource::ActiveRecord_Relation
-    def self.not_pg_transcript: () -> ::Workflow::Resource::ActiveRecord_Relation
-    def self.pg_ebook: () -> ::Workflow::Resource::ActiveRecord_Relation
-    def self.not_pg_ebook: () -> ::Workflow::Resource::ActiveRecord_Relation
     def self.ia_scan_set: () -> ::Workflow::Resource::ActiveRecord_Relation
     def self.not_ia_scan_set: () -> ::Workflow::Resource::ActiveRecord_Relation
     def self.text_repo: () -> ::Workflow::Resource::ActiveRecord_Relation
@@ -382,26 +362,6 @@ module ::Workflow
 
     module ::Workflow::Resource::GeneratedRelationMethods
       def kinds: () -> ::ActiveSupport::HashWithIndifferentAccess[::String, ::String]
-
-      def hathitrust_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-
-      def not_hathitrust_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-
-      def archive_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-
-      def not_archive_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-
-      def google_books_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-
-      def not_google_books_scans: () -> ::Workflow::Resource::ActiveRecord_Relation
-
-      def pg_transcript: () -> ::Workflow::Resource::ActiveRecord_Relation
-
-      def not_pg_transcript: () -> ::Workflow::Resource::ActiveRecord_Relation
-
-      def pg_ebook: () -> ::Workflow::Resource::ActiveRecord_Relation
-
-      def not_pg_ebook: () -> ::Workflow::Resource::ActiveRecord_Relation
 
       def ia_scan_set: () -> ::Workflow::Resource::ActiveRecord_Relation
 

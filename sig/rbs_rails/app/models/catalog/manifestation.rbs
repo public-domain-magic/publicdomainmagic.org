@@ -444,6 +444,46 @@ module ::Catalog
       def place_of_publication_before_type_cast: () -> ::String?
 
       def place_of_publication_for_database: () -> ::String?
+
+      def access_address: () -> ::String?
+
+      def access_address=: (::String?) -> ::String?
+
+      def access_address?: () -> bool
+
+      def access_address_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def access_address_change: () -> [ ::String?, ::String? ]
+
+      def access_address_will_change!: () -> void
+
+      def access_address_was: () -> ::String?
+
+      def access_address_previously_changed?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def access_address_previous_change: () -> ::Array[::String?]?
+
+      def access_address_previously_was: () -> ::String?
+
+      def access_address_before_last_save: () -> ::String?
+
+      def access_address_change_to_be_saved: () -> ::Array[::String?]?
+
+      def access_address_in_database: () -> ::String?
+
+      def saved_change_to_access_address: () -> ::Array[::String?]?
+
+      def saved_change_to_access_address?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def will_save_change_to_access_address?: (?from: ::String?, ?to: ::String?) -> bool
+
+      def restore_access_address!: () -> void
+
+      def clear_access_address_change: () -> void
+
+      def access_address_before_type_cast: () -> ::String?
+
+      def access_address_for_database: () -> ::String?
     end
     include ::Catalog::Manifestation::GeneratedAttributeMethods
     module ::Catalog::Manifestation::GeneratedAliasAttributeMethods
@@ -544,7 +584,10 @@ module ::Catalog
     end
     include ::Catalog::Manifestation::GeneratedAssociationMethods
 
+    def self.online: () -> ::Catalog::Manifestation::ActiveRecord_Relation
+
     module ::Catalog::Manifestation::GeneratedRelationMethods
+      def online: () -> ::Catalog::Manifestation::ActiveRecord_Relation
     end
 
     class ::Catalog::Manifestation::ActiveRecord_Relation < ::ActiveRecord::Relation

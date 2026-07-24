@@ -1,6 +1,11 @@
 print:
   name: Print
 
+# The FRBR "online resource" form of carrier: digital editions read remotely,
+# each bearing an access address (URL).
+online_resource:
+  name: Online resource
+
 # Referenced by nothing — the destroy-test target.
 pdf:
   name: PDF
