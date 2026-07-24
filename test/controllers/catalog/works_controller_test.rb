@@ -58,6 +58,27 @@ class Catalog::WorksControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to catalog_works_url
   end
 
+  test "a title alone creates an entry and opens its workbench" do
+    assert_difference("Catalog::Work.count") do
+      post catalog_works_url, params: { catalog_work: { title: "A Freshly Found Book" } }
+    end
+
+    entry = Catalog::Work.last
+    assert_equal "A Freshly Found Book", entry.title
+    assert_redirected_to catalog_work_url(entry)
+  end
+
+  test "the workbench shows what is known and the computed copyright verdict" do
+    get catalog_work_url(catalog_works(:royal_road))
+
+    assert_response :success
+    assert_select "#creators-heading"
+    assert_select "#editions-heading"
+    assert_select "#rights-heading"
+    assert_match "Public domain", response.body # royal_road is cleared PD
+    assert_select "legend", text: "Cite an external reference"
+  end
+
   test "a signed-in visitor without the librarian capability is forbidden" do
     sign_in :visitor
     get catalog_works_url

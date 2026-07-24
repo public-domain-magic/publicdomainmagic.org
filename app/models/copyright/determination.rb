@@ -66,6 +66,28 @@ class Copyright::Determination < ApplicationRecord
   # DB layer (SQLite treats NULLs as distinct in ordinary unique indexes).
   validates :work_id, uniqueness: { scope: :manifestation_id }
 
+  # Record a copyright notice transcribed from a work — a first-publication or
+  # notice year, its country, and the registration number — onto the work's
+  # unscoped determination (created if absent, updated if present, so the
+  # librarian may correct it later). Compute the verdict by date math via
+  # {Verdict}, then return the determination, whose status and dates now
+  # reflect that verdict. The notice fields are evidence; the verdict is never
+  # invented from them (a bare notice with no year leaves it +researching+).
+  def self.record_notice(work:, first_publication_year: nil,
+    first_publication_country: nil,
+    initial_registration_number: nil, notes: nil
+  )
+    determination = find_or_initialize_by(work_id: work.id, manifestation_id: nil)
+    determination.first_publication_year = first_publication_year.presence
+    determination.first_publication_country = first_publication_country.presence
+    determination.initial_registration_number = initial_registration_number.presence
+    determination.notes = notes.presence
+    determination.status ||= "researching"
+    determination.save!
+    Verdict.new(determination).assess!
+    determination
+  end
+
   # The number of days until the work enters the public domain — the
   # countdown. +nil+ unless +public_domain_on+ is known and still in the
   # future.

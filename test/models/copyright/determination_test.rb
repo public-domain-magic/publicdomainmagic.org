@@ -96,4 +96,48 @@ class Copyright::DeterminationTest < ActiveSupport::TestCase
       duplicate.save!(validate: false)
     end
   end
+
+  test "record_notice opens a work's determination and computes the verdict" do
+    work = catalog_works(:hocus_pocus_junior)
+
+    travel_to Date.new(2026, 7, 1) do
+      determination = Copyright::Determination.record_notice(
+        work:, first_publication_year: "1901", first_publication_country: "US",
+        initial_registration_number: "A1", notes: "© 1901 by Someone")
+
+      assert_predicate determination, :public_domain?
+      assert_equal "term_expired", determination.basis
+      assert_equal "1901", determination.first_publication_year
+      assert_equal "A1", determination.initial_registration_number
+    end
+  end
+
+  test "record_notice on a 1978-or-later year records a determined, not-public-domain verdict" do
+    work = catalog_works(:hocus_pocus_junior)
+    determination = Copyright::Determination.record_notice(work:, first_publication_year: "1990")
+
+    assert_equal "determined", determination.status
+    assert_not determination.public_domain?
+    assert_nil determination.public_domain_on
+  end
+
+  test "record_notice corrects the existing determination when recorded again" do
+    work = catalog_works(:trick_brain)
+
+    travel_to Date.new(2026, 7, 1) do
+      Copyright::Determination.record_notice(work:, first_publication_year: "1901")
+    end
+
+    assert_equal 1, Copyright::Determination.where(work_id: work.id, manifestation_id: nil).count
+    assert_predicate copyright_determinations(:trick_brain).reload, :public_domain?
+  end
+
+  test "record_notice without a year leaves the determination open, offering no verdict" do
+    work = catalog_works(:hocus_pocus_junior)
+    determination = Copyright::Determination.record_notice(work:, notes: "exterior photo only")
+
+    assert_equal "researching", determination.status
+    assert_nil determination.public_domain_on
+    assert_equal "exterior photo only", determination.notes
+  end
 end

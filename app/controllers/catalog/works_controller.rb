@@ -16,8 +16,10 @@ class Catalog::WorksController < ApplicationController
     @catalog_works = Catalog::Work.all
   end
 
-  # GET /catalog/works/1 or /catalog/works/1.json
+  # GET /catalog/works/1 or /catalog/works/1.json — the entry workbench: what
+  # is known about the entry, and a focused action to enrich each facet.
   def show
+    @determination = Copyright::Determination.find_by(work_id: @catalog_work.id, manifestation_id: nil)
   end
 
   # GET /catalog/works/new

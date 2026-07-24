@@ -1,0 +1,38 @@
+<%#
+SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+SPDX-License-Identifier: LicenseRef-LICENSE
+-%>
+<% if references.any? %>
+  <ul>
+    <% references.each do |reference| %>
+      <li>
+        <%= link_to reference.url, reference.url, rel: "nofollow noopener" %><%
+          if reference.source.present? %> &mdash; <%= reference.source %><% end %>
+        <%= button_to "Remove", catalog_work_external_reference_path(catalog_work, reference),
+          method: :delete %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No references cited yet.</p>
+<% end %>
+
+<%= form_with scope: :external_reference,
+      url: catalog_work_external_references_path(catalog_work), method: :post do |form| %>
+  <fieldset>
+    <legend>Cite an external reference</legend>
+    <p>
+      <%= form.label :url, "URL" %><br>
+      <%= form.url_field :url, required: true %>
+    </p>
+    <p>
+      <%= form.label :source, "Source (Magicpedia, a dealer, a review, &hellip;)".html_safe %><br>
+      <%= form.text_field :source %>
+    </p>
+    <p>
+      <%= form.label :note, "Note" %><br>
+      <%= form.text_area :note %>
+    </p>
+    <p><%= form.submit "Cite this reference" %></p>
+  </fieldset>
+<% end %>

@@ -32,7 +32,14 @@ Rails.application.routes.draw do
 
   namespace :catalog do
     resources :expressions
-    resources :works
+    # The librarian's entry workbench: create an entry from a title, then
+    # enrich it through small focused actions nested beneath it.
+    resources :works do
+      scope module: :works do
+        resource :determination, only: %i[create update]
+        resources :external_references, only: %i[create destroy]
+      end
+    end
     resources :items
     resources :conditions
     resources :manifestations

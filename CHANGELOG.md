@@ -50,6 +50,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   on) require the magician or librarian capability.
 - Purchase links on listings for commerce and countdown affiliate hooks.
 - Flat tags for classifying listings, optionally bridged to catalog subjects.
+- Librarians catalog an entry from a title alone, then enrich it on the entry
+  workbench: record a copyright notice (first-publication year, country,
+  registration) and see the computed verdict — public domain, not public
+  domain, or needs Rule 6 research — and cite external references as shared
+  evidence.
 - Book pages now list where to read a title from its catalog editions (online
   resources) alongside the Public Domain Magic edition once published.
 

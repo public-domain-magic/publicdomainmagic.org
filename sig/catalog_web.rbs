@@ -174,6 +174,37 @@ class Catalog::WorksController < ::ApplicationController
   def catalog_work_params: () -> ::ActionController::Parameters
 end
 
+# Shared setup for the entry-workbench enrichment actions nested under a work.
+# The self-type binds it to a controller so the body can reach +Catalog::Work+
+# and +params+.
+module CatalogWorkScoped : ActionController::Base
+  extend ActiveSupport::Concern
+
+  def set_catalog_work: () -> void
+end
+
+module Catalog::Works
+end
+
+class Catalog::Works::DeterminationsController < ::ApplicationController
+  def create: () -> void
+  def update: () -> void
+
+  private
+
+  def record_notice: () -> void
+  def determination_params: () -> ::ActionController::Parameters
+end
+
+class Catalog::Works::ExternalReferencesController < ::ApplicationController
+  def create: () -> void
+  def destroy: () -> void
+
+  private
+
+  def external_reference_params: () -> ::ActionController::Parameters
+end
+
 module Catalog::CarriersHelper
 end
 

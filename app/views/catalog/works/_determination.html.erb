@@ -1,0 +1,62 @@
+<%#
+SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+SPDX-License-Identifier: LicenseRef-LICENSE
+-%>
+<%# The copyright verdict, computed from the recorded notice, plus the form to
+    record or correct that notice. Never demands a fact; the year drives the
+    verdict by date math. -%>
+<% if determination.nil? %>
+  <p>No copyright notice recorded yet.</p>
+<% else %>
+  <dl>
+    <dt>Verdict</dt>
+    <dd>
+      <% if determination.public_domain? %>
+        Public domain<% if (pd = determination.public_domain_on) %>
+          since <time datetime="<%= pd.iso8601 %>"><%= pd.strftime("%B %-d, %Y") %></time><% end %>
+      <% elsif determination.researching? %>
+        Needs Rule 6 research
+      <% elsif (pd = determination.public_domain_on) %>
+        Enters the public domain on
+        <time datetime="<%= pd.iso8601 %>"><%= pd.strftime("%B %-d, %Y") %></time><%
+          if (days = determination.countdown_days) %> (<%= pluralize(days, "day") %> to go)<% end %>
+      <% else %>
+        Not public domain
+      <% end %>
+    </dd>
+    <% if determination.first_publication_year.present? %>
+      <dt>First-publication year</dt>
+      <dd><%= determination.first_publication_year %><%
+        if determination.first_publication_country.present? %> (<%= determination.first_publication_country %>)<% end %></dd>
+    <% end %>
+    <% if determination.initial_registration_number.present? %>
+      <dt>Registration</dt>
+      <dd><%= determination.initial_registration_number %></dd>
+    <% end %>
+  </dl>
+<% end %>
+
+<%= form_with scope: :determination, url: catalog_work_determination_path(catalog_work),
+      method: (determination ? :patch : :post) do |form| %>
+  <fieldset>
+    <legend>Record a copyright notice</legend>
+    <p>
+      <%= form.label :first_publication_year, "First-publication / notice year" %><br>
+      <%= form.text_field :first_publication_year,
+        value: determination&.first_publication_year, inputmode: "numeric" %>
+    </p>
+    <p>
+      <%= form.label :first_publication_country, "Country" %><br>
+      <%= form.text_field :first_publication_country, value: determination&.first_publication_country %>
+    </p>
+    <p>
+      <%= form.label :initial_registration_number, "Registration number" %><br>
+      <%= form.text_field :initial_registration_number, value: determination&.initial_registration_number %>
+    </p>
+    <p>
+      <%= form.label :notes, "Notes (claimant, notice text, &hellip;)".html_safe %><br>
+      <%= form.text_area :notes, value: determination&.notes %>
+    </p>
+    <p><%= form.submit determination ? "Update the notice" : "Record the notice" %></p>
+  </fieldset>
+<% end %>

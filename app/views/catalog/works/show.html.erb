@@ -2,13 +2,84 @@
 SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
 SPDX-License-Identifier: LicenseRef-LICENSE
 -%>
-<p style="color: green"><%= notice %></p>
+<% content_for :page_title, @catalog_work.title.presence || "Untitled entry" %>
 
-<%= render @catalog_work %>
+<% if notice %><p role="status"><%= notice %></p><% end %>
+<% if alert %><p role="alert"><%= alert %></p><% end %>
 
-<div>
-  <%= link_to "Edit this work", edit_catalog_work_path(@catalog_work) %> |
-  <%= link_to "Back to works", catalog_works_path %>
+<p><%= link_to "← All entries", catalog_works_path %></p>
 
-  <%= button_to "Destroy this work", @catalog_work, method: :delete %>
-</div>
+<article id="<%= dom_id(@catalog_work) %>">
+  <dl>
+    <dt>Form of work</dt>
+    <dd><%= @catalog_work.form_of_work&.name.presence || "Unclassified" %></dd>
+    <dt>Date of work</dt>
+    <dd><%= @catalog_work.date.presence || "Unknown" %></dd>
+  </dl>
+  <p><%= link_to "Edit title, form & date", edit_catalog_work_path(@catalog_work) %></p>
+
+  <section aria-labelledby="creators-heading">
+    <h2 id="creators-heading">Creators</h2>
+    <% contributions = @catalog_work.contributions.to_a %>
+    <% if contributions.any? %>
+      <ul>
+        <% contributions.each do |contribution| %>
+          <li><%= contribution.credited_name %> &mdash; <%= contribution.role %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No creators recorded yet.</p>
+    <% end %>
+  </section>
+
+  <section aria-labelledby="editions-heading">
+    <h2 id="editions-heading">Editions</h2>
+    <% editions = @catalog_work.expressions.flat_map(&:manifestations).uniq %>
+    <% if editions.any? %>
+      <ul>
+        <% editions.each do |edition| %>
+          <li>
+            <%= edition.title.presence || "Untitled edition" %> (<%= edition.carrier.name %>)<%
+              if edition.online? %> &mdash; <%= link_to "read online", edition.access_address, rel: "nofollow noopener" %><% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>No editions recorded yet.</p>
+    <% end %>
+  </section>
+
+  <% relationships = @catalog_work.work_relationships.to_a %>
+  <% if relationships.any? %>
+    <section aria-labelledby="relationships-heading">
+      <h2 id="relationships-heading">Related entries</h2>
+      <ul>
+        <% relationships.each do |relationship| %>
+          <li><%= relationship.kind %>: <%= link_to relationship.related_work.title, catalog_work_path(relationship.related_work) %></li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <% concepts = @catalog_work.concepts.to_a %>
+  <% if concepts.any? %>
+    <section aria-labelledby="subjects-heading">
+      <h2 id="subjects-heading">Subjects</h2>
+      <ul>
+        <% concepts.each { |concept| %><li><%= concept.name %></li><% } %>
+      </ul>
+    </section>
+  <% end %>
+
+  <section aria-labelledby="rights-heading">
+    <h2 id="rights-heading">Copyright</h2>
+    <%= render "catalog/works/determination",
+      catalog_work: @catalog_work, determination: @determination %>
+  </section>
+
+  <section aria-labelledby="references-heading">
+    <h2 id="references-heading">External references</h2>
+    <%= render "catalog/works/external_references",
+      catalog_work: @catalog_work, references: @catalog_work.external_references.to_a %>
+  </section>
+</article>

@@ -18,6 +18,8 @@ class Copyright::Determination < ApplicationRecord
   PG_RULES: Hash[String, String]
   STATUSES: Array[String]
 
+  def self.record_notice: (work: Catalog::Work, ?first_publication_year: String?, ?first_publication_country: String?, ?initial_registration_number: String?, ?notes: String?) -> Copyright::Determination
+
   def countdown_days: () -> Integer?
   def pg_rule: () -> String?
   def public_domain?: () -> bool
