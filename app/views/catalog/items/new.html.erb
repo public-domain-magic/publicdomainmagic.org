@@ -4,7 +4,7 @@ SPDX-License-Identifier: LicenseRef-LICENSE
 -%>
 <% content_for :title, "New item" %>
 
-<h1>New item</h1>
+<% content_for :page_title, "New item" %>
 
 <%= render "form", catalog_item: @catalog_item %>
 
