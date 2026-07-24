@@ -36,6 +36,16 @@ class TagsController < ApplicationController
   def show: () -> void
 end
 
+# The librarian's Discovery write surface (guarded by LibrarianAccess).
+class DiscoveriesController < ApplicationController
+  def new: () -> void
+  def create: () -> void
+
+  private
+
+  def discovery_params: () -> ::ActionController::Parameters
+end
+
 module BooksHelper
   def book_creators: (Magic::Listing listing) -> String
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_24_152106) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_24_153659) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -113,6 +113,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_24_152106) do
     t.index ["form_of_expression_id"], name: "index_catalog_expressions_on_form_of_expression_id"
     t.index ["language_id"], name: "index_catalog_expressions_on_language_id"
     t.index ["work_id"], name: "index_catalog_expressions_on_work_id"
+  end
+
+  create_table "catalog_external_references", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "note"
+    t.string "source"
+    t.datetime "updated_at", null: false
+    t.string "url", null: false
+    t.integer "work_id", null: false
+    t.index ["work_id", "url"], name: "index_catalog_external_references_uniqueness", unique: true
+    t.index ["work_id"], name: "index_catalog_external_references_on_work_id"
   end
 
   create_table "catalog_form_of_expressions", force: :cascade do |t|
@@ -228,7 +239,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_24_152106) do
   create_table "catalog_works", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "date"
-    t.integer "form_of_work_id", null: false
+    t.integer "form_of_work_id"
     t.string "identifier"
     t.string "title"
     t.datetime "updated_at", null: false
@@ -524,6 +535,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_24_152106) do
   add_foreign_key "catalog_expressions", "catalog_form_of_expressions", column: "form_of_expression_id"
   add_foreign_key "catalog_expressions", "catalog_languages", column: "language_id"
   add_foreign_key "catalog_expressions", "catalog_works", column: "work_id"
+  add_foreign_key "catalog_external_references", "catalog_works", column: "work_id"
   add_foreign_key "catalog_items", "catalog_conditions", column: "condition_id"
   add_foreign_key "catalog_items", "catalog_manifestations", column: "manifestation_id"
   add_foreign_key "catalog_manifestation_relationships", "catalog_manifestations", column: "manifestation_id"

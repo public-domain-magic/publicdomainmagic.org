@@ -27,4 +27,15 @@ class Catalog::WorkTest < ActiveSupport::TestCase
     assert_equal "1948", catalog_works(:royal_road).date
     assert_equal "1924/1928", catalog_works(:annals).date
   end
+
+  test "is valid with no form of work" do
+    work = Catalog::Work.new(title: "A Just-Discovered Book")
+    assert_predicate work, :valid?
+  end
+
+  test "has many external references" do
+    reference = catalog_works(:royal_road).external_references.create!(
+      url: "https://conjuringarchive.com/list/publication/1", source: "Conjuring Archive")
+    assert_includes catalog_works(:royal_road).external_references, reference
+  end
 end

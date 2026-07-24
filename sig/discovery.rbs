@@ -1,0 +1,91 @@
+#--
+# SPDX-FileCopyrightText: 2026 Kerrick Design, LLC <me@kerricklong.com>
+#
+# SPDX-License-Identifier: LicenseRef-LICENSE
+#++
+
+# Hand-written signatures for the top-level Discovery form object and its nested
+# rows. ActiveModel::API supplies validations, attribute assignment, and
+# conversion; the rest is declared here since none of these are ActiveRecord.
+
+class Discovery
+  include ActiveModel::API
+  extend ActiveModel::Validations::ClassMethods
+
+  DEFAULT_LANGUAGE_CODE: String
+  DEFAULT_LANGUAGE_NAME: String
+  DEFAULT_FORM_OF_EXPRESSION: String
+  ONLINE_CARRIER: String
+
+  attr_accessor title: String?
+  attr_accessor date: String?
+  attr_accessor first_publication_year: String?
+  attr_accessor first_publication_country: String?
+  attr_accessor form_of_work_id: String?
+  attr_accessor exposure: String?
+  attr_accessor notes: String?
+  attr_writer librarian: User?
+  attr_reader work: Catalog::Work?
+  attr_reader listing: Magic::Listing?
+  attr_reader determination: Copyright::Determination?
+  attr_reader author_names: Array[String]
+  attr_reader found_copies: Array[Discovery::FoundCopy]
+  attr_reader external_references: Array[Discovery::ExternalReference]
+
+  def self.new: (?untyped attributes) -> instance
+
+  # Implementation detail behind self.new; steep needs it to check the body.
+  def initialize: (?untyped attributes) -> void
+
+  def librarian: () -> User?
+  def author_names=: (untyped values) -> Array[String]
+  def found_copies_attributes=: (untyped rows) -> Array[Discovery::FoundCopy]
+  def external_references_attributes=: (untyped rows) -> Array[Discovery::ExternalReference]
+  def prefill: (?found: Integer, ?references: Integer) -> Discovery
+  def save: () -> bool
+
+  private
+
+  def nested_records_are_valid: () -> void
+  def build_rows: (untyped rows, untyped klass) -> Array[untyped]
+  def build_catalog: () -> Catalog::Work
+  def form_of_work: () -> Catalog::FormOfWork?
+  def create_authors: (Catalog::Work work) -> void
+  def create_found_copies: (Catalog::Work work) -> void
+  def choose_expression: (Catalog::Work work, Discovery::FoundCopy copy, Catalog::Expression? primary) -> Catalog::Expression
+  def build_expression: (Catalog::Work work) -> Catalog::Expression
+  def embody: (Discovery::FoundCopy copy, Catalog::Expression expression) -> void
+  def create_external_references: (Catalog::Work work) -> void
+  def open_determination: (Catalog::Work work) -> void
+  def start_workflow: (Catalog::Work work, User actor) -> void
+  def publish_listing: (Catalog::Work work) -> Magic::Listing
+  def language: () -> Catalog::Language
+  def form_of_expression: () -> Catalog::FormOfExpression
+  def online_carrier: () -> Catalog::Carrier
+end
+
+class Discovery::FoundCopy
+  include ActiveModel::API
+  extend ActiveModel::Validations::ClassMethods
+
+  attr_accessor url: String?
+  attr_accessor source: String?
+  attr_accessor statement_of_responsibility: String?
+  attr_accessor content: String?
+  attr_accessor reproduction_of_manifestation_id: String?
+
+  def self.new: (?untyped attributes) -> instance
+
+  def new_expression?: () -> bool
+end
+
+class Discovery::ExternalReference
+  include ActiveModel::API
+  extend ActiveModel::Validations::ClassMethods
+
+  attr_accessor url: String?
+  attr_accessor source: String?
+  attr_accessor note: String?
+
+  def self.new: (?untyped attributes) -> instance
+end

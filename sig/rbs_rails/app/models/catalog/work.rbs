@@ -165,9 +165,9 @@ module ::Catalog
 
       def identifier_for_database: () -> ::String?
 
-      def form_of_work_id: () -> ::Integer
+      def form_of_work_id: () -> ::Integer?
 
-      def form_of_work_id=: (::Integer) -> ::Integer
+      def form_of_work_id=: (::Integer?) -> ::Integer?
 
       def form_of_work_id?: () -> bool
 
@@ -201,9 +201,9 @@ module ::Catalog
 
       def clear_form_of_work_id_change: () -> void
 
-      def form_of_work_id_before_type_cast: () -> ::Integer
+      def form_of_work_id_before_type_cast: () -> ::Integer?
 
-      def form_of_work_id_for_database: () -> ::Integer
+      def form_of_work_id_for_database: () -> ::Integer?
 
       def created_at: () -> ::ActiveSupport::TimeWithZone
 
@@ -334,6 +334,10 @@ module ::Catalog
     def expressions=: (::Catalog::Expression::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::Expression]) -> (::Catalog::Expression::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::Expression])
     def expression_ids: () -> ::Array[::Integer]
     def expression_ids=: (::Array[::Integer]) -> ::Array[::Integer]
+    def external_references: () -> ::Catalog::ExternalReference::ActiveRecord_Associations_CollectionProxy
+    def external_references=: (::Catalog::ExternalReference::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::ExternalReference]) -> (::Catalog::ExternalReference::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::ExternalReference])
+    def external_reference_ids: () -> ::Array[::Integer]
+    def external_reference_ids=: (::Array[::Integer]) -> ::Array[::Integer]
     def contributions: () -> ::Catalog::Contribution::ActiveRecord_Associations_CollectionProxy
     def contributions=: (::Catalog::Contribution::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::Contribution]) -> (::Catalog::Contribution::ActiveRecord_Associations_CollectionProxy | ::Array[::Catalog::Contribution])
     def contribution_ids: () -> ::Array[::Integer]
@@ -371,7 +375,7 @@ module ::Catalog
     def intended_audience_ids: () -> ::Array[::Integer]
     def intended_audience_ids=: (::Array[::Integer]) -> ::Array[::Integer]
 
-    def form_of_work: () -> ::Catalog::FormOfWork
+    def form_of_work: () -> ::Catalog::FormOfWork?
     def form_of_work=: (::Catalog::FormOfWork?) -> ::Catalog::FormOfWork?
     def reload_form_of_work: () -> ::Catalog::FormOfWork?
     def build_form_of_work: (?untyped) -> ::Catalog::FormOfWork
@@ -420,6 +424,10 @@ end
 class ::Catalog::Expression < ::ApplicationRecord
 end
 class ::Catalog::Expression::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
+end
+class ::Catalog::ExternalReference < ::ApplicationRecord
+end
+class ::Catalog::ExternalReference::ActiveRecord_Associations_CollectionProxy < ::ActiveRecord::Associations::CollectionProxy
 end
 class ::Catalog::Contribution < ::ApplicationRecord
 end

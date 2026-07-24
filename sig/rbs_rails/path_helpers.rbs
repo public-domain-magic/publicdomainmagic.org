@@ -7,6 +7,17 @@ interface ::_RbsRailsPathHelpers
   def rails_info_notes_path: (*untyped) -> ::String
   def rails_info_path: (*untyped) -> ::String
   def root_path: (*untyped) -> ::String
+  def about_path: (*untyped) -> ::String
+  def about_our_goals_path: (*untyped) -> ::String
+  def about_exposure_path: (*untyped) -> ::String
+  def about_dual_license_path: (*untyped) -> ::String
+  def about_accessibility_path: (*untyped) -> ::String
+  def contribute_path: (*untyped) -> ::String
+  def newsletter_path: (*untyped) -> ::String
+  def books_path: (*untyped) -> ::String
+  def book_path: (*untyped) -> ::String
+  def ebooks_path: (*untyped) -> ::String
+  def tag_path: (*untyped) -> ::String
   def new_session_path: (*untyped) -> ::String
   def edit_session_path: (*untyped) -> ::String
   def session_path: (*untyped) -> ::String
@@ -16,6 +27,8 @@ interface ::_RbsRailsPathHelpers
   def new_password_path: (*untyped) -> ::String
   def edit_password_path: (*untyped) -> ::String
   def password_path: (*untyped) -> ::String
+  def discoveries_path: (*untyped) -> ::String
+  def new_discovery_path: (*untyped) -> ::String
   def catalog_expressions_path: (*untyped) -> ::String
   def new_catalog_expression_path: (*untyped) -> ::String
   def edit_catalog_expression_path: (*untyped) -> ::String
@@ -94,6 +107,17 @@ interface ::_RbsRailsPathHelpers
   def rails_info_notes_url: (*untyped) -> ::String
   def rails_info_url: (*untyped) -> ::String
   def root_url: (*untyped) -> ::String
+  def about_url: (*untyped) -> ::String
+  def about_our_goals_url: (*untyped) -> ::String
+  def about_exposure_url: (*untyped) -> ::String
+  def about_dual_license_url: (*untyped) -> ::String
+  def about_accessibility_url: (*untyped) -> ::String
+  def contribute_url: (*untyped) -> ::String
+  def newsletter_url: (*untyped) -> ::String
+  def books_url: (*untyped) -> ::String
+  def book_url: (*untyped) -> ::String
+  def ebooks_url: (*untyped) -> ::String
+  def tag_url: (*untyped) -> ::String
   def new_session_url: (*untyped) -> ::String
   def edit_session_url: (*untyped) -> ::String
   def session_url: (*untyped) -> ::String
@@ -103,6 +127,8 @@ interface ::_RbsRailsPathHelpers
   def new_password_url: (*untyped) -> ::String
   def edit_password_url: (*untyped) -> ::String
   def password_url: (*untyped) -> ::String
+  def discoveries_url: (*untyped) -> ::String
+  def new_discovery_url: (*untyped) -> ::String
   def catalog_expressions_url: (*untyped) -> ::String
   def new_catalog_expression_url: (*untyped) -> ::String
   def edit_catalog_expression_url: (*untyped) -> ::String

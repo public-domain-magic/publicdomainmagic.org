@@ -9,9 +9,12 @@
 # FRBR (WEMI): a distinct intellectual or artistic creation. Abstract; it
 # exists only in the commonality of content among its expressions.
 class Catalog::Work < ApplicationRecord
-  belongs_to :form_of_work
+  # Optional: at discovery a work's form may not be known yet. A null form is
+  # honest; the record is enriched later.
+  belongs_to :form_of_work, optional: true
 
   has_many :expressions, dependent: :destroy
+  has_many :external_references, dependent: :destroy
   has_and_belongs_to_many :intended_audiences, join_table: "catalog_intended_audiences_works"
 
   has_many :contributions, as: :contributable, dependent: :destroy

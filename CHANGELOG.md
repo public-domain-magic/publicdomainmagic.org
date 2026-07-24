@@ -40,13 +40,23 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   validated against the copy.pglaf.org form limits, including page scans.
 - Workflow projects tracking each book's journey as a step ledger
   (discovery through publication and print editions), with per-step actor
-  and date, external resource links (scans, transcripts, the book's text
-  repository), and readiness checks that read the Copyright context.
+  and date, links to our own production artifacts (the uploaded scan set,
+  the book's text repository, the published ebook), and readiness checks
+  that read the Copyright context. Where a book otherwise exists online is
+  recorded as a catalog edition, not a workflow resource.
 - Public book listings with a download access gate: public books are open to
   everyone, while protected books (whose methods working magicians still rely
   on) require the magician or librarian capability.
 - Purchase links on listings for commerce and countdown affiliate hooks.
 - Flat tags for classifying listings, optionally bridged to catalog subjects.
+- Librarians can record a discovered book through one guided form (the
+  Discovery workflow): the work, its authors, the copies found online (each
+  an edition, with where to read it), and third-party records about it. Saving
+  creates the catalog record, opens a copyright determination — computing the
+  public-domain countdown when the first-publication year makes it certain —
+  starts a workflow project, and publishes the book to the public library.
+- Book pages now list where to read a title from its catalog editions (online
+  resources) alongside the Public Domain Magic edition once published.
 
 ### Changed
 
